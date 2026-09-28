@@ -1,0 +1,17 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "events": "Events",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "memberLogin": "Member Login",
+    "join": "Join / Register",
+    "dashboard": "My Portal"
+  },
+  "Hero": {
+    "title": "Preserving Our Heritage, Building Our Future",
+    "subtitle": "Welcome to the official portal of our Igbo Cultural Community.",
+    "cta": "Become a Member"
+  }
+}

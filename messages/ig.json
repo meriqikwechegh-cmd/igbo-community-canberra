@@ -1,0 +1,17 @@
+{
+  "Navigation": {
+    "home": "Ụlọ",
+    "about": "Gbasara Anyị",
+    "events": "Ihe Omume",
+    "gallery": "Ihe Nkiri",
+    "contact": "Kpọtụrụ Anyị",
+    "memberLogin": "Banye (Ndị Otu)",
+    "join": "Soro Anyị",
+    "dashboard": "Oghere m"
+  },
+  "Hero": {
+    "title": "Na-echekwa Omenala Anyị, Na-ewulite Ọdịnihu Anyị",
+    "subtitle": "Nnọọ na oghere gọọmentị nke Obodo Omenala Igbo anyị.",
+    "cta": "Bụrụ Onye Otu"
+  }
+}

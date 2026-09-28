@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email           String    @unique
+  passwordHash    String
+  firstName       String
+  lastName        String
+  role            String    @default("member") // 'member', 'family_admin', 'treasurer', 'super_admin'
+  phoneNumber     String?
+  isEmailVerified Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  householdId     String?   @db.Uuid
+  household       Household? @relation(fields: [householdId], references: [id])
+
+  duesSubscriptions DuesSubscription[]
+  payments          Payment[]
+  eventsCreated     Event[]
+  rsvps             Rsvp[]
+  auditLogs         AuditLog[]
+}
+
+model Household {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name         String
+  addressLine1 String?
+  addressLine2 String?
+  city         String?
+  state        String?
+  postalCode   String?
+  country      String   @default("USA")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  members      User[]
+  subscriptions DuesSubscription[]
+  payments      Payment[]
+}
+
+model DuesSubscription {
+  id                   String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  householdId          String?   @db.Uuid
+  household            Household? @relation(fields: [householdId], references: [id])
+  userId               String?   @db.Uuid
+  user                 User?      @relation(fields: [userId], references: [id])
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  planType             String    // 'monthly', 'annual'
+  amount               Decimal   @db.Decimal(10, 2)
+  status               String    @default("active") // 'active', 'past_due', 'canceled', 'unpaid'
+  nextBillingDate      DateTime? @db.Date
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+}
+
+model Payment {
+  id                   String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  householdId          String?   @db.Uuid
+  household            Household? @relation(fields: [householdId], references: [id])
+  userId               String?   @db.Uuid
+  user                 User?      @relation(fields: [userId], references: [id])
+  amount               Decimal   @db.Decimal(10, 2)
+  paymentMethod        String    // 'stripe', 'cash', 'check'
+  stripePaymentIntentId String?
+  status               String    @default("completed") // 'pending', 'completed', 'failed', 'refunded'
+  description          String?
+  recordedById         String?   @db.Uuid // Nullable, only for manual
+  paidAt               DateTime  @default(now())
+  createdAt            DateTime  @default(now())
+}
+
+model Event {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title         String
+  description   String?
+  eventDate     DateTime
+  location      String?
+  capacityLimit Int?
+  fee           Decimal? @default(0.00) @db.Decimal(10, 2)
+  createdById   String?  @db.Uuid
+  createdBy     User?    @relation(fields: [createdById], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  rsvps         Rsvp[]
+}
+
+model Rsvp {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  eventId   String   @db.Uuid
+  event     Event    @relation(fields: [eventId], references: [id])
+  userId    String   @db.Uuid
+  user      User     @relation(fields: [userId], references: [id])
+  rsvpStatus String   @default("yes") // 'yes', 'no', 'maybe', 'waitlist'
+  paymentId String?  @db.Uuid // Optional linkage if event has fee
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([eventId, userId])
+}
+
+model AuditLog {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  actorId     String?  @db.Uuid
+  actor       User?    @relation(fields: [actorId], references: [id])
+  action      String
+  targetTable String?
+  targetId    String?  @db.Uuid
+  changes     Json?
+  createdAt   DateTime @default(now())
+}
