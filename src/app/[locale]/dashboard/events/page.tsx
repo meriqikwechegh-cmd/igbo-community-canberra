@@ -31,7 +31,7 @@ export default function EventsPortalPage() {
       capacityLimit: 250,
       yesCount: 184,
       fee: 0,
-      description: 'The premier annual cultural gathering celebrating the yam harvest, traditional Igbo masquerades, authentic delicacies, and cultural performances.',
+      description: 'The annual cultural gathering celebrating the yam harvest, traditional Igbo masquerades, authentic delicacies, and cultural performances.',
       tag: 'Major Festival',
     },
     {

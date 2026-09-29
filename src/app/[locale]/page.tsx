@@ -47,7 +47,7 @@ export default function HomePage() {
                 Igbo Community Canberra
               </span>
               <span className="font-sans text-[11px] font-semibold text-emerald-800 uppercase tracking-wider block mt-0.5">
-                Cultural &amp; Civic Association Inc.
+                Cultural Association Inc.
               </span>
             </div>
           </Link>
@@ -141,7 +141,7 @@ export default function HomePage() {
           <div className="md:col-span-5 flex justify-center">
             <div className="relative w-full max-w-sm rounded-xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-stone-200 aspect-[4/5]">
               <Image
-                src="/president.jpg"
+                src="/president-ifeanyi.jpg"
                 alt="Chief Ifeanyi Onuchukwu"
                 fill
                 className="object-cover object-[center_12%]"
@@ -171,7 +171,7 @@ export default function HomePage() {
               On behalf of the Executive Council and our dedicated member families, I welcome you to the official portal of Igbo Community Canberra (ICC). Established in 2012, our association serves as the unified voice and cultural bastion for the Igbo people residing in the Australian Capital Territory and surrounding regions.
             </p>
             <p className="text-stone-700 leading-relaxed text-base font-sans">
-              Our vision is anchored on the enduring philosophy of <em>Onye aghana nwanne ya</em>&mdash;ensuring no brother or sister is left behind. Whether you are a newly arrived resident in Canberra or have been a foundational member for years, this portal offers transparent financial dues accounting, civic engagement, cultural calendar coordination, and family welfare support.
+              Our vision is anchored on the enduring philosophy of <em>Onye aghana nwanne ya</em>&mdash;ensuring no brother or sister is left behind. Whether you are a newly arrived resident in Canberra or have been a foundational member for years, this portal offers transparent financial dues accounting, cultural calendar coordination, communal solidarity, and family welfare support.
             </p>
             <div className="pt-5 border-t border-stone-200 flex items-center justify-between">
               <div>
@@ -264,10 +264,10 @@ export default function HomePage() {
                   <span className="text-xs uppercase font-bold tracking-wider text-stone-400 font-sans">Next Generation</span>
                 </div>
                 <h3 className="font-display text-xl font-bold text-stone-900 mb-3">
-                  Youth Mentorship &amp; Civic Leadership
+                  Youth Mentorship &amp; Leadership
                 </h3>
                 <p className="text-stone-600 text-sm leading-relaxed font-sans">
-                  Fostering academic distinction, professional mentorship, career networks, and civic leadership development for the rising generation of Igbo Australian professionals.
+                  Fostering academic distinction, professional mentorship, career networks, and leadership development for the rising generation of Igbo Australian professionals.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-medium font-sans">
@@ -469,7 +469,7 @@ export default function HomePage() {
               The Executive Council (2025&ndash;2027)
             </h2>
             <p className="text-stone-600 mt-3 text-base font-sans">
-              Democratically elected officers dedicated to administrative integrity, fiduciary accountability, and civic representation.
+              Democratically elected officers dedicated to administrative integrity, fiduciary accountability, and community representation.
             </p>
           </div>
 
@@ -477,7 +477,7 @@ export default function HomePage() {
           <div className="bg-white rounded-xl border border-stone-200/90 shadow-md p-6 sm:p-8 mb-8 flex flex-col sm:flex-row items-center sm:items-stretch gap-6 sm:gap-8">
             <div className="relative w-56 sm:w-64 h-72 sm:h-80 rounded-lg overflow-hidden border-2 border-emerald-800 shadow-md shrink-0 bg-stone-100">
               <Image
-                src="/president.jpg"
+                src="/president-ifeanyi.jpg"
                 alt="Chief Ifeanyi Onuchukwu"
                 fill
                 className="object-cover object-[center_12%]"
@@ -489,7 +489,7 @@ export default function HomePage() {
               <h3 className="font-display text-2xl sm:text-4xl font-bold text-stone-900 tracking-tight">Chief Ifeanyi Onuchukwu</h3>
               <p className="font-serif italic text-amber-800 text-xl mt-1">Ikeorah 1 of Oraifite</p>
               <p className="font-sans text-sm text-stone-600 mt-3 max-w-xl leading-relaxed">
-                Leading executive governance, constitutional custodianship, and diaspora civic representation for the Igbo community across the Australian Capital Territory.
+                Leading executive governance, constitutional custodianship, and community leadership for the Igbo community across the Australian Capital Territory.
               </p>
               <div className="mt-4 pt-4 border-t border-stone-100 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-stone-500 font-sans">
                 <span className="font-semibold text-emerald-800">Executive Council (2025&ndash;2027)</span>
@@ -506,7 +506,7 @@ export default function HomePage() {
             <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
-                  src="/vice-president.jpg"
+                  src="/vice-president-joseph.jpg"
                   alt="Joseph Nwosu"
                   fill
                   className="object-cover object-[center_12%]"
@@ -523,7 +523,7 @@ export default function HomePage() {
             <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
-                  src="/women-leader.jpg"
+                  src="/women-leader-nonye.jpg"
                   alt="Nonye Orisakwe"
                   fill
                   className="object-cover object-[center_12%]"
@@ -632,7 +632,7 @@ export default function HomePage() {
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Join the Premier Igbo Community in the ACT
+            Join Igbo Community Canberra
           </h2>
           <p className="text-stone-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-sans">
             Full membership grants household participation rights at the Annual General Meeting, cultural event allocations, bereavement solidarity, and direct access to our member registry.
@@ -672,7 +672,7 @@ export default function HomePage() {
               </span>
             </div>
             <p className="text-stone-400 text-sm leading-relaxed max-w-md mb-5 font-sans">
-              An incorporated, non-profit community association established in 2012 for the promotion of cultural heritage, communal solidarity, and civic engagement across the Australian Capital Territory.
+              An incorporated, non-profit community association established in 2012 for the promotion of cultural heritage, communal solidarity, and fellowship across the Australian Capital Territory.
             </p>
             <p className="font-sans text-xs text-stone-400">
               ACT Reg. No.: <strong className="text-stone-200">A04821</strong>

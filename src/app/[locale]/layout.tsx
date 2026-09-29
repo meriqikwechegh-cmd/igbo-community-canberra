@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: 'Igbo Community Canberra (ICC) — Official Portal',
-  description: 'The official cultural, civic, and membership portal for Igbo Community Canberra, Australian Capital Territory.',
+  description: 'The official cultural and membership portal for Igbo Community Canberra, Australian Capital Territory.',
 };
 
 export default async function LocaleLayout({
