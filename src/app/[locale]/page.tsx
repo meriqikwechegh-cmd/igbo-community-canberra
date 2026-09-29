@@ -353,12 +353,17 @@ export default function HomePage() {
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-            <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">
-              NA
+            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+              <Image
+                src="/vice-president.jpg"
+                alt="Joseph Nwosu"
+                fill
+                className="object-cover object-[center_15%]"
+              />
             </div>
-            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Vice President</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Engr. (Mrs.) Nkechi Agu</h4>
-            <p className="text-xs text-slate-500 mt-1">M.Eng., Project Director</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Vice-President</p>
+            <h4 className="font-serif font-bold text-slate-900 text-base">Joseph Nwosu</h4>
+            <p className="text-xs text-slate-500 mt-1">Executive Council</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
