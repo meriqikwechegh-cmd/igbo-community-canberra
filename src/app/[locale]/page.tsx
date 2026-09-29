@@ -412,6 +412,20 @@ export default function HomePage() {
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+              <Image
+                src="/doris-njoku.jpg"
+                alt="Doris Njoku"
+                fill
+                className="object-cover object-[center_10%]"
+              />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Member of EXCO</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Doris Njoku</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Executive Committee</p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
             <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-lg mx-auto mb-4">
               IN
             </div>
@@ -420,7 +434,7 @@ export default function HomePage() {
             <p className="text-[11px] text-slate-500 mt-1">Legal &amp; Secretariat</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm col-span-2 sm:col-span-1">
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
             <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-lg mx-auto mb-4">
               CE
             </div>
