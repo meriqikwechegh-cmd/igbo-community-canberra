@@ -139,7 +139,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <p className="text-xs uppercase tracking-widest text-amber-300 font-semibold">President &amp; Executive Chairman</p>
-                <p className="font-serif text-lg font-bold">Dr. Chidiebere Okonkwo</p>
+                <p className="font-serif text-lg font-bold">Ifeanyi Onuchukwu</p>
                 <p className="text-xs text-slate-300">Igbo Community Canberra Inc.</p>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function HomePage() {
             </p>
             <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
               <div>
-                <p className="font-serif font-bold text-slate-900">Dr. Chidiebere Okonkwo</p>
+                <p className="font-serif font-bold text-slate-900">Ifeanyi Onuchukwu</p>
                 <p className="text-xs text-slate-500">President, Executive Council (2025&ndash;2027)</p>
               </div>
               <Link
@@ -342,13 +342,13 @@ export default function HomePage() {
             <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
                 src="/president.jpg"
-                alt="Dr. Chidiebere Okonkwo"
+                alt="Ifeanyi Onuchukwu"
                 fill
                 className="object-cover object-top"
               />
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">President</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Dr. Chidiebere Okonkwo</h4>
+            <h4 className="font-serif font-bold text-slate-900 text-base">Ifeanyi Onuchukwu</h4>
             <p className="text-xs text-slate-500 mt-1">Executive Chairman</p>
           </div>
 
