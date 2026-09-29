@@ -339,9 +339,9 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="relative w-18 h-18 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
                 src="/president.jpg"
                 alt="Chief Ifeanyi Onuchukwu"
@@ -355,8 +355,8 @@ export default function HomePage() {
             <p className="text-[10px] text-slate-500">Executive Chairman</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="relative w-18 h-18 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
                 src="/vice-president.jpg"
                 alt="Joseph Nwosu"
@@ -369,8 +369,8 @@ export default function HomePage() {
             <p className="text-[11px] text-slate-500 mt-1">Executive Council</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm col-span-2 sm:col-span-1">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="relative w-18 h-18 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
                 src="/women-leader.jpg"
                 alt="President of Ezinwanyi Canberra"
@@ -383,8 +383,22 @@ export default function HomePage() {
             <p className="text-[11px] text-slate-500 mt-1">Women&apos;s Wing Leader</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-            <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="relative w-18 h-18 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+              <Image
+                src="/lawrence-ochu.jpg"
+                alt="Lawrence Ochu"
+                fill
+                className="object-cover object-[center_12%]"
+              />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">EXCO Member</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Lawrence Ochu</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Member of EXCO</p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="w-18 h-18 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-lg mx-auto mb-4">
               IN
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Secretary-General</p>
@@ -392,8 +406,8 @@ export default function HomePage() {
             <p className="text-[11px] text-slate-500 mt-1">Legal &amp; Secretariat</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-            <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">
+          <div className="bg-white rounded-2xl p-5 border border-slate-200 text-center shadow-sm">
+            <div className="w-18 h-18 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-lg mx-auto mb-4">
               CE
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Treasurer</p>
