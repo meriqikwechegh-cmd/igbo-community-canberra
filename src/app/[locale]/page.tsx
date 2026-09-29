@@ -83,9 +83,12 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#d1fae5_1px,transparent_1px)] [background-size:28px_28px]"></div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-emerald-900/60 border border-emerald-400/30 rounded-md text-emerald-200 text-xs font-semibold uppercase tracking-wider mb-8 backdrop-blur shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Established 2012 &middot; Australian Capital Territory</span>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent via-amber-400/50 to-amber-300/80"></span>
+            <span className="font-display uppercase tracking-[0.35em] text-amber-300 text-xs sm:text-sm font-semibold">
+              EST. 2012
+            </span>
+            <span className="h-px w-12 bg-gradient-to-l from-transparent via-amber-400/50 to-amber-300/80"></span>
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.12] mb-8 text-stone-50">
@@ -152,7 +155,7 @@ export default function HomePage() {
                 <p className="font-sans text-xs uppercase tracking-wider text-amber-300 font-bold">President &amp; Executive Chairman</p>
                 <p className="font-display text-2xl font-bold mt-1">Chief Ifeanyi Onuchukwu</p>
                 <p className="text-sm text-amber-200 font-serif italic mt-0.5">Ikeorah 1 of Oraifite</p>
-                <p className="font-sans text-xs text-stone-300 mt-1">Igbo Community Canberra Inc.</p>
+                <p className="font-sans text-xs text-stone-300 mt-1">President Since 2021 &middot; Igbo Community Canberra</p>
               </div>
             </div>
           </div>
@@ -177,7 +180,7 @@ export default function HomePage() {
               <div>
                 <p className="font-display font-bold text-stone-900 text-lg">Chief Ifeanyi Onuchukwu</p>
                 <p className="text-sm font-serif italic text-emerald-800 font-semibold">Ikeorah 1 of Oraifite</p>
-                <p className="font-sans text-xs text-stone-500 mt-0.5">President, Executive Council (2025&ndash;2027)</p>
+                <p className="font-sans text-xs text-stone-500 mt-0.5">President, Executive Council &middot; In Office Since 2021</p>
               </div>
               <Link
                 href="/en/register"
@@ -492,9 +495,9 @@ export default function HomePage() {
                 Leading executive governance, constitutional custodianship, and community leadership for the Igbo community across the Australian Capital Territory.
               </p>
               <div className="mt-4 pt-4 border-t border-stone-100 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-stone-500 font-sans">
-                <span className="font-semibold text-emerald-800">Executive Council (2025&ndash;2027)</span>
+                <span className="font-semibold text-emerald-800">President in Office Since 2021</span>
                 <span>&middot;</span>
-                <span>Incorporated Cultural Association</span>
+                <span>Executive Council Chair</span>
               </div>
             </div>
           </div>
