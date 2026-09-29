@@ -1,4 +1,5 @@
 'use client';
+import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -26,11 +27,19 @@ export default function RegisterPage() {
     setError('');
     setLoading(true);
     try {
-      // TODO: POST to /api/auth/register with form data
-      await new Promise(r => setTimeout(r, 1000));
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || 'Registration failed. Please try again.');
+        return;
+      }
       setStep(3); // success state
     } catch {
-      setError('Registration failed. Please try again.');
+      setError('Registration failed. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
