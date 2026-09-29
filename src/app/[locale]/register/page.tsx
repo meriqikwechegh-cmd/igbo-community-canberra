@@ -2,6 +2,7 @@
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function RegisterPage() {
   const [step, setStep] = useState(1);
@@ -70,7 +71,9 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <Link href="/en" className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-green-700 flex items-center justify-center text-white font-bold">I</div>
+          <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-emerald-800/30 shrink-0 bg-white">
+            <Image src="/logo.jpg" alt="Igbo Community Canberra Logo" fill className="object-contain" />
+          </div>
           <div>
             <span className="font-bold text-green-800 block text-sm leading-tight">Igbo Community</span>
             <span className="text-xs text-green-600">Canberra</span>

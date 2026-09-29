@@ -2,18 +2,20 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
-import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
 import '../globals.css';
 
-const sans = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const serif = Playfair_Display({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-serif',
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -36,8 +38,11 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${sans.variable} ${serif.variable}`}>
-      <body className="font-sans antialiased bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <html
+      lang={locale}
+      className={`${dmSans.variable} ${playfair.variable}`}
+    >
+      <body className="font-sans antialiased bg-[#fafaf9] text-stone-900 selection:bg-emerald-900 selection:text-emerald-100">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

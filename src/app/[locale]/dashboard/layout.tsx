@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
   return (
@@ -8,8 +9,13 @@ export default async function DashboardLayout({ children }: { children: ReactNod
       <aside className="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0">
         <div className="h-16 flex items-center px-6 border-b border-slate-200">
           <Link href="/en" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-emerald-850 bg-emerald-900 flex items-center justify-center text-amber-300 font-serif font-bold text-base">
-              I
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-emerald-800/30 shrink-0 bg-white">
+              <Image
+                src="/logo.jpg"
+                alt="Igbo Community Canberra Logo"
+                fill
+                className="object-contain"
+              />
             </div>
             <div>
               <span className="font-serif font-bold text-sm text-slate-900 block leading-tight">Igbo Community</span>
