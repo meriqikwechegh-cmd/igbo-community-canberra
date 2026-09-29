@@ -337,7 +337,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
             <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
@@ -348,8 +348,8 @@ export default function HomePage() {
               />
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">President</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Ifeanyi Onuchukwu</h4>
-            <p className="text-xs text-slate-500 mt-1">Executive Chairman</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Ifeanyi Onuchukwu</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Executive Chairman</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
@@ -362,8 +362,22 @@ export default function HomePage() {
               />
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Vice-President</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Joseph Nwosu</h4>
-            <p className="text-xs text-slate-500 mt-1">Executive Council</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Joseph Nwosu</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Executive Council</p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm col-span-2 sm:col-span-1">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
+              <Image
+                src="/women-leader.jpg"
+                alt="President of Ezinwanyi Canberra"
+                fill
+                className="object-cover object-[center_12%]"
+              />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">President, Ezinwanyi</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Ezinwanyi Canberra</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Women&apos;s Wing Leader</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
@@ -371,17 +385,17 @@ export default function HomePage() {
               IN
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Secretary-General</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Barr. Ikechukwu Nnamdi</h4>
-            <p className="text-xs text-slate-500 mt-1">LL.B, Legal Counsel</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Barr. Ikechukwu Nnamdi</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Legal &amp; Secretariat</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
             <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-serif font-bold text-xl mx-auto mb-4">
               CE
             </div>
-            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Treasurer &amp; Fiduciary Officer</p>
-            <h4 className="font-serif font-bold text-slate-900 text-base">Mazi Chinedu Eze</h4>
-            <p className="text-xs text-slate-500 mt-1">CPA, Senior Financial Analyst</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">Treasurer</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Mazi Chinedu Eze</h4>
+            <p className="text-[11px] text-slate-500 mt-1">Fiduciary Officer</p>
           </div>
         </div>
       </section>
