@@ -139,8 +139,9 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <p className="text-xs uppercase tracking-widest text-amber-300 font-semibold">President &amp; Executive Chairman</p>
-                <p className="font-serif text-lg font-bold">Ifeanyi Onuchukwu</p>
-                <p className="text-xs text-slate-300">Igbo Community Canberra Inc.</p>
+                <p className="font-serif text-lg font-bold">Chief Ifeanyi Onuchukwu</p>
+                <p className="text-xs text-amber-200/90 font-serif italic">Ikeorah 1 of Oraifite</p>
+                <p className="text-[11px] text-slate-300 mt-0.5">Igbo Community Canberra Inc.</p>
               </div>
             </div>
           </div>
@@ -160,8 +161,9 @@ export default function HomePage() {
             </p>
             <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
               <div>
-                <p className="font-serif font-bold text-slate-900">Ifeanyi Onuchukwu</p>
-                <p className="text-xs text-slate-500">President, Executive Council (2025&ndash;2027)</p>
+                <p className="font-serif font-bold text-slate-900 text-lg">Chief Ifeanyi Onuchukwu</p>
+                <p className="text-xs font-serif italic text-emerald-800 font-semibold">Ikeorah 1 of Oraifite</p>
+                <p className="text-xs text-slate-500 mt-0.5">President, Executive Council (2025&ndash;2027)</p>
               </div>
               <Link
                 href="/en/register"
@@ -342,14 +344,15 @@ export default function HomePage() {
             <div className="relative w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-800 shadow-sm">
               <Image
                 src="/president.jpg"
-                alt="Ifeanyi Onuchukwu"
+                alt="Chief Ifeanyi Onuchukwu"
                 fill
                 className="object-cover object-top"
               />
             </div>
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-1">President</p>
-            <h4 className="font-serif font-bold text-slate-900 text-sm">Ifeanyi Onuchukwu</h4>
-            <p className="text-[11px] text-slate-500 mt-1">Executive Chairman</p>
+            <h4 className="font-serif font-bold text-slate-900 text-sm">Chief Ifeanyi Onuchukwu</h4>
+            <p className="text-[11px] text-amber-800 font-serif italic mt-0.5">Ikeorah 1 of Oraifite</p>
+            <p className="text-[10px] text-slate-500">Executive Chairman</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
