@@ -1,17 +1,19 @@
 {
   "Navigation": {
     "home": "Home",
-    "about": "About Us",
-    "events": "Events",
-    "gallery": "Gallery",
-    "contact": "Contact",
-    "memberLogin": "Member Login",
-    "join": "Join / Register",
-    "dashboard": "My Portal"
+    "about": "About the Association",
+    "events": "Cultural Calendar",
+    "gallery": "Heritage Archive",
+    "contact": "Secretariat",
+    "memberLogin": "Member Portal Sign In",
+    "join": "Apply for Membership",
+    "dashboard": "Executive Dashboard"
   },
   "Hero": {
-    "title": "Preserving Our Heritage, Building Our Future",
-    "subtitle": "Welcome to the official portal of our Igbo Cultural Community.",
-    "cta": "Become a Member"
+    "badge": "Incorporated Association · Australian Capital Territory",
+    "title": "Fostering Unity, Preserving Heritage, Empowering Generations",
+    "subtitle": "The official representative body and cultural association for the Igbo diaspora across Canberra and the surrounding region.",
+    "cta": "Submit Membership Application",
+    "secondaryCta": "Explore Our Heritage & Charter"
   }
 }

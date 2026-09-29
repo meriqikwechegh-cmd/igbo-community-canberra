@@ -1,17 +1,19 @@
 {
   "Navigation": {
     "home": "Ụlọ",
-    "about": "Gbasara Anyị",
-    "events": "Ihe Omume",
-    "gallery": "Ihe Nkiri",
-    "contact": "Kpọtụrụ Anyị",
-    "memberLogin": "Banye (Ndị Otu)",
-    "join": "Soro Anyị",
-    "dashboard": "Oghere m"
+    "about": "Gbasara Òtù Anyị",
+    "events": "Kalenda Omenala",
+    "gallery": "Ebe Nchekwa Akụkọ",
+    "contact": "Ụlọ Ọrụ Ndị Odee",
+    "memberLogin": "Banye Oghere Ndị Otu",
+    "join": "Tinyere Akwụkwọ Ntinye Otu",
+    "dashboard": "Oghere Nchịkwa"
   },
   "Hero": {
-    "title": "Na-echekwa Omenala Anyị, Na-ewulite Ọdịnihu Anyị",
-    "subtitle": "Nnọọ na oghere gọọmentị nke Obodo Omenala Igbo anyị.",
-    "cta": "Bụrụ Onye Otu"
+    "badge": "Òtù Edebanyere Aha n'Akwụkwọ Iwu · Australian Capital Territory",
+    "title": "Ịkwalite Ịdị n'Otu, Ichekwa Omenala, na Iwulite Ọdịnihu",
+    "subtitle": "Isi ụlọ ọrụ nnochite anya na njikọ omenala maka ndị Igbo bi na Canberra na mpaghara ACT niile.",
+    "cta": "Bụrụ Onye Otu Edebanyere Aha",
+    "secondaryCta": "Mụta Maka Omenala Anyị"
   }
 }
