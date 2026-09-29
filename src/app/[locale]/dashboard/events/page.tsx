@@ -194,35 +194,35 @@ export default function EventsPortalPage() {
                     onClick={() => handleRSVP(evt.id, 'yes')}
                     className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
                       currentRsvp === 'yes'
-                        ? 'bg-green-700 text-white'
+                        ? 'bg-emerald-800 text-white'
                         : isFull
                         ? 'bg-amber-100 text-amber-800 hover:bg-amber-200'
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
                     }`}
                   >
-                    {isFull && currentRsvp !== 'yes' ? 'Join Waitlist' : '✓ Going'}
+                    {isFull && currentRsvp !== 'yes' ? 'Join Waitlist' : 'Attending'}
                   </button>
 
                   <button
                     onClick={() => handleRSVP(evt.id, 'maybe')}
                     className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
                       currentRsvp === 'maybe'
-                        ? 'bg-blue-600 text-white'
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                        ? 'bg-slate-800 text-white'
+                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
                     }`}
                   >
-                    ? Maybe
+                    Tentative
                   </button>
 
                   <button
                     onClick={() => handleRSVP(evt.id, 'no')}
                     className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
                       currentRsvp === 'no'
-                        ? 'bg-gray-800 text-white'
-                        : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                        ? 'bg-rose-800 text-white'
+                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
                     }`}
                   >
-                    ✕ Can&apos;t Go
+                    Declined
                   </button>
                 </div>
 

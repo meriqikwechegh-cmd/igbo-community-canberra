@@ -47,15 +47,19 @@ export default function RegisterPage() {
 
   if (step === 3) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-        <div className="bg-white max-w-md w-full rounded-2xl border shadow-sm p-10 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✅</div>
-          <h1 className="text-2xl font-bold mb-2">Registration Submitted!</h1>
-          <p className="text-gray-500 text-sm mb-6">
-            Thank you for joining Igbo Community Canberra. Please check your email to verify your account. Your membership will be activated once dues are processed.
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+        <div className="bg-white max-w-md w-full rounded-2xl border border-slate-200 shadow-sm p-10 text-center">
+          <div className="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h1 className="font-serif text-2xl font-bold text-slate-900 mb-2">Registration Submitted</h1>
+          <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+            Thank you for applying to join Igbo Community Canberra. Your application has been received by the Secretariat. You may now sign in to review your profile and dues status.
           </p>
-          <Link href="/en/login" className="block bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-800 transition text-sm">
-            Go to Sign In
+          <Link href="/en/login" className="block bg-emerald-800 text-white font-semibold py-3 rounded-lg hover:bg-emerald-900 transition text-xs uppercase tracking-wider">
+            Proceed to Sign In
           </Link>
         </div>
       </div>
