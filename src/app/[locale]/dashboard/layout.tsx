@@ -1,25 +1,27 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { Sidebar } from '@/components/dashboard/Sidebar';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-[#fafaf9] text-stone-900 font-sans">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-sans transition-colors">
       {/* Sidebar Navigation */}
       <Sidebar />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-14 bg-white border-b border-stone-200 flex items-center justify-between px-6 shrink-0">
+        <header className="h-14 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between px-6 shrink-0 transition-colors">
           <div className="flex items-center gap-3">
-            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-stone-600 bg-stone-100 border border-stone-200 px-2.5 py-1 rounded">
+            <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-stone-600 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 px-2.5 py-1 rounded">
               Member Portal &middot; ACT Inc. A04821
             </span>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Link
               href="/en"
-              className="text-xs font-semibold text-stone-600 hover:text-[#064e3b] transition flex items-center gap-1.5"
+              className="text-xs font-semibold text-stone-600 dark:text-stone-300 hover:text-[#064e3b] dark:hover:text-emerald-400 transition flex items-center gap-1.5"
             >
               <span>View Public Website</span>
               <svg className="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { ThemeToggle } from '@/components/ThemeToggle';
+
 interface PublicHeaderProps {
   memberLoginText?: string;
   joinText?: string;
@@ -27,10 +29,10 @@ export function PublicHeader({
   ];
 
   return (
-    <header className="w-full bg-white border-b border-stone-200 sticky top-0 z-50">
+    <header className="w-full bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 sticky top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/en" className="flex items-center gap-3">
-          <div className="relative w-9 h-9 overflow-hidden border border-stone-300 shrink-0 bg-white">
+          <div className="relative w-9 h-9 overflow-hidden border border-stone-300 dark:border-stone-700 shrink-0 bg-white">
             <Image
               src="/logo.jpg"
               alt="Igbo Community Canberra Logo"
@@ -40,22 +42,22 @@ export function PublicHeader({
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-serif font-bold text-base text-stone-900 tracking-tight leading-tight">
+            <span className="font-serif font-bold text-base text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
               Igbo Community Canberra
             </span>
-            <span className="font-sans text-[10px] font-semibold text-emerald-900 uppercase tracking-widest leading-none mt-0.5">
+            <span className="font-sans text-[10px] font-semibold text-emerald-900 dark:text-emerald-400 uppercase tracking-widest leading-none mt-0.5">
               Cultural Association Inc.
             </span>
           </div>
         </Link>
 
         {/* Editorial Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wide uppercase text-stone-700">
+        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wide uppercase text-stone-700 dark:text-stone-300">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-emerald-900 transition-colors"
+              className="hover:text-emerald-900 dark:hover:text-white transition-colors"
             >
               {link.label}
             </a>
@@ -64,9 +66,10 @@ export function PublicHeader({
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
+          <ThemeToggle />
           <Link
             href="/en/login"
-            className="font-sans text-xs font-semibold text-stone-800 hover:text-emerald-900 border border-stone-300 px-3.5 py-2 rounded transition"
+            className="font-sans text-xs font-semibold text-stone-800 dark:text-stone-200 hover:text-emerald-900 border border-stone-300 dark:border-stone-700 px-3.5 py-2 rounded transition"
           >
             {memberLoginText}
           </Link>

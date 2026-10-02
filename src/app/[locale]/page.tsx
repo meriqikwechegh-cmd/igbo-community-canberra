@@ -506,16 +506,16 @@ export default function HomePage() {
 
               <ul className="space-y-3 text-xs sm:text-sm text-stone-700 border-t border-stone-100 pt-4 font-sans">
                 <li className="flex items-center gap-2">
-                  <span className="text-[#064e3b] font-bold">&check;</span> Full voting rights at Annual General Assembly
+                  <span className="text-[#064e3b] font-bold">✓</span> Full voting rights at Annual General Assembly
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#064e3b] font-bold">&check;</span> Complete household inclusion (Spouse &amp; Children)
+                  <span className="text-[#064e3b] font-bold">✓</span> Complete household inclusion (Spouse &amp; Children)
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#064e3b] font-bold">&check;</span> Full Bereavement &amp; Welfare Charter coverage
+                  <span className="text-[#064e3b] font-bold">✓</span> Full Bereavement &amp; Welfare Charter coverage
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#064e3b] font-bold">&check;</span> Priority event allocations &amp; member directory access
+                  <span className="text-[#064e3b] font-bold">✓</span> Priority event allocations &amp; member directory access
                 </li>
               </ul>
             </div>
@@ -549,13 +549,13 @@ export default function HomePage() {
 
               <ul className="space-y-3 text-xs sm:text-sm text-stone-700 border-t border-stone-100 pt-4 font-sans">
                 <li className="flex items-center gap-2">
-                  <span className="text-stone-900 font-bold">&check;</span> Individual voting right at General Assembly
+                  <span className="text-stone-900 font-bold">✓</span> Individual voting right at General Assembly
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-stone-900 font-bold">&check;</span> Individual Welfare Charter coverage
+                  <span className="text-stone-900 font-bold">✓</span> Individual Welfare Charter coverage
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-stone-900 font-bold">&check;</span> Member portal access &amp; event RSVPs
+                  <span className="text-stone-900 font-bold">✓</span> Member portal access &amp; event RSVPs
                 </li>
               </ul>
             </div>
