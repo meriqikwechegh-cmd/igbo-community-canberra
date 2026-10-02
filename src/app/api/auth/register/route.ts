@@ -51,8 +51,8 @@ export async function POST(req: Request) {
       data: {
         householdId: household.id,
         userId: user.id,
-        planType: planType || 'annual',
-        amount: planType === 'monthly' ? 25.00 : 250.00,
+        planType: planType || 'family',
+        amount: planType === 'single' ? 150.00 : 250.00,
         status: 'unpaid',
       },
     });

@@ -12,7 +12,7 @@ export default function RegisterPage() {
     firstName: '', lastName: '', email: '', phone: '',
     password: '', confirmPassword: '',
     address: '', suburb: '', state: 'ACT', postcode: '',
-    planType: 'annual',
+    planType: 'family',
   });
 
   function update(field: string, value: string) {
@@ -180,8 +180,8 @@ export default function RegisterPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-3">Membership Plan</label>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { key: 'monthly', label: 'Monthly', price: '$25/mo', sub: 'Billed monthly' },
-                      { key: 'annual', label: 'Annual', price: '$250/yr', sub: 'Save $50 — best value' },
+                      { key: 'family', label: 'Family', price: '$250/yr', sub: 'All household members included' },
+                      { key: 'single', label: 'Single', price: '$150/yr', sub: 'Individual membership' },
                     ].map(plan => (
                       <label key={plan.key} className={`border-2 rounded-xl p-4 cursor-pointer transition ${form.planType === plan.key ? 'border-green-700 bg-green-50' : 'border-gray-200 hover:border-gray-300'}`}>
                         <input type="radio" className="sr-only" value={plan.key} checked={form.planType === plan.key} onChange={() => update('planType', plan.key)} />

@@ -1,81 +1,42 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { Sidebar } from '@/components/dashboard/Sidebar';
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-slate-50">
-      {/* Sidebar Navigation */}
-      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0">
-        <div className="h-16 flex items-center px-6 border-b border-slate-200">
-          <Link href="/en" className="flex items-center gap-2.5">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-emerald-800/30 shrink-0 bg-white">
-              <Image
-                src="/logo.jpg"
-                alt="Igbo Community Canberra Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div>
-              <span className="font-serif font-bold text-sm text-slate-900 block leading-tight">Igbo Community</span>
-              <span className="text-[10px] text-emerald-800 font-semibold uppercase tracking-wider">Canberra Portal</span>
-            </div>
-          </Link>
-        </div>
-
-        <nav className="flex-1 p-4 space-y-1">
-          <Link
-            href="/en/dashboard"
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 transition"
-          >
-            Overview
-          </Link>
-          <Link
-            href="/en/dashboard/billing"
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 transition"
-          >
-            Dues &amp; Billing
-          </Link>
-          <Link
-            href="/en/dashboard/events"
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 transition"
-          >
-            Events &amp; RSVPs
-          </Link>
-          <Link
-            href="/en/dashboard/admin"
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 transition"
-          >
-            Treasurer &amp; Executive Portal
-          </Link>
-        </nav>
-
-        <div className="p-4 border-t border-slate-200 text-xs text-slate-500">
-          <p className="font-semibold text-slate-700 mb-0.5">Igbo Community Canberra</p>
-          <p>Founded 2012 &middot; ACT Inc. A04821</p>
-        </div>
-      </aside>
+    <div className="flex flex-col lg:flex-row min-h-screen bg-stone-100 text-stone-900 font-sans">
+      {/* Sidebar Navigation (Desktop sticky sidebar + Mobile drawer) */}
+      <Sidebar />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0">
+        <header className="h-16 bg-white border-b border-stone-200 flex items-center justify-between px-6 sm:px-8 shrink-0 shadow-xs">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-md">
-              Executive Member Portal
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-950 bg-amber-400/20 border border-amber-400/40 px-3 py-1 rounded-md">
+              Member Portal &middot; ACT Inc. A04821
             </span>
           </div>
-          <div className="flex items-center gap-6">
-            <Link href="/en" className="text-xs font-semibold text-slate-600 hover:text-emerald-800 transition">
-              View Public Website &rarr;
+          <div className="flex items-center gap-5">
+            <Link
+              href="/en"
+              className="text-xs font-semibold text-stone-600 hover:text-emerald-900 transition flex items-center gap-1.5"
+            >
+              <span>View Public Site</span>
+              <svg className="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </Link>
-            <div className="w-8 h-8 rounded-full bg-slate-200 text-slate-700 text-xs font-bold flex items-center justify-center border border-slate-300">
-              OO
+            <div className="h-4 w-px bg-stone-200 hidden sm:block"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-emerald-950 text-amber-300 text-xs font-serif font-bold flex items-center justify-center border border-emerald-900">
+                OO
+              </div>
+              <span className="text-xs font-semibold text-stone-700 hidden sm:inline">Obinna Okafor</span>
             </div>
           </div>
         </header>
 
-        <main className="p-8 overflow-y-auto flex-1">
+        <main className="p-4 sm:p-8 overflow-y-auto flex-1">
           {children}
         </main>
       </div>

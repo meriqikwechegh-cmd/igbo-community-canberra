@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   try {
     const session = await auth();
     const body = await req.json().catch(() => ({}));
-    const { planType = 'annual', userId, email } = body;
+    const { planType = 'family', userId, email } = body;
 
     const userEmail = session?.user?.email || email;
     const targetUserId = session?.user?.id || userId;
@@ -16,9 +16,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Authentication or email required' }, { status: 401 });
     }
 
-    const isAnnual = planType === 'annual';
-    const amountInCents = isAnnual ? 25000 : 2500; // $250/yr or $25/mo
-    const interval = isAnnual ? 'year' : 'month';
+    const isFamily = planType === 'family';
+    const amountInCents = isFamily ? 25000 : 15000; // $250/yr family or $150/yr single
+    const interval = 'year';
 
     // Find or create customer in Stripe
     const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
@@ -45,8 +45,8 @@ export async function POST(req: Request) {
           price_data: {
             currency: 'aud',
             product_data: {
-              name: `Igbo Community Canberra — ${isAnnual ? 'Annual' : 'Monthly'} Membership Dues`,
-              description: `Recurring community membership dues (${isAnnual ? '$250 AUD/year' : '$25 AUD/month'})`,
+              name: `Igbo Community Canberra — ${isFamily ? 'Family' : 'Single'} Membership Dues`,
+              description: `Annual community membership dues (${isFamily ? '$250 AUD/year — all household members' : '$150 AUD/year — individual'})`,
             },
             unit_amount: amountInCents,
             recurring: {

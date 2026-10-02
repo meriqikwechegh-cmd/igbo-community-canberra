@@ -6,7 +6,7 @@ export default function BillingPage() {
   const [loading, setLoading] = useState<string | null>(null);
   const [customAmount, setCustomAmount] = useState('25.00');
 
-  async function handleSubscribe(planType: 'monthly' | 'annual') {
+  async function handleSubscribe(planType: 'family' | 'single') {
     setLoading(planType);
     try {
       const res = await fetch('/api/checkout/subscription', {
@@ -56,7 +56,7 @@ export default function BillingPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Membership Dues & Billing</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Manage your subscription, pay annual/monthly dues, or record contributions for your household.
+          Manage your membership subscription — choose Family or Single — and track dues payments for your household.
         </p>
       </div>
 
@@ -71,35 +71,35 @@ export default function BillingPage() {
           <div className="border-2 border-green-700 bg-green-50/50 rounded-xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-bold text-green-800 uppercase tracking-wider">Annual Membership</span>
-                <span className="bg-green-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Save $50</span>
+                <span className="text-sm font-bold text-green-800 uppercase tracking-wider">Family Membership</span>
+                <span className="bg-green-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Best Value</span>
               </div>
               <p className="text-3xl font-extrabold text-gray-900 mb-1">$250 <span className="text-sm font-normal text-gray-500">AUD / year</span></p>
               <p className="text-xs text-gray-600 mb-4">Covers primary member & linked household family members for 12 months.</p>
             </div>
             <button
-              onClick={() => handleSubscribe('annual')}
+              onClick={() => handleSubscribe('family')}
               disabled={loading !== null}
               className="w-full bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-800 transition disabled:opacity-60 text-sm"
             >
-              {loading === 'annual' ? 'Redirecting to Stripe…' : 'Subscribe Annual ($250/yr)'}
+              {loading === 'family' ? 'Redirecting to Stripe…' : 'Subscribe — Family ($250/yr)'}
             </button>
           </div>
 
           <div className="border border-gray-200 rounded-xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">Monthly Membership</span>
+                <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">Single Membership</span>
               </div>
-              <p className="text-3xl font-extrabold text-gray-900 mb-1">$25 <span className="text-sm font-normal text-gray-500">AUD / month</span></p>
-              <p className="text-xs text-gray-600 mb-4">Flexible monthly dues auto-debited on the 1st of every month.</p>
+              <p className="text-3xl font-extrabold text-gray-900 mb-1">$150 <span className="text-sm font-normal text-gray-500">AUD / year</span></p>
+              <p className="text-xs text-gray-600 mb-4">Individual annual membership for one person.</p>
             </div>
             <button
-              onClick={() => handleSubscribe('monthly')}
+              onClick={() => handleSubscribe('single')}
               disabled={loading !== null}
               className="w-full bg-gray-900 text-white font-semibold py-3 rounded-lg hover:bg-gray-800 transition disabled:opacity-60 text-sm"
             >
-              {loading === 'monthly' ? 'Redirecting to Stripe…' : 'Subscribe Monthly ($25/mo)'}
+              {loading === 'single' ? 'Redirecting to Stripe…' : 'Subscribe — Single ($150/yr)'}
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PublicHeader } from '@/components/PublicHeader';
 
 export default function HomePage() {
   const t = useTranslations('Hero');
@@ -30,53 +31,11 @@ export default function HomePage() {
       </div>
 
       {/* Main Navigation Bar */}
-      <header className="w-full bg-white/95 backdrop-blur border-b border-stone-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/en" className="flex items-center gap-3.5 group">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-stone-200 shrink-0 bg-white">
-              <Image
-                src="/logo.jpg"
-                alt="Igbo Community Canberra Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div>
-              <span className="font-display font-bold text-xl text-stone-900 block leading-tight tracking-tight">
-                Igbo Community Canberra
-              </span>
-              <span className="font-sans text-[11px] font-semibold text-emerald-800 uppercase tracking-wider block mt-0.5">
-                Cultural Association Inc.
-              </span>
-            </div>
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-stone-700">
-            <a href="#welcome" className="hover:text-emerald-800 transition">President&apos;s Welcome</a>
-            <a href="#charter" className="hover:text-emerald-800 transition">Charter &amp; Mission</a>
-            <a href="#events" className="hover:text-emerald-800 transition">Cultural Calendar</a>
-            <a href="#leadership" className="hover:text-emerald-800 transition">Executive Council</a>
-            <a href="#membership" className="hover:text-emerald-800 transition">Membership</a>
-            <a href="#contact" className="hover:text-emerald-800 transition">{nav('contact')}</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/en/login"
-              className="font-sans text-sm font-semibold text-stone-700 hover:text-emerald-800 border border-stone-300 hover:border-emerald-800 px-4 py-2 rounded-lg transition"
-            >
-              {nav('memberLogin')}
-            </Link>
-            <Link
-              href="/en/register"
-              className="font-sans text-sm font-semibold bg-emerald-800 hover:bg-emerald-900 text-white px-5 py-2 rounded-lg shadow-sm transition"
-            >
-              {nav('join')}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PublicHeader
+        memberLoginText={nav('memberLogin')}
+        joinText={nav('join')}
+        contactText={nav('contact')}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-stone-950 via-emerald-950 to-stone-950 text-white py-28 px-6 overflow-hidden">
@@ -477,8 +436,8 @@ export default function HomePage() {
           </div>
 
           {/* President — Feature Card */}
-          <div className="bg-white rounded-xl border border-stone-200/90 shadow-md p-6 sm:p-8 mb-8 flex flex-col sm:flex-row items-center sm:items-stretch gap-6 sm:gap-8">
-            <div className="relative w-56 sm:w-64 h-72 sm:h-80 rounded-lg overflow-hidden border-2 border-emerald-800 shadow-md shrink-0 bg-stone-100">
+          <div className="bg-white rounded-xl border border-stone-200/90 shadow-md p-6 sm:p-8 mb-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+            <div className="relative w-56 sm:w-64 aspect-[4/5] rounded-xl overflow-hidden border-2 border-emerald-800 shadow-md shrink-0 bg-stone-100">
               <Image
                 src="/president-ifeanyi.jpg"
                 alt="Chief Ifeanyi Onuchukwu"
@@ -502,11 +461,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Officers Grid — Full-Bleed 4:5 Portraits */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Officers Grid — Balanced 4:5 Portraits */}
+          <div className="flex flex-wrap justify-center gap-6">
 
             {/* Vice-President */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
                   src="/vice-president-joseph.jpg"
@@ -523,7 +482,7 @@ export default function HomePage() {
             </div>
 
             {/* President Ezinwanyi */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
                   src="/women-leader-nonye.jpg"
@@ -540,7 +499,7 @@ export default function HomePage() {
             </div>
 
             {/* P.R.O */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
                   src="/lawrence-ochu.jpg"
@@ -557,7 +516,7 @@ export default function HomePage() {
             </div>
 
             {/* Assistant Secretary */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
                   src="/chibueze-iloelunachi.jpg"
@@ -574,7 +533,7 @@ export default function HomePage() {
             </div>
 
             {/* Treasurer */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-stone-100 via-stone-50 to-stone-200 flex flex-col items-center justify-center p-6 text-center border-b border-stone-200">
                 <div className="w-20 h-20 rounded-full bg-emerald-900 text-amber-200 flex items-center justify-center font-display font-bold text-2xl shadow-inner border border-emerald-700">
                   AI
@@ -589,7 +548,7 @@ export default function HomePage() {
             </div>
 
             {/* Assistant Treasurer */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
                 <Image
                   src="/doris-njoku.jpg"
@@ -606,7 +565,7 @@ export default function HomePage() {
             </div>
 
             {/* Provost */}
-            <div className="bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
+            <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-sm bg-white rounded-xl border border-stone-200/90 shadow-sm hover:shadow-md hover:border-emerald-800/50 transition overflow-hidden flex flex-col">
               <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-stone-100 via-stone-50 to-stone-200 flex flex-col items-center justify-center p-6 text-center border-b border-stone-200">
                 <div className="w-20 h-20 rounded-full bg-emerald-900 text-amber-200 flex items-center justify-center font-display font-bold text-2xl shadow-inner border border-emerald-700">
                   CN
