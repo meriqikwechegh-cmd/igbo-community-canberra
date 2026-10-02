@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function AdminDashboardPage() {
-  const [activeTab, setActiveTab] = useState<'members' | 'offline' | 'reports'>('members');
+  const [activeTab, setActiveTab] = useState<'members' | 'offline'>('members');
   const [search, setSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
 
@@ -18,13 +18,13 @@ export default function AdminDashboardPage() {
   const [submittingPayment, setSubmittingPayment] = useState(false);
   const [paymentSuccessMsg, setPaymentSuccessMsg] = useState('');
 
-  // Mock members for preview & interaction
-  const [members, setMembers] = useState([
-    { id: '1', name: 'Obinna Okafor', email: 'obinna@example.com', role: 'member', household: 'Okafor Household', duesStatus: 'active', plan: 'Annual ($250)', phone: '0412 345 678' },
-    { id: '2', name: 'Ngozi Okafor', email: 'ngozi@example.com', role: 'member', household: 'Okafor Household', duesStatus: 'active', plan: 'Annual', phone: '0423 456 789' },
-    { id: '3', name: 'Chinedu Eze', email: 'chinedu@example.com', role: 'treasurer', household: 'Eze Family', duesStatus: 'active', plan: 'Annual ($250)', phone: '0434 567 890' },
-    { id: '4', name: 'Emeka Nwosu', email: 'emeka@example.com', role: 'member', household: 'Nwosu Household', duesStatus: 'past_due', plan: 'Monthly ($25)', phone: '0445 678 901' },
-    { id: '5', name: 'Amaka Adeleke', email: 'amaka@example.com', role: 'family_admin', household: 'Adeleke Family', duesStatus: 'unpaid', plan: 'Annual ($250)', phone: '0456 789 012' },
+  // Mock members for directory
+  const [members] = useState([
+    { id: '1', name: 'Obinna Okafor', email: 'obinna@example.com', role: 'member', household: 'Okafor Household', duesStatus: 'active', plan: 'Family ($250)', phone: '0412 345 678' },
+    { id: '2', name: 'Ngozi Okafor', email: 'ngozi@example.com', role: 'member', household: 'Okafor Household', duesStatus: 'active', plan: 'Family', phone: '0423 456 789' },
+    { id: '3', name: 'Chinedu Eze', email: 'chinedu@example.com', role: 'treasurer', household: 'Eze Family', duesStatus: 'active', plan: 'Family ($250)', phone: '0434 567 890' },
+    { id: '4', name: 'Emeka Nwosu', email: 'emeka@example.com', role: 'member', household: 'Nwosu Household', duesStatus: 'past_due', plan: 'Single ($150)', phone: '0445 678 901' },
+    { id: '5', name: 'Amaka Adeleke', email: 'amaka@example.com', role: 'family_admin', household: 'Adeleke Family', duesStatus: 'unpaid', plan: 'Family ($250)', phone: '0456 789 012' },
   ]);
 
   const filteredMembers = members.filter(m => {
@@ -50,7 +50,7 @@ export default function AdminDashboardPage() {
         setPaymentSuccessMsg('Recorded successfully (offline mode).');
       }
     } catch {
-      setPaymentSuccessMsg('Payment recorded in ledger.');
+      setPaymentSuccessMsg('Payment recorded in treasury ledger.');
     } finally {
       setSubmittingPayment(false);
     }
@@ -59,98 +59,99 @@ export default function AdminDashboardPage() {
   return (
     <div className="space-y-8 max-w-6xl">
       {/* Top Header & Export Actions */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Admin & Treasurer Portal</h1>
-          <p className="text-gray-500 text-sm mt-1">
-            Financial oversight, offline payment reconciliation, and membership governance for Igbo Community Canberra.
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b]">SECRETARIAT GOVERNANCE</span>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-0.5">Treasurer &amp; Executive Portal</h1>
+          <p className="text-stone-600 text-xs sm:text-sm mt-1">
+            Financial oversight, offline dues reconciliation, and membership administration for Igbo Community Canberra.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 self-start sm:self-auto font-sans">
           <a
             href="/api/admin/export?type=members"
-            className="border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 px-4 py-2 rounded-lg text-sm font-semibold transition"
+            className="border border-stone-300 text-stone-700 bg-white hover:bg-stone-50 px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition"
           >
             Export Members CSV
           </a>
           <a
             href="/api/admin/export?type=payments"
-            className="bg-green-700 text-white hover:bg-green-800 px-4 py-2 rounded-lg text-sm font-semibold transition"
+            className="bg-[#064e3b] text-white hover:bg-emerald-950 px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition"
           >
             Export Ledger CSV
           </a>
         </div>
       </div>
 
-      {/* Financial KPIs */}
+      {/* Financial KPIs — Flat Editorial Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border shadow-sm">
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Members</span>
-          <p className="text-3xl font-extrabold text-gray-900 mt-1">312</p>
-          <span className="text-xs text-green-600 font-medium">84 Households linked</span>
+        <div className="bg-white p-5 rounded-md border border-stone-200">
+          <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-widest">Total Registered</span>
+          <p className="text-3xl font-serif font-bold text-stone-900 mt-1">312</p>
+          <span className="text-xs text-[#064e3b] font-mono font-semibold">84 Households linked</span>
         </div>
-        <div className="bg-white p-5 rounded-2xl border shadow-sm">
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Collected (YTD)</span>
-          <p className="text-3xl font-extrabold text-green-700 mt-1">$58,250</p>
-          <span className="text-xs text-gray-500">Stripe + Cash / Direct</span>
+        <div className="bg-white p-5 rounded-md border border-stone-200">
+          <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-widest">Total Dues (YTD)</span>
+          <p className="text-3xl font-serif font-bold text-[#064e3b] mt-1">$58,250</p>
+          <span className="text-xs text-stone-500 font-mono">Stripe + Cash Ledger</span>
         </div>
-        <div className="bg-white p-5 rounded-2xl border shadow-sm">
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Outstanding Dues</span>
-          <p className="text-3xl font-extrabold text-red-600 mt-1">$4,750</p>
-          <span className="text-xs text-red-500">19 members past due</span>
+        <div className="bg-white p-5 rounded-md border border-stone-200">
+          <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-widest">Outstanding Arrears</span>
+          <p className="text-3xl font-serif font-bold text-rose-800 mt-1">$4,750</p>
+          <span className="text-xs text-rose-700 font-mono">19 members past due</span>
         </div>
-        <div className="bg-white p-5 rounded-2xl border shadow-sm">
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Active Subscription Rate</span>
-          <p className="text-3xl font-extrabold text-blue-600 mt-1">94.2%</p>
-          <span className="text-xs text-gray-500">In good standing</span>
+        <div className="bg-white p-5 rounded-md border border-stone-200">
+          <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-widest">Compliance Rate</span>
+          <p className="text-3xl font-serif font-bold text-stone-900 mt-1">94.2%</p>
+          <span className="text-xs text-stone-500 font-mono">Financial standing</span>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="border-b border-gray-200">
+      {/* Navigation Tabs */}
+      <div className="border-b border-stone-200 font-sans">
         <nav className="flex gap-6">
           <button
             onClick={() => setActiveTab('members')}
-            className={`pb-3 text-sm font-semibold border-b-2 transition ${
+            className={`pb-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'members'
-                ? 'border-green-700 text-green-800'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                ? 'border-[#064e3b] text-[#064e3b]'
+                : 'border-transparent text-stone-500 hover:text-stone-800'
             }`}
           >
-            Member & Household Directory
+            Member Directory
           </button>
           <button
             onClick={() => setActiveTab('offline')}
-            className={`pb-3 text-sm font-semibold border-b-2 transition ${
+            className={`pb-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'offline'
-                ? 'border-green-700 text-green-800'
-                : 'border-transparent text-gray-500 hover:text-gray-700'
+                ? 'border-[#064e3b] text-[#064e3b]'
+                : 'border-transparent text-stone-500 hover:text-stone-800'
             }`}
           >
-            Record Offline Payment (Cash / Check)
+            Record Cash / Check Dues
           </button>
         </nav>
       </div>
 
       {/* Tab 1: Member Directory */}
       {activeTab === 'members' && (
-        <div className="bg-white rounded-2xl border p-6 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <div className="bg-white rounded-md border border-stone-200 p-6 space-y-4">
+          <div className="flex flex-col sm:flex-row gap-3 justify-between items-center font-sans">
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              placeholder="Search by member name or email…"
-              className="w-full sm:w-80 border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+              placeholder="Search member name or email…"
+              className="w-full sm:w-72 border border-stone-300 rounded px-3 py-1.5 text-xs focus:outline-none focus:border-[#064e3b]"
             />
             <div className="flex items-center gap-2 w-full sm:w-auto">
-              <label className="text-xs font-semibold text-gray-600">Status:</label>
+              <label className="text-xs font-mono font-semibold text-stone-600 uppercase">Status Filter:</label>
               <select
                 value={filterStatus}
                 onChange={e => setFilterStatus(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                className="border border-stone-300 rounded px-3 py-1.5 text-xs focus:outline-none focus:border-[#064e3b] font-mono"
               >
-                <option value="all">All Members</option>
+                <option value="all">All Statuses</option>
                 <option value="active">Active Dues</option>
                 <option value="past_due">Past Due</option>
                 <option value="unpaid">Unpaid</option>
@@ -159,53 +160,41 @@ export default function AdminDashboardPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="border-b bg-gray-50 text-gray-600">
+            <table className="w-full text-left text-xs font-sans">
+              <thead className="border-b border-stone-200 bg-stone-50 text-stone-600 font-mono">
                 <tr>
                   <th className="p-3">Member Name</th>
                   <th className="p-3">Household</th>
+                  <th className="p-3">Plan</th>
                   <th className="p-3">Role</th>
-                  <th className="p-3">Dues Plan</th>
-                  <th className="p-3">Payment Status</th>
-                  <th className="p-3 text-right">Actions</th>
+                  <th className="p-3">Phone</th>
+                  <th className="p-3">Dues Status</th>
+                  <th className="p-3 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y text-gray-700">
+              <tbody className="divide-y divide-stone-100 text-stone-700">
                 {filteredMembers.map(m => (
-                  <tr key={m.id} className="hover:bg-gray-50/50">
+                  <tr key={m.id} className="hover:bg-stone-50">
                     <td className="p-3">
-                      <p className="font-bold text-gray-900">{m.name}</p>
-                      <p className="text-xs text-gray-500">{m.email} • {m.phone}</p>
+                      <p className="font-bold text-stone-900">{m.name}</p>
+                      <p className="text-[11px] text-stone-500 font-mono">{m.email}</p>
                     </td>
-                    <td className="p-3 text-gray-600">{m.household}</td>
+                    <td className="p-3 font-semibold text-stone-800">{m.household}</td>
+                    <td className="p-3 font-mono text-[11px]">{m.plan}</td>
+                    <td className="p-3 uppercase text-[10px] font-mono font-bold">{m.role}</td>
+                    <td className="p-3 font-mono text-[11px]">{m.phone}</td>
                     <td className="p-3">
-                      <span className="bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded font-mono">
-                        {m.role}
-                      </span>
-                    </td>
-                    <td className="p-3 font-medium text-gray-600">{m.plan}</td>
-                    <td className="p-3">
-                      <span
-                        className={`text-xs px-2.5 py-1 rounded-full font-bold ${
-                          m.duesStatus === 'active'
-                            ? 'bg-green-100 text-green-700'
-                            : m.duesStatus === 'past_due'
-                            ? 'bg-amber-100 text-amber-700'
-                            : 'bg-red-100 text-red-700'
-                        }`}
-                      >
-                        {m.duesStatus.replace('_', ' ').toUpperCase()}
+                      <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded border uppercase ${
+                        m.duesStatus === 'active'
+                          ? 'bg-emerald-50 text-[#064e3b] border-emerald-200'
+                          : 'bg-rose-50 text-rose-800 border-rose-200'
+                      }`}>
+                        {m.duesStatus.replace('_', ' ')}
                       </span>
                     </td>
                     <td className="p-3 text-right">
-                      <button
-                        onClick={() => {
-                          setOfflineForm(prev => ({ ...prev, memberName: m.name, email: m.email }));
-                          setActiveTab('offline');
-                        }}
-                        className="text-xs text-green-700 font-semibold hover:underline"
-                      >
-                        Record Dues
+                      <button className="text-[#064e3b] hover:underline font-bold text-xs">
+                        Edit
                       </button>
                     </td>
                   </tr>
@@ -216,99 +205,85 @@ export default function AdminDashboardPage() {
         </div>
       )}
 
-      {/* Tab 2: Offline Payment Recording */}
+      {/* Tab 2: Record Offline Payment */}
       {activeTab === 'offline' && (
-        <div className="bg-white rounded-2xl border p-8 shadow-sm max-w-2xl">
-          <h2 className="text-lg font-bold text-gray-900 mb-1">Record Offline Payment (Cash / Bank Transfer / Check)</h2>
-          <p className="text-sm text-gray-500 mb-6">
-            As a Treasurer or Org Admin, record funds received offline directly into the official community ledger with audit trail tracking.
-          </p>
+        <div className="bg-white rounded-md border border-stone-200 p-6 space-y-4 max-w-xl font-sans">
+          <div className="border-b border-stone-200 pb-3">
+            <h2 className="text-base font-serif font-bold text-stone-900">Record Cash or Check Dues</h2>
+            <p className="text-xs text-stone-500 font-mono mt-0.5">Manually record offline payments collected at general meetings.</p>
+          </div>
 
           {paymentSuccessMsg && (
-            <div className="mb-6 bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm rounded-lg p-4 font-medium flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-              <span>{paymentSuccessMsg}</span>
+            <div className="bg-emerald-50 border border-emerald-200 text-[#064e3b] text-xs p-3 rounded font-mono">
+              ✓ {paymentSuccessMsg}
             </div>
           )}
 
           <form onSubmit={handleRecordPayment} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Member Name</label>
-                <input
-                  type="text"
-                  required
-                  value={offlineForm.memberName}
-                  onChange={e => setOfflineForm({ ...offlineForm, memberName: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input
-                  type="email"
-                  required
-                  value={offlineForm.email}
-                  onChange={e => setOfflineForm({ ...offlineForm, email: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Member Name</label>
+              <input
+                type="text"
+                required
+                value={offlineForm.memberName}
+                onChange={e => setOfflineForm({ ...offlineForm, memberName: e.target.value })}
+                className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
+              />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Email Address</label>
+              <input
+                type="email"
+                required
+                value={offlineForm.email}
+                onChange={e => setOfflineForm({ ...offlineForm, email: e.target.value })}
+                className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Amount (AUD)</label>
+                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Amount (AUD)</label>
                 <input
                   type="number"
                   step="0.01"
                   required
                   value={offlineForm.amount}
                   onChange={e => setOfflineForm({ ...offlineForm, amount: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
+                  className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Payment Method</label>
+                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Payment Method</label>
                 <select
                   value={offlineForm.paymentMethod}
                   onChange={e => setOfflineForm({ ...offlineForm, paymentMethod: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
+                  className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b] font-mono"
                 >
-                  <option value="cash">Cash Received</option>
+                  <option value="cash">Cash Payment</option>
                   <option value="bank_transfer">Direct Bank Transfer</option>
-                  <option value="check">Bank Cheque</option>
+                  <option value="check">Official Check</option>
                 </select>
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Description / Dues Period</label>
+              <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Description</label>
               <input
                 type="text"
-                required
                 value={offlineForm.description}
                 onChange={e => setOfflineForm({ ...offlineForm, description: e.target.value })}
-                className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Audit Notes (Internal)</label>
-              <textarea
-                rows={3}
-                value={offlineForm.notes}
-                onChange={e => setOfflineForm({ ...offlineForm, notes: e.target.value })}
-                className="w-full border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-green-600 focus:outline-none"
-                placeholder="Details of transaction, meeting location, or reference number..."
+                className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
               />
             </div>
 
             <button
               type="submit"
               disabled={submittingPayment}
-              className="w-full bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-800 transition disabled:opacity-60 text-sm"
+              className="w-full bg-[#064e3b] text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider hover:bg-emerald-950 transition disabled:opacity-60"
             >
-              {submittingPayment ? 'Saving to Ledger…' : 'Record Offline Payment in Ledger'}
+              {submittingPayment ? 'Recording…' : 'Save Payment to Treasury Ledger'}
             </button>
           </form>
         </div>

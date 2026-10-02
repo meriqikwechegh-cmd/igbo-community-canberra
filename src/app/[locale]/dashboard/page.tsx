@@ -17,34 +17,27 @@ export default async function DashboardOverview() {
 
   return (
     <div className="space-y-6 max-w-6xl">
-      {/* Igbo Community Canberra Cultural Welcome Banner */}
-      <div className="relative bg-gradient-to-r from-emerald-950 via-emerald-900 to-stone-900 text-stone-50 p-8 rounded-2xl shadow-md overflow-hidden border border-emerald-800/50">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      {/* Editorial Member Welcome Banner */}
+      <div className="bg-[#064e3b] text-white p-6 sm:p-8 rounded-md border border-emerald-950">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="space-y-2 max-w-2xl">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-serif italic text-amber-300 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-                Onye aghana nwanne ya
-              </span>
-              <span className="text-xs font-sans text-emerald-300 font-medium hidden sm:inline">
-                &middot; ACT Reg. A04821
+              <span className="text-[11px] font-mono text-emerald-200 uppercase tracking-widest border-b border-emerald-400/30 pb-0.5">
+                MEMBER PORTAL &middot; ACT INC. A04821
               </span>
             </div>
-            <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Nnọọ! <span className="text-amber-200 font-normal italic">Welcome back, Obinna</span>
+            <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Nnọọ! Welcome back, Obinna
             </h1>
-            <p className="text-stone-300 text-sm sm:text-base font-sans leading-relaxed">
+            <p className="text-emerald-100/90 text-xs sm:text-sm font-sans leading-relaxed">
               Manage your household membership dues, view event RSVPs, and connect with the Igbo Community Canberra family.
             </p>
           </div>
           <Link
             href="/en/dashboard/billing"
-            className="shrink-0 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold text-sm px-5 py-3 rounded-xl shadow-sm transition flex items-center gap-2"
+            className="shrink-0 bg-stone-50 hover:bg-white text-[#064e3b] font-bold text-xs px-4 py-2.5 rounded transition uppercase tracking-wider"
           >
-            <span>View Dues Status</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+            View Dues Status &rarr;
           </Link>
         </div>
       </div>
@@ -58,44 +51,47 @@ export default async function DashboardOverview() {
         </div>
       </div>
 
-      {/* Household Summary Card */}
-      <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
-        <div className="flex justify-between items-center mb-5 pb-3 border-b border-stone-100">
+      {/* Household Summary Table */}
+      <div className="bg-white p-6 rounded-md border border-stone-200">
+        <div className="flex justify-between items-center mb-4 pb-3 border-b border-stone-200">
           <div>
-            <h3 className="font-serif font-bold text-lg text-stone-900">Okafor Household</h3>
-            <p className="text-xs text-stone-500 font-sans">Family Membership Dues Registered</p>
+            <h3 className="font-serif font-bold text-base text-stone-900">Okafor Household</h3>
+            <p className="text-xs text-stone-500 font-mono mt-0.5">Family Membership Dues Registered</p>
           </div>
-          <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#064e3b] bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded">
             Active Dues
           </span>
         </div>
-        <ul className="divide-y divide-stone-100">
-          <li className="py-3 flex justify-between items-center text-sm">
+        
+        <div className="divide-y divide-stone-100 font-sans">
+          <div className="py-3 flex justify-between items-center text-xs sm:text-sm">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-emerald-950 text-amber-300 text-xs font-bold flex items-center justify-center font-serif">
+              <div className="w-7 h-7 rounded-sm bg-stone-900 text-white font-serif font-bold text-xs flex items-center justify-center">
                 OO
               </div>
               <div>
-                <span className="font-semibold text-stone-900 block">Obinna Okafor</span>
-                <span className="text-xs text-stone-500">obinna@example.com</span>
+                <span className="font-bold text-stone-900 block">Obinna Okafor</span>
+                <span className="text-xs text-stone-500 font-mono">obinna@example.com</span>
               </div>
             </div>
-            <span className="bg-amber-100 text-amber-900 font-bold px-2.5 py-0.5 rounded text-xs">Primary Member</span>
-          </li>
-          <li className="py-3 flex justify-between items-center text-sm">
+            <span className="bg-stone-100 text-stone-800 font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded border border-stone-200">Primary Member</span>
+          </div>
+
+          <div className="py-3 flex justify-between items-center text-xs sm:text-sm">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-stone-200 text-stone-700 text-xs font-bold flex items-center justify-center font-serif">
+              <div className="w-7 h-7 rounded-sm bg-stone-200 text-stone-700 font-serif font-bold text-xs flex items-center justify-center">
                 NO
               </div>
               <div>
-                <span className="font-semibold text-stone-900 block">Ngozi Okafor</span>
-                <span className="text-xs text-stone-500">ngozi@example.com</span>
+                <span className="font-bold text-stone-900 block">Ngozi Okafor</span>
+                <span className="text-xs text-stone-500 font-mono">ngozi@example.com</span>
               </div>
             </div>
-            <span className="bg-stone-100 text-stone-700 font-medium px-2.5 py-0.5 rounded text-xs">Spouse</span>
-          </li>
-        </ul>
-        <button className="mt-5 w-full text-sm border border-stone-300 text-stone-700 font-semibold py-2.5 rounded-xl hover:bg-stone-50 transition">
+            <span className="bg-stone-100 text-stone-600 font-mono text-[10px] uppercase font-medium px-2 py-0.5 rounded border border-stone-200">Spouse</span>
+          </div>
+        </div>
+
+        <button className="mt-4 w-full text-xs font-semibold border border-stone-300 text-stone-700 py-2.5 rounded hover:bg-stone-50 transition uppercase tracking-wider">
           + Add Household Member
         </button>
       </div>

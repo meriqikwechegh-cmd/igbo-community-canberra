@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function BillingPage() {
   const [loading, setLoading] = useState<string | null>(null);
@@ -20,7 +19,7 @@ export default function BillingPage() {
       } else {
         alert(data.error || 'Unable to start checkout. Please ensure Stripe keys are configured.');
       }
-    } catch (err) {
+    } catch {
       alert('Checkout error. Please try again.');
     } finally {
       setLoading(null);
@@ -44,7 +43,7 @@ export default function BillingPage() {
       } else {
         alert(data.error || 'Unable to start checkout.');
       }
-    } catch (err) {
+    } catch {
       alert('Checkout error. Please try again.');
     } finally {
       setLoading(null);
@@ -53,128 +52,134 @@ export default function BillingPage() {
 
   return (
     <div className="space-y-8 max-w-5xl">
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">Membership Dues & Billing</h1>
-        <p className="text-gray-500 text-sm mt-1">
-          Manage your membership subscription — choose Family or Single — and track dues payments for your household.
+      <div className="border-b border-stone-200 pb-3">
+        <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b]">SECRETARIAT TREASURY</span>
+        <h1 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-0.5">Membership Dues &amp; Billing</h1>
+        <p className="text-stone-600 text-xs sm:text-sm mt-1">
+          Manage your membership subscription — Family ($250/yr) or Single ($150/yr) — and track official payment records.
         </p>
       </div>
 
-      {/* Subscription Plans Card */}
-      <div className="bg-white rounded-2xl border p-6 shadow-sm">
-        <h2 className="text-lg font-bold text-gray-900 mb-2">Automated Dues Subscription</h2>
-        <p className="text-sm text-gray-500 mb-6">
+      {/* Subscription Plans */}
+      <div className="bg-white rounded-md border border-stone-200 p-6">
+        <h2 className="text-base font-serif font-bold text-stone-900 mb-1">Automated Dues Subscription</h2>
+        <p className="text-xs text-stone-500 mb-6 font-mono">
           Set up automated recurring dues via Stripe Billing to keep your membership in good standing.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="border-2 border-green-700 bg-green-50/50 rounded-xl p-6 flex flex-col justify-between">
+          
+          {/* Family Plan */}
+          <div className="border border-stone-300 bg-white rounded-md p-6 flex flex-col justify-between">
             <div>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-bold text-green-800 uppercase tracking-wider">Family Membership</span>
-                <span className="bg-green-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">Best Value</span>
+              <div className="flex justify-between items-center mb-3 pb-2 border-b border-stone-100">
+                <span className="text-xs font-mono font-bold text-stone-900 uppercase tracking-wider">Family Membership</span>
+                <span className="bg-[#064e3b] text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded">Recommended</span>
               </div>
-              <p className="text-3xl font-extrabold text-gray-900 mb-1">$250 <span className="text-sm font-normal text-gray-500">AUD / year</span></p>
-              <p className="text-xs text-gray-600 mb-4">Covers primary member & linked household family members for 12 months.</p>
+              <p className="text-3xl font-serif font-bold text-stone-900 mb-1">$250 <span className="text-xs font-sans font-normal text-stone-500">AUD / year</span></p>
+              <p className="text-xs text-stone-600 mb-6 font-sans">Covers primary member &amp; linked household family members for 12 months.</p>
             </div>
             <button
               onClick={() => handleSubscribe('family')}
               disabled={loading !== null}
-              className="w-full bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-800 transition disabled:opacity-60 text-sm"
+              className="w-full bg-[#064e3b] text-white font-bold py-2.5 rounded hover:bg-emerald-950 transition disabled:opacity-60 text-xs uppercase tracking-wider"
             >
               {loading === 'family' ? 'Redirecting to Stripe…' : 'Subscribe — Family ($250/yr)'}
             </button>
           </div>
 
-          <div className="border border-gray-200 rounded-xl p-6 flex flex-col justify-between">
+          {/* Single Plan */}
+          <div className="border border-stone-200 bg-white rounded-md p-6 flex flex-col justify-between">
             <div>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">Single Membership</span>
+              <div className="flex justify-between items-center mb-3 pb-2 border-b border-stone-100">
+                <span className="text-xs font-mono font-bold text-stone-700 uppercase tracking-wider">Single Membership</span>
+                <span className="border border-stone-300 text-stone-600 text-[10px] font-mono font-bold px-2 py-0.5 rounded">Individual</span>
               </div>
-              <p className="text-3xl font-extrabold text-gray-900 mb-1">$150 <span className="text-sm font-normal text-gray-500">AUD / year</span></p>
-              <p className="text-xs text-gray-600 mb-4">Individual annual membership for one person.</p>
+              <p className="text-3xl font-serif font-bold text-stone-900 mb-1">$150 <span className="text-xs font-sans font-normal text-stone-500">AUD / year</span></p>
+              <p className="text-xs text-stone-600 mb-6 font-sans">Individual annual membership for one adult member.</p>
             </div>
             <button
               onClick={() => handleSubscribe('single')}
               disabled={loading !== null}
-              className="w-full bg-gray-900 text-white font-semibold py-3 rounded-lg hover:bg-gray-800 transition disabled:opacity-60 text-sm"
+              className="w-full bg-stone-900 text-white font-bold py-2.5 rounded hover:bg-stone-800 transition disabled:opacity-60 text-xs uppercase tracking-wider"
             >
               {loading === 'single' ? 'Redirecting to Stripe…' : 'Subscribe — Single ($150/yr)'}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* One-off payment / Donation */}
-      <div className="bg-white rounded-2xl border p-6 shadow-sm">
-        <h2 className="text-lg font-bold text-gray-900 mb-1">One-Time Dues or Contribution</h2>
-        <p className="text-sm text-gray-500 mb-4">
-          Pay a custom dues amount, settle outstanding arrears, or make a community building levy contribution.
+      {/* One-off payment */}
+      <div className="bg-white rounded-md border border-stone-200 p-6">
+        <h2 className="text-base font-serif font-bold text-stone-900 mb-1">One-Time Dues or Contribution</h2>
+        <p className="text-xs text-stone-500 mb-4 font-mono">
+          Pay a custom dues amount, settle outstanding arrears, or make a community levy contribution.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-center max-w-md">
+        <div className="flex flex-col sm:flex-row gap-3 items-center max-w-md">
           <div className="relative w-full">
-            <span className="absolute left-3 top-2.5 text-gray-500 font-semibold">$</span>
+            <span className="absolute left-3 top-2.5 text-stone-500 font-mono text-xs">$</span>
             <input
               type="number"
               min="5"
               step="5"
               value={customAmount}
               onChange={e => setCustomAmount(e.target.value)}
-              className="w-full pl-8 pr-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+              className="w-full pl-7 pr-3 py-2 border border-stone-300 rounded text-xs font-mono focus:outline-none focus:border-[#064e3b]"
               placeholder="Amount in AUD"
             />
           </div>
           <button
             onClick={handleOneTimePayment}
             disabled={loading !== null}
-            className="w-full sm:w-auto whitespace-nowrap bg-green-700 text-white px-6 py-2 rounded-lg font-semibold text-sm hover:bg-green-800 transition disabled:opacity-60"
+            className="w-full sm:w-auto whitespace-nowrap bg-[#064e3b] text-white px-5 py-2 rounded font-bold text-xs uppercase tracking-wider hover:bg-emerald-950 transition disabled:opacity-60"
           >
-            {loading === 'onetime' ? 'Processing…' : 'Pay via Stripe Checkout'}
+            {loading === 'onetime' ? 'Processing…' : 'Pay via Stripe'}
           </button>
         </div>
       </div>
 
-      {/* Payment History & Receipts */}
-      <div className="bg-white rounded-2xl border p-6 shadow-sm">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold text-gray-900">Payment History & Receipts</h2>
-          <span className="text-xs bg-gray-100 text-gray-600 font-semibold px-3 py-1 rounded-full">Official Records</span>
+      {/* Payment Receipts Table */}
+      <div className="bg-white rounded-md border border-stone-200 p-6">
+        <div className="flex justify-between items-center mb-4 pb-2 border-b border-stone-200">
+          <h2 className="text-base font-serif font-bold text-stone-900">Payment History &amp; Receipts</h2>
+          <span className="text-[10px] font-mono uppercase text-stone-500 font-semibold">Official Records</span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead className="border-b bg-gray-50 text-gray-600">
+          <table className="w-full text-left text-xs font-sans">
+            <thead className="border-b border-stone-200 bg-stone-50 text-stone-600 font-mono">
               <tr>
-                <th className="p-3">Date</th>
-                <th className="p-3">Description</th>
-                <th className="p-3">Method</th>
-                <th className="p-3">Amount</th>
-                <th className="p-3">Status</th>
-                <th className="p-3 text-right">Receipt</th>
+                <th className="p-2.5">Date</th>
+                <th className="p-2.5">Description</th>
+                <th className="p-2.5">Method</th>
+                <th className="p-2.5">Amount</th>
+                <th className="p-2.5">Status</th>
+                <th className="p-2.5 text-right">Receipt</th>
               </tr>
             </thead>
-            <tbody className="divide-y text-gray-700">
+            <tbody className="divide-y divide-stone-100 text-stone-700">
               <tr>
-                <td className="p-3">2026-09-15</td>
-                <td className="p-3 font-medium">Annual Membership Dues (2026/2027)</td>
-                <td className="p-3">Stripe Card</td>
-                <td className="p-3 font-bold text-green-700">$250.00 AUD</td>
-                <td className="p-3"><span className="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full font-semibold">Completed</span></td>
-                <td className="p-3 text-right">
-                  <button onClick={() => window.print()} className="text-green-700 hover:underline text-xs font-semibold">
+                <td className="p-2.5 font-mono text-[11px]">2026-09-15</td>
+                <td className="p-2.5 font-semibold text-stone-900">Annual Family Dues (2026/2027)</td>
+                <td className="p-2.5 font-mono text-[11px]">Stripe Card</td>
+                <td className="p-2.5 font-serif font-bold text-[#064e3b]">$250.00 AUD</td>
+                <td className="p-2.5"><span className="bg-emerald-50 text-[#064e3b] text-[10px] font-mono px-2 py-0.5 rounded font-bold border border-emerald-200">Completed</span></td>
+                <td className="p-2.5 text-right">
+                  <button onClick={() => window.print()} className="text-[#064e3b] hover:underline text-xs font-semibold">
                     Download PDF
                   </button>
                 </td>
               </tr>
               <tr>
-                <td className="p-3">2026-08-01</td>
-                <td className="p-3 font-medium">New Yam Festival Cultural Levy</td>
-                <td className="p-3">Direct Transfer</td>
-                <td className="p-3 font-bold text-green-700">$50.00 AUD</td>
-                <td className="p-3"><span className="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full font-semibold">Completed</span></td>
-                <td className="p-3 text-right">
-                  <button onClick={() => window.print()} className="text-green-700 hover:underline text-xs font-semibold">
+                <td className="p-2.5 font-mono text-[11px]">2026-08-01</td>
+                <td className="p-2.5 font-semibold text-stone-900">New Yam Festival Cultural Levy</td>
+                <td className="p-2.5 font-mono text-[11px]">Direct Transfer</td>
+                <td className="p-2.5 font-serif font-bold text-[#064e3b]">$50.00 AUD</td>
+                <td className="p-2.5"><span className="bg-emerald-50 text-[#064e3b] text-[10px] font-mono px-2 py-0.5 rounded font-bold border border-emerald-200">Completed</span></td>
+                <td className="p-2.5 text-right">
+                  <button onClick={() => window.print()} className="text-[#064e3b] hover:underline text-xs font-semibold">
                     Download PDF
                   </button>
                 </td>

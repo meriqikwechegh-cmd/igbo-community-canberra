@@ -18,19 +18,19 @@ export function PublicHeader({
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const links = [
-    { label: "President's Welcome", href: '#welcome' },
-    { label: 'Charter & Mission', href: '#charter' },
+    { label: "President's Address", href: '#welcome' },
+    { label: 'Charter & Pillars', href: '#charter' },
     { label: 'Cultural Calendar', href: '#events' },
     { label: 'Executive Council', href: '#leadership' },
-    { label: 'Membership Plans', href: '#membership' },
+    { label: 'Membership Dues', href: '#membership' },
     { label: contactText, href: '#contact' },
   ];
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur border-b border-stone-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/en" className="flex items-center gap-3.5 group">
-          <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm border border-stone-200 shrink-0 bg-white">
+    <header className="w-full bg-white border-b border-stone-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/en" className="flex items-center gap-3">
+          <div className="relative w-9 h-9 overflow-hidden border border-stone-300 shrink-0 bg-white">
             <Image
               src="/logo.jpg"
               alt="Igbo Community Canberra Logo"
@@ -39,40 +39,40 @@ export function PublicHeader({
               priority
             />
           </div>
-          <div>
-            <span className="font-display font-bold text-xl text-stone-900 block leading-tight tracking-tight">
+          <div className="flex flex-col">
+            <span className="font-serif font-bold text-base text-stone-900 tracking-tight leading-tight">
               Igbo Community Canberra
             </span>
-            <span className="font-sans text-[11px] font-semibold text-emerald-800 uppercase tracking-wider block mt-0.5">
+            <span className="font-sans text-[10px] font-semibold text-emerald-900 uppercase tracking-widest leading-none mt-0.5">
               Cultural Association Inc.
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-stone-700">
+        {/* Editorial Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wide uppercase text-stone-700">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-emerald-800 transition"
+              className="hover:text-emerald-900 transition-colors"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Desktop Action Buttons */}
+        {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <Link
             href="/en/login"
-            className="font-sans text-sm font-semibold text-stone-700 hover:text-emerald-800 border border-stone-300 hover:border-emerald-800 px-4 py-2 rounded-lg transition"
+            className="font-sans text-xs font-semibold text-stone-800 hover:text-emerald-900 border border-stone-300 px-3.5 py-2 rounded transition"
           >
             {memberLoginText}
           </Link>
           <Link
             href="/en/register"
-            className="font-sans text-sm font-semibold bg-emerald-800 hover:bg-emerald-900 text-white px-5 py-2 rounded-lg shadow-sm transition"
+            className="font-sans text-xs font-semibold bg-[#064e3b] hover:bg-emerald-950 text-white px-4 py-2 rounded transition"
           >
             {joinText}
           </Link>
@@ -82,28 +82,27 @@ export function PublicHeader({
         <button
           type="button"
           onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-          className="lg:hidden p-2 text-stone-700 hover:text-emerald-800 rounded-lg hover:bg-stone-100 transition"
-          aria-label="Open Navigation Sidebar"
+          className="lg:hidden p-2 text-stone-800 hover:text-emerald-900 rounded hover:bg-stone-100 transition"
+          aria-label="Toggle Menu"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
       </div>
 
-      {/* Mobile Slide-Out Navigation Sidebar Drawer */}
+      {/* Mobile Slide-Out Drawer */}
       {mobileDrawerOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div
-            className="fixed inset-0 bg-stone-950/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-stone-900/60 transition-opacity"
             onClick={() => setMobileDrawerOpen(false)}
           />
-          <div className="relative w-80 max-w-[85vw] bg-emerald-950 text-stone-100 h-full shadow-2xl z-10 flex flex-col justify-between">
+          <div className="relative w-72 max-w-[80vw] bg-stone-900 text-stone-100 h-full z-10 flex flex-col justify-between border-r border-stone-800">
             <div>
-              {/* Drawer Top Branding */}
-              <div className="p-6 border-b border-emerald-900 flex items-center justify-between">
+              <div className="p-5 border-b border-stone-800 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-amber-400 shrink-0 bg-white">
+                  <div className="relative w-8 h-8 overflow-hidden border border-stone-700 bg-white">
                     <Image
                       src="/logo.jpg"
                       alt="ICC Logo"
@@ -112,28 +111,27 @@ export function PublicHeader({
                     />
                   </div>
                   <div>
-                    <span className="font-serif font-bold text-sm text-stone-50 block leading-tight">Igbo Community</span>
-                    <span className="text-[10px] font-sans text-amber-300 font-semibold uppercase tracking-wider block">Canberra Inc.</span>
+                    <span className="font-serif font-bold text-xs text-stone-100 block">Igbo Community</span>
+                    <span className="text-[9px] font-sans text-stone-400 uppercase tracking-widest block">Canberra Inc.</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="p-1 text-stone-300 hover:text-white rounded-md"
+                  className="p-1 text-stone-400 hover:text-white"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
-              {/* Drawer Links */}
               <nav className="p-4 space-y-1">
                 {links.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileDrawerOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-semibold text-stone-200 hover:bg-emerald-900 hover:text-amber-200 transition"
+                    className="block px-3 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-300 hover:text-white hover:bg-stone-800 transition"
                   >
                     {link.label}
                   </a>
@@ -141,25 +139,21 @@ export function PublicHeader({
               </nav>
             </div>
 
-            {/* Drawer Action CTA */}
-            <div className="p-6 border-t border-emerald-900 space-y-3 bg-emerald-950">
+            <div className="p-5 border-t border-stone-800 space-y-2 bg-stone-900">
               <Link
                 href="/en/login"
                 onClick={() => setMobileDrawerOpen(false)}
-                className="w-full block text-center font-sans text-sm font-semibold text-amber-200 border border-amber-400/40 py-2.5 rounded-xl hover:bg-emerald-900 transition"
+                className="w-full block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2.5 rounded hover:bg-stone-800 transition"
               >
                 {memberLoginText}
               </Link>
               <Link
                 href="/en/register"
                 onClick={() => setMobileDrawerOpen(false)}
-                className="w-full block text-center font-sans text-sm font-bold bg-amber-400 text-emerald-950 py-2.5 rounded-xl shadow-sm hover:bg-amber-300 transition"
+                className="w-full block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2.5 rounded hover:bg-emerald-900 transition"
               >
                 {joinText}
               </Link>
-              <p className="text-[11px] text-center text-stone-400 pt-2 font-serif italic">
-                Onye aghana nwanne ya
-              </p>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ export default function EventsPortalPage() {
       formattedDate: 'Sunday, 2 November 2026 • 2:00 PM',
       location: 'ACT Public Library, Seminar Room 1',
       capacityLimit: 30,
-      yesCount: 30, // Full capacity to test waitlist!
+      yesCount: 30, // Full capacity
       fee: 15,
       description: 'Interactive language learning, Igbo proverb discussions, and storytelling for children and youth.',
       tag: 'Education',
@@ -77,7 +77,6 @@ export default function EventsPortalPage() {
         : `RSVP updated to "${status.toUpperCase()}".`
     );
 
-    // Call API in background
     fetch(`/api/events/${eventId}/rsvp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -104,7 +103,6 @@ export default function EventsPortalPage() {
     setShowCreateModal(false);
     setActionMessage(`Event "${created.title}" published successfully!`);
 
-    // Call API in background
     fetch('/api/events', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -114,41 +112,42 @@ export default function EventsPortalPage() {
 
   return (
     <div className="space-y-8 max-w-5xl">
-      {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      {/* Editorial Header */}
+      <div className="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Community Events & RSVPs</h1>
-          <p className="text-gray-500 text-sm mt-1">
-            Browse upcoming Igbo Community Canberra festivals, workshops, and gatherings.
+          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b]">SECRETARIAT EVENTS</span>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-0.5">Community Events &amp; RSVPs</h1>
+          <p className="text-stone-600 text-xs sm:text-sm mt-1">
+            Browse upcoming Igbo Community Canberra festivals, workshops, and general assemblies.
           </p>
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="bg-green-700 text-white hover:bg-green-800 px-4 py-2.5 rounded-lg text-sm font-semibold transition"
+          className="bg-[#064e3b] text-white hover:bg-emerald-950 px-4 py-2 rounded text-xs font-bold uppercase tracking-wider transition self-start sm:self-auto"
         >
-          + Create New Event (Admin)
+          + Create New Event
         </button>
       </div>
 
       {actionMessage && (
-        <div className="bg-green-50 border border-green-200 text-green-800 text-sm p-4 rounded-xl flex justify-between items-center">
+        <div className="bg-emerald-50 border border-emerald-200 text-[#064e3b] text-xs font-sans p-3.5 rounded-md flex justify-between items-center">
           <span>{actionMessage}</span>
-          <button onClick={() => setActionMessage(null)} className="text-green-800 font-bold ml-4">✕</button>
+          <button onClick={() => setActionMessage(null)} className="text-[#064e3b] font-bold ml-4">✕</button>
         </div>
       )}
 
       {/* Household RSVP Setting */}
-      <div className="bg-white border rounded-xl p-4 shadow-sm flex items-center justify-between">
+      <div className="bg-white border border-stone-200 rounded-md p-4 flex items-center justify-between font-sans">
         <div>
-          <p className="font-semibold text-sm text-gray-900">Household RSVP Mode</p>
-          <p className="text-xs text-gray-500">Automatically register all linked family members when you RSVP &quot;Yes&quot;</p>
+          <p className="font-bold text-xs text-stone-900 uppercase tracking-wider font-mono">Household Auto-RSVP</p>
+          <p className="text-xs text-stone-500 mt-0.5">Automatically register all linked family members when you RSVP &quot;Yes&quot;</p>
         </div>
-        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 cursor-pointer">
+        <label className="flex items-center gap-2 text-xs font-bold text-stone-700 cursor-pointer">
           <input
             type="checkbox"
             checked={includeFamily}
             onChange={e => setIncludeFamily(e.target.checked)}
-            className="w-4 h-4 text-green-600 rounded focus:ring-green-500"
+            className="w-3.5 h-3.5 text-[#064e3b] rounded border-stone-300 focus:ring-0"
           />
           Include Family
         </label>
@@ -161,54 +160,54 @@ export default function EventsPortalPage() {
           const isFull = evt.yesCount >= evt.capacityLimit;
 
           return (
-            <div key={evt.id} className="bg-white rounded-2xl border p-6 shadow-sm space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+            <div key={evt.id} className="bg-white rounded-md border border-stone-200 p-6 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-stone-100 pb-3">
                 <div>
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                  <span className="bg-stone-100 text-stone-700 text-[10px] font-mono font-bold px-2 py-0.5 rounded border border-stone-200 uppercase">
                     {evt.tag}
                   </span>
-                  <h2 className="text-xl font-bold text-gray-900 mt-2">{evt.title}</h2>
-                  <p className="text-sm text-gray-500 mt-1">📅 {evt.formattedDate}</p>
-                  <p className="text-sm text-gray-500">📍 {evt.location}</p>
+                  <h2 className="text-xl font-serif font-bold text-stone-900 mt-2">{evt.title}</h2>
+                  <p className="text-xs text-stone-500 mt-1 font-mono">📅 {evt.formattedDate}</p>
+                  <p className="text-xs text-stone-500 font-mono">📍 {evt.location}</p>
                 </div>
 
-                <div className="text-right">
-                  <div className="flex items-center gap-2 sm:justify-end">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${isFull ? 'bg-red-100 text-red-700' : 'bg-blue-50 text-blue-700'}`}>
-                      {evt.yesCount} / {evt.capacityLimit} Attending {isFull ? '(FULL)' : ''}
-                    </span>
-                  </div>
+                <div className="text-right shrink-0">
+                  <span className={`text-[10px] font-mono font-bold px-2 py-1 rounded border uppercase ${
+                    isFull ? 'bg-rose-50 text-rose-800 border-rose-200' : 'bg-emerald-50 text-[#064e3b] border-emerald-200'
+                  }`}>
+                    {evt.yesCount} / {evt.capacityLimit} Attending {isFull ? '(FULL)' : ''}
+                  </span>
                   {evt.fee > 0 && (
-                    <p className="text-xs font-bold text-green-700 mt-1">${evt.fee} AUD / person</p>
+                    <p className="text-xs font-serif font-bold text-[#064e3b] mt-1">${evt.fee} AUD / person</p>
                   )}
                 </div>
               </div>
 
-              <p className="text-gray-600 text-sm leading-relaxed">{evt.description}</p>
+              <p className="text-stone-700 text-xs sm:text-sm leading-relaxed font-sans">{evt.description}</p>
 
               {/* RSVP Action Bar */}
-              <div className="pt-4 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="pt-3 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mr-1">Your RSVP:</span>
+                  <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-wider mr-1">Your RSVP:</span>
                   <button
                     onClick={() => handleRSVP(evt.id, 'yes')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
+                    className={`px-3 py-1.5 rounded text-xs font-bold transition uppercase tracking-wider ${
                       currentRsvp === 'yes'
-                        ? 'bg-emerald-800 text-white'
+                        ? 'bg-[#064e3b] text-white'
                         : isFull
-                        ? 'bg-amber-100 text-amber-800 hover:bg-amber-200'
-                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
+                        ? 'bg-amber-100 text-amber-900 border border-amber-300'
+                        : 'border border-stone-300 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
-                    {isFull && currentRsvp !== 'yes' ? 'Join Waitlist' : 'Attending'}
+                    {isFull && currentRsvp !== 'yes' ? 'Waitlist' : 'Attending'}
                   </button>
 
                   <button
                     onClick={() => handleRSVP(evt.id, 'maybe')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
+                    className={`px-3 py-1.5 rounded text-xs font-bold transition uppercase tracking-wider ${
                       currentRsvp === 'maybe'
-                        ? 'bg-slate-800 text-white'
-                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
+                        ? 'bg-stone-800 text-white'
+                        : 'border border-stone-300 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
                     Tentative
@@ -216,10 +215,10 @@ export default function EventsPortalPage() {
 
                   <button
                     onClick={() => handleRSVP(evt.id, 'no')}
-                    className={`px-4 py-1.5 rounded-lg text-xs font-bold transition ${
+                    className={`px-3 py-1.5 rounded text-xs font-bold transition uppercase tracking-wider ${
                       currentRsvp === 'no'
                         ? 'bg-rose-800 text-white'
-                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
+                        : 'border border-stone-300 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
                     Declined
@@ -228,13 +227,13 @@ export default function EventsPortalPage() {
 
                 <div className="flex items-center gap-2">
                   {currentRsvp === 'waitlist' && (
-                    <span className="text-xs bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full">
-                      Waitlisted (#3 in queue)
+                    <span className="text-[10px] font-mono bg-amber-50 text-amber-900 font-bold px-2 py-1 rounded border border-amber-200">
+                      Waitlisted (#3)
                     </span>
                   )}
                   <a
                     href={`/api/events/${evt.id}/export`}
-                    className="text-xs text-gray-500 hover:text-green-700 font-medium underline"
+                    className="text-xs text-stone-500 hover:text-[#064e3b] font-medium underline"
                   >
                     Export Attendee List (CSV)
                   </a>
@@ -247,80 +246,80 @@ export default function EventsPortalPage() {
 
       {/* Admin Event Creation Modal */}
       {showCreateModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto space-y-4">
-            <div className="flex justify-between items-center border-b pb-3">
-              <h2 className="text-lg font-bold text-gray-900">Create Community Event</h2>
-              <button onClick={() => setShowCreateModal(false)} className="text-gray-400 hover:text-gray-600 text-xl font-bold">✕</button>
+        <div className="fixed inset-0 bg-stone-900/60 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-md p-6 max-w-lg w-full border border-stone-300 font-sans space-y-4">
+            <div className="flex justify-between items-center border-b border-stone-200 pb-3">
+              <h2 className="text-base font-serif font-bold text-stone-900">Create Community Event</h2>
+              <button onClick={() => setShowCreateModal(false)} className="text-stone-400 hover:text-stone-700 text-lg font-bold">✕</button>
             </div>
 
             <form onSubmit={handleCreateEvent} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Event Title</label>
+                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Event Title</label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Igbo Cultural Day & Children's Masquerade"
+                  placeholder="e.g. Igbo Cultural Day & Masquerade"
                   value={newEvent.title}
                   onChange={e => setNewEvent({ ...newEvent, title: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                  className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Date & Time</label>
+                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Date &amp; Time</label>
                   <input
                     type="datetime-local"
                     required
                     value={newEvent.eventDate}
                     onChange={e => setNewEvent({ ...newEvent, eventDate: e.target.value })}
-                    className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                    className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Capacity Limit</label>
+                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Capacity</label>
                   <input
                     type="number"
                     value={newEvent.capacityLimit}
                     onChange={e => setNewEvent({ ...newEvent, capacityLimit: e.target.value })}
-                    className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                    className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Location</label>
                   <input
                     type="text"
                     required
                     placeholder="Venue / Address"
                     value={newEvent.location}
                     onChange={e => setNewEvent({ ...newEvent, location: e.target.value })}
-                    className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                    className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Fee (AUD)</label>
+                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Fee (AUD)</label>
                   <input
                     type="number"
                     step="0.01"
                     value={newEvent.fee}
                     onChange={e => setNewEvent({ ...newEvent, fee: e.target.value })}
-                    className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                    className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Description</label>
                 <textarea
                   rows={3}
                   placeholder="Event details, schedule, food and dress code instructions..."
                   value={newEvent.description}
                   onChange={e => setNewEvent({ ...newEvent, description: e.target.value })}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+                  className="w-full border border-stone-300 rounded px-3 py-2 text-xs focus:outline-none focus:border-[#064e3b]"
                 />
               </div>
 
@@ -328,13 +327,13 @@ export default function EventsPortalPage() {
                 <button
                   type="button"
                   onClick={() => setShowCreateModal(false)}
-                  className="flex-1 border text-gray-700 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50"
+                  className="flex-1 border border-stone-300 text-stone-700 font-bold py-2 rounded text-xs hover:bg-stone-50 uppercase tracking-wider"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-green-700 text-white font-semibold py-2.5 rounded-lg text-sm hover:bg-green-800"
+                  className="flex-1 bg-[#064e3b] text-white font-bold py-2 rounded text-xs hover:bg-emerald-950 uppercase tracking-wider"
                 >
                   Publish Event
                 </button>

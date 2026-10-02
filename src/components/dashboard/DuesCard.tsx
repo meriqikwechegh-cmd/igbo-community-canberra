@@ -4,32 +4,32 @@ export function DuesCard({ status = 'active', amount = '250.00', nextBillingDate
   const isPastDue = status === 'past_due' || status === 'unpaid';
 
   return (
-    <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between h-full">
+    <div className="bg-white p-6 rounded-md border border-stone-200 flex flex-col justify-between h-full">
       <div>
-        <div className="flex justify-between items-center mb-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-500">Dues Status</span>
-          <span className={`px-3 py-1 text-xs font-bold rounded-full ${
-            isPastDue ? 'bg-rose-100 text-rose-800 border border-rose-200' : 'bg-emerald-100 text-emerald-900 border border-emerald-200'
+        <div className="flex justify-between items-center mb-3 pb-2 border-b border-stone-100">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-stone-500">DUES STATUS</span>
+          <span className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider rounded border ${
+            isPastDue ? 'bg-rose-50 text-rose-800 border-rose-200' : 'bg-emerald-50 text-[#064e3b] border-emerald-200'
           }`}>
-            {status.replace('_', ' ').toUpperCase()}
+            {status.replace('_', ' ')}
           </span>
         </div>
 
-        <div className="my-4">
-          <p className="text-3xl sm:text-4xl font-serif font-extrabold text-stone-900 mb-1">
-            ${amount} <span className="text-xs font-sans font-normal text-stone-500">AUD / year</span>
+        <div className="my-3">
+          <p className="text-3xl font-serif font-bold text-stone-900 mb-1">
+            ${amount} <span className="text-xs font-sans text-stone-500 font-normal">AUD / year</span>
           </p>
-          <p className="text-xs font-sans text-stone-500">Family Membership &middot; Next billing: {nextBillingDate}</p>
+          <p className="text-xs font-mono text-stone-500">Family Membership &middot; Next: {nextBillingDate}</p>
         </div>
       </div>
 
-      <div className="mt-6 pt-4 border-t border-stone-100">
+      <div className="mt-4 pt-3 border-t border-stone-100">
         <Link
           href="/en/dashboard/billing"
-          className={`w-full block text-center py-3 rounded-xl font-semibold text-sm transition shadow-xs ${
+          className={`w-full block text-center py-2.5 rounded font-bold text-xs uppercase tracking-wider transition ${
             isPastDue
-              ? 'bg-rose-700 text-white hover:bg-rose-800'
-              : 'bg-emerald-900 text-white hover:bg-emerald-950'
+              ? 'bg-rose-800 text-white hover:bg-rose-900'
+              : 'bg-[#064e3b] text-white hover:bg-emerald-950'
           }`}
         >
           {isPastDue ? 'Pay Outstanding Dues' : 'Manage Dues & Billing'}
