@@ -628,7 +628,11 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto pt-6 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-stone-500 gap-2">
           <p>&copy; 2026 Igbo Community Canberra Inc. All rights reserved.</p>
-          <p>Founded 2012 &middot; Compliant with ACT Community Standards.</p>
+          <p className="flex items-center gap-2">
+            <span>Founded 2012 &middot; ACT Inc. A04821</span>
+            <span>&middot;</span>
+            <span className="text-stone-400">Powered by <strong className="text-emerald-400 font-bold tracking-wider">MeriQTech</strong></span>
+          </p>
         </div>
       </footer>
 
