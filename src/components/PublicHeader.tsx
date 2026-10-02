@@ -15,8 +15,8 @@ interface PublicHeaderProps {
 export function PublicHeader({
   memberLoginText = 'Member Portal',
   joinText = 'Apply for Membership',
-  contactText = 'Contact Us',
-}: PublicHeaderProps) {
+  contactText = 'Contact',
+}: PublicHeaderProps = {}) {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const links = [
