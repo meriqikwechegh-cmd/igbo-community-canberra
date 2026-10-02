@@ -13,7 +13,6 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
 
   useEffect(() => {
     setMounted(true);
-    // Check initial localStorage preference or system theme preference
     const savedTheme = localStorage.getItem('icc_theme') as 'light' | 'dark' | null;
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
@@ -21,8 +20,10 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
     setTheme(initialTheme);
     if (initialTheme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.body?.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.body?.classList.remove('dark');
     }
   }, []);
 
@@ -33,12 +34,13 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
 
     if (nextTheme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.body?.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.body?.classList.remove('dark');
     }
   }
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return (
       <div className={`p-1.5 rounded border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-xs font-mono opacity-50 flex items-center gap-1.5 ${className}`}>

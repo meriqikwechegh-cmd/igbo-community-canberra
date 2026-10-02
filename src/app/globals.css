@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ─── Tailwind v4 Class-Based Dark Mode Variant Definition ─── */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─── Font Stack ─────────────────────────────────────────────── */
 @layer base {
   :root {
