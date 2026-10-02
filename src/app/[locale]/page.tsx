@@ -1,33 +1,23 @@
 'use client';
 
 /**
- * ICC Public Homepage — Editorial Grid Redesign
- * ─────────────────────────────────────────────
+ * ICC Public Homepage — Editorial Grid Redesign & Responsive Architecture
+ * ───────────────────────────────────────────────────────────────────────
  * • One accent: #064e3b (deep forest emerald)
  * • Max container radius: 6px (rounded-md)
  * • Max button radius: 4px (rounded)
  * • No gradients, glows, pills, floating cards
- * • Skeleton states for all async-feeling sections
- * • Accessible: aria-busy, aria-label, sr-only status
- * • prefers-reduced-motion honoured via .sk CSS class
+ * • Responsive scaling across mobile (320px+), tablet, and desktop
+ * • Polished skeleton states matching responsive grid layouts
+ * • Accessible: role=status, aria-busy=true, aria-label, sr-only
+ * • prefers-reduced-motion respected
  */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PublicHeader } from '@/components/PublicHeader';
 import { Sk, SkSection } from '@/components/Skeleton';
-
-// ─── Tiny inline spinner for individual actions ───────────────
-function InlineSpinner({ className = '' }: { className?: string }) {
-  return (
-    <span
-      role="status"
-      aria-label="Loading"
-      className={`spinner ${className}`}
-    />
-  );
-}
 
 // ─── Section label used throughout ───────────────────────────
 function SectionLabel({
@@ -56,26 +46,28 @@ function HeroSkeleton() {
   return (
     <SkSection
       label="Loading hero section."
-      className="bg-[#064e3b] py-20 sm:py-28 px-6"
+      className="bg-[#064e3b] py-16 sm:py-24 px-4 sm:px-6"
     >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-8 space-y-5">
           <Sk h="h-3" w="w-28" />
-          <Sk h="h-14" w="w-full" rounded="rounded" />
-          <Sk h="h-5" w="w-4/5" rounded="rounded" />
-          <Sk h="h-5" w="w-3/5" rounded="rounded" />
-          <div className="flex gap-3 pt-3">
-            <Sk h="h-11" w="w-44" rounded="rounded" />
-            <Sk h="h-11" w="w-36" rounded="rounded" />
+          <Sk h="h-12 sm:h-14" w="w-full" rounded="rounded" />
+          <Sk h="h-4 sm:h-5" w="w-4/5" rounded="rounded" />
+          <Sk h="h-4 sm:h-5" w="w-3/5" rounded="rounded" />
+          <div className="flex flex-col sm:flex-row gap-3 pt-3">
+            <Sk h="h-11" w="w-full sm:w-44" rounded="rounded" />
+            <Sk h="h-11" w="w-full sm:w-36" rounded="rounded" />
           </div>
         </div>
-        <div className="md:col-span-4 space-y-8 border-l border-emerald-800/50 pl-8">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="space-y-1.5 pb-6 border-b border-emerald-800/40">
-              <Sk h="h-9" w="w-24" />
-              <Sk h="h-3" w="w-32" />
-            </div>
-          ))}
+        <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-emerald-800/50 pt-8 md:pt-0 pl-0 md:pl-8">
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-0">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="space-y-1.5 pb-4 md:pb-6 md:border-b border-emerald-800/40">
+                <Sk h="h-7 sm:h-9" w="w-20 sm:w-24" />
+                <Sk h="h-3" w="w-28 sm:w-32" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </SkSection>
@@ -87,13 +79,13 @@ function FactsStripSkeleton() {
   return (
     <SkSection
       label="Loading community facts."
-      className="border-b border-stone-200 dark:border-stone-800 py-10 px-6"
+      className="border-b border-stone-200 dark:border-stone-800 py-8 sm:py-10 px-4 sm:px-6"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="space-y-2">
-            <Sk h="h-7" w="w-20" />
-            <Sk h="h-3" w="w-32" />
+            <Sk h="h-6 sm:h-7" w="w-16 sm:w-20" />
+            <Sk h="h-3" w="w-28 sm:w-32" />
           </div>
         ))}
       </div>
@@ -106,24 +98,26 @@ function WelcomeSkeleton() {
   return (
     <SkSection
       label="Loading President's welcome."
-      className="py-20 px-6 max-w-7xl mx-auto"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
     >
-      <div className="grid md:grid-cols-12 gap-12 items-center">
+      <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-5">
-          <Sk h="h-[420px]" w="w-full" rounded="rounded-md" />
+          <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5]">
+            <Sk h="h-full" w="w-full" rounded="rounded-md" />
+          </div>
         </div>
         <div className="md:col-span-7 space-y-4">
           <Sk h="h-3" w="w-28" />
-          <Sk h="h-9" w="w-3/4" />
+          <Sk h="h-8 sm:h-9" w="w-3/4" />
           <Rule className="my-4" />
           <Sk h="h-4" w="w-full" />
           <Sk h="h-4" w="w-full" />
           <Sk h="h-4" w="w-5/6" />
-          <div className="py-4" />
+          <div className="py-2" />
           <Sk h="h-4" w="w-full" />
           <Sk h="h-4" w="w-4/5" />
           <Rule className="mt-6 mb-4" />
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div className="space-y-2">
               <Sk h="h-4" w="w-36" />
               <Sk h="h-3" w="w-24" />
@@ -141,18 +135,15 @@ function PillarsSkeleton() {
   return (
     <SkSection
       label="Loading community programs."
-      className="py-20 px-6 max-w-7xl mx-auto"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
     >
-      <div className="mb-10 space-y-2">
+      <div className="mb-8 sm:mb-10 space-y-2">
         <Sk h="h-3" w="w-36" />
-        <Sk h="h-8" w="w-72" />
+        <Sk h="h-7 sm:h-8" w="w-72" />
       </div>
-      <div className="grid md:grid-cols-3 gap-0 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
         {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="p-6 border-r last:border-r-0 border-stone-200 dark:border-stone-800 space-y-4"
-          >
+          <div key={i} className="p-6 sm:p-8 space-y-4 bg-white dark:bg-stone-900/60">
             <div className="flex justify-between items-center pb-3 border-b border-stone-100 dark:border-stone-800">
               <Sk h="h-6" w="w-6" />
               <Sk h="h-3" w="w-16" />
@@ -161,6 +152,10 @@ function PillarsSkeleton() {
             <Sk h="h-3" w="w-full" />
             <Sk h="h-3" w="w-full" />
             <Sk h="h-3" w="w-3/4" />
+            <div className="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between">
+              <Sk h="h-3" w="w-24" />
+              <Sk h="h-3" w="w-16" />
+            </div>
           </div>
         ))}
       </div>
@@ -173,46 +168,49 @@ function EventsSkeleton() {
   return (
     <SkSection
       label="Loading cultural calendar."
-      className="py-20 px-6 max-w-7xl mx-auto"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
     >
-      <div className="flex justify-between items-end mb-10 pb-3 border-b border-stone-200 dark:border-stone-800">
+      <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-8 sm:mb-10 pb-3 border-b border-stone-200 dark:border-stone-800 gap-3">
         <div className="space-y-2">
           <Sk h="h-3" w="w-28" />
-          <Sk h="h-8" w="w-60" />
+          <Sk h="h-7 sm:h-8" w="w-60" />
         </div>
         <Sk h="h-3" w="w-36" />
       </div>
-      {/* Featured event */}
-      <div className="border border-stone-800 bg-stone-900 p-8 rounded-md mb-8">
-        <div className="grid md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-3 space-y-3">
+
+      {/* Featured event skeleton */}
+      <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-md mb-8">
+        <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
+          <div className="md:col-span-3 space-y-2 pb-4 md:pb-0 border-b md:border-b-0 md:border-r border-stone-800">
             <Sk h="h-3" w="w-20" className="opacity-40" />
-            <Sk h="h-9" w="w-36" className="opacity-30" />
+            <Sk h="h-8" w="w-36" className="opacity-30" />
             <Sk h="h-3" w="w-28" className="opacity-30" />
           </div>
           <div className="md:col-span-6 space-y-3">
-            <Sk h="h-7" w="w-4/5" className="opacity-30" />
+            <Sk h="h-6 sm:h-7" w="w-4/5" className="opacity-30" />
             <Sk h="h-3" w="w-48" className="opacity-20" />
             <Sk h="h-4" w="w-full" className="opacity-20" />
             <Sk h="h-4" w="w-5/6" className="opacity-20" />
           </div>
-          <div className="md:col-span-3 flex justify-end">
-            <Sk h="h-11" w="w-36" className="opacity-30" />
+          <div className="md:col-span-3 flex md:justify-end">
+            <Sk h="h-10" w="w-full sm:w-36" className="opacity-30" rounded="rounded" />
           </div>
         </div>
       </div>
-      {/* Quarterly cards */}
-      <div className="grid md:grid-cols-3 gap-0 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+
+      {/* Quarterly cards skeleton */}
+      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
         {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="p-6 border-r last:border-r-0 border-stone-200 dark:border-stone-800 space-y-3"
-          >
+          <div key={i} className="p-6 space-y-3 bg-white dark:bg-stone-900/60">
             <Sk h="h-3" w="w-24" />
-            <Sk h="h-6" w="w-40" />
+            <Sk h="h-5 sm:h-6" w="w-40" />
             <Sk h="h-3" w="w-36" />
             <Sk h="h-4" w="w-full" />
             <Sk h="h-4" w="w-4/5" />
+            <div className="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between">
+              <Sk h="h-3" w="w-20" />
+              <Sk h="h-3" w="w-12" />
+            </div>
           </div>
         ))}
       </div>
@@ -225,36 +223,42 @@ function LeadershipSkeleton() {
   return (
     <SkSection
       label="Loading executive council."
-      className="py-20 px-6 max-w-7xl mx-auto"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
     >
-      <div className="mb-10 space-y-2 pb-4 border-b border-stone-200 dark:border-stone-800">
+      <div className="mb-8 sm:mb-10 space-y-2 pb-4 border-b border-stone-200 dark:border-stone-800">
         <Sk h="h-3" w="w-36" />
-        <Sk h="h-8" w="w-80" />
+        <Sk h="h-7 sm:h-8" w="w-80" />
         <Sk h="h-3" w="w-64" />
       </div>
-      {/* President feature */}
-      <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-8 items-center">
+
+      {/* President feature skeleton */}
+      <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
         <div className="md:col-span-4">
-          <Sk h="h-[300px]" w="w-full" rounded="rounded" />
+          <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5]">
+            <Sk h="h-full" w="w-full" rounded="rounded" />
+          </div>
         </div>
         <div className="md:col-span-8 space-y-3">
           <Sk h="h-3" w="w-40" />
-          <Sk h="h-9" w="w-64" />
-          <Sk h="h-5" w="w-44" />
+          <Sk h="h-7 sm:h-9" w="w-64" />
+          <Sk h="h-4 sm:h-5" w="w-44" />
           <Sk h="h-4" w="w-full" />
           <Sk h="h-4" w="w-5/6" />
           <Rule className="mt-4" />
           <Sk h="h-3" w="w-56" />
         </div>
       </div>
-      {/* Officers */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+
+      {/* Officers skeleton */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="border border-stone-200 dark:border-stone-800 rounded overflow-hidden">
-            <Sk h="h-36" w="w-full" rounded="rounded-none" />
-            <div className="p-3 space-y-1.5">
-              <Sk h="h-3" w="w-16" />
-              <Sk h="h-4" w="w-full" />
+          <div key={i} className="border border-stone-200 dark:border-stone-800 rounded overflow-hidden bg-white dark:bg-stone-900">
+            <div className="aspect-[4/5] w-full">
+              <Sk h="h-full" w="w-full" rounded="rounded-none" />
+            </div>
+            <div className="p-3 space-y-1.5 border-t border-stone-100 dark:border-stone-800">
+              <Sk h="h-2.5" w="w-16" />
+              <Sk h="h-3.5" w="w-full" />
             </div>
           </div>
         ))}
@@ -268,26 +272,23 @@ function MembershipSkeleton() {
   return (
     <SkSection
       label="Loading membership options."
-      className="py-20 px-6 max-w-7xl mx-auto"
+      className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
     >
-      <div className="mb-10 space-y-2 pb-4 border-b border-stone-200 dark:border-stone-800">
+      <div className="mb-8 sm:mb-10 space-y-2 pb-4 border-b border-stone-200 dark:border-stone-800">
         <Sk h="h-3" w="w-36" />
-        <Sk h="h-8" w="w-80" />
+        <Sk h="h-7 sm:h-8" w="w-80" />
       </div>
-      <div className="grid md:grid-cols-2 gap-0 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
         {[1, 2].map((i) => (
-          <div
-            key={i}
-            className="p-8 border-r last:border-r-0 border-stone-200 dark:border-stone-800 space-y-5"
-          >
+          <div key={i} className="p-6 sm:p-8 space-y-5 bg-white dark:bg-stone-900/60">
             <div className="flex justify-between pb-4 border-b border-stone-100 dark:border-stone-800">
               <div className="space-y-2">
-                <Sk h="h-6" w="w-40" />
+                <Sk h="h-5 sm:h-6" w="w-40" />
                 <Sk h="h-3" w="w-32" />
               </div>
               <Sk h="h-5" w="w-20" rounded="rounded" />
             </div>
-            <Sk h="h-10" w="w-28" />
+            <Sk h="h-9 sm:h-10" w="w-28" />
             <div className="space-y-2 pt-2">
               {[1, 2, 3, 4].map((j) => (
                 <div key={j} className="flex gap-2 items-center">
@@ -309,12 +310,12 @@ function FooterSkeleton() {
   return (
     <SkSection
       label="Loading footer information."
-      className="bg-stone-900 py-16 px-6"
+      className="bg-stone-900 py-12 sm:py-16 px-4 sm:px-6"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <div className="md:col-span-2 space-y-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="sm:col-span-2 space-y-4">
           <div className="flex gap-3 items-center">
-            <Sk h="h-9" w="w-9" className="opacity-20" rounded="rounded-none" />
+            <Sk h="h-8" w="w-8" className="opacity-20" rounded="rounded-none" />
             <Sk h="h-4" w="w-48" className="opacity-20" />
           </div>
           <Sk h="h-3" w="w-full" className="opacity-20" />
@@ -339,20 +340,11 @@ function FooterSkeleton() {
 // ═══════════════════════════════════════════════════════════════
 
 export default function HomePage() {
-  /*
-   * We simulate progressive loading:
-   * - Hero & facts load immediately (< 100ms, no skeleton needed per spec)
-   * - President's welcome, programs, events, leadership, membership, footer
-   *   are treated as async — we show skeleton for 1.1s then reveal.
-   *
-   * In production this would be driven by real fetch() states.
-   */
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate API hydration window.
-    // Replace with real data-loading state from SWR/React Query in prod.
-    const timer = setTimeout(() => setLoaded(true), 1100);
+    // Simulated hydration window for async data
+    const timer = setTimeout(() => setLoaded(true), 900);
     return () => clearTimeout(timer);
   }, []);
 
@@ -361,19 +353,19 @@ export default function HomePage() {
       className="min-h-screen bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col font-sans selection:bg-[#064e3b] selection:text-white"
     >
       {/* ── Institutional Notice Bar ─────────────────────────── */}
-      <div className="bg-stone-900 text-stone-400 text-xs py-2 px-6 border-b border-stone-800">
+      <div className="bg-stone-900 text-stone-400 text-xs py-2 px-4 sm:px-6 border-b border-stone-800">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-center sm:text-left">
             <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
-            <span className="font-mono">
+            <span className="font-mono text-[11px] sm:text-xs">
               Incorporated Cultural Association · ACT Reg. No. A04821 · Founded 2012
             </span>
           </div>
-          <div className="flex items-center gap-6">
-            <span className="hidden sm:inline font-serif italic text-stone-400">
+          <div className="flex items-center gap-4 sm:gap-6 text-xs">
+            <span className="hidden md:inline font-serif italic text-stone-400">
               Onye aghana nwanne ya{' '}
               <span className="not-italic font-sans text-stone-500">
-                (Be your brother's keeper)
+                (Be your brother&apos;s keeper)
               </span>
             </span>
             <div className="flex gap-2 font-mono text-stone-400">
@@ -385,24 +377,24 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── Navigation ──────────────────────────────────────── */}
+      {/* ── Compact Navigation ──────────────────────────────── */}
       <PublicHeader />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="bg-[#064e3b] text-white py-20 sm:py-28 px-6 border-b border-emerald-950">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      {/* ── Hero Section ─────────────────────────────────────── */}
+      <section className="bg-[#064e3b] text-white py-16 sm:py-24 lg:py-28 px-4 sm:px-6 border-b border-emerald-950">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left: headline block */}
-          <div className="md:col-span-8 space-y-6">
+          <div className="md:col-span-8 space-y-5 sm:space-y-6">
             <SectionLabel className="text-emerald-300/80 font-mono text-[10px] uppercase tracking-widest">
               ESTABLISHED 2012 · CANBERRA ACT
             </SectionLabel>
 
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-tight leading-[1.1] text-stone-50">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.12] text-stone-50">
               Fostering Unity, Preserving Heritage &amp; Empowering Generations
             </h1>
 
-            <p className="text-base sm:text-lg text-emerald-100/80 max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-emerald-100/80 max-w-2xl leading-relaxed">
               The official representative body and incorporated cultural association for the
               Igbo diaspora across Canberra and the Australian Capital Territory.
             </p>
@@ -418,35 +410,37 @@ export default function HomePage() {
                 href="#welcome"
                 className="border border-emerald-500/30 hover:bg-emerald-900/50 text-emerald-50 font-semibold px-6 py-3 rounded text-sm transition text-center"
               >
-                President's Address
+                President&apos;s Address
               </a>
             </div>
           </div>
 
-          {/* Right: metrics sidebar */}
-          <div className="md:col-span-4 border-l border-emerald-800/60 pl-0 md:pl-8 space-y-0">
-            {[
-              { value: '2012', label: 'Foundation Year' },
-              { value: '300+', label: 'Member Network' },
-              { value: '85+',  label: 'Registered Households' },
-              { value: 'ACT Inc.', label: 'A04821 Incorporated' },
-            ].map(({ value, label }, i, arr) => (
-              <div
-                key={label}
-                className={`py-6 ${i < arr.length - 1 ? 'border-b border-emerald-800/60' : ''}`}
-              >
-                <p className="font-serif text-3xl sm:text-4xl font-bold text-white">{value}</p>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-emerald-300 mt-1">{label}</p>
-              </div>
-            ))}
+          {/* Right: metrics sidebar (2x2 grid on mobile, stacked on desktop) */}
+          <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-emerald-800/60 pt-6 md:pt-0 pl-0 md:pl-8">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-4 md:gap-0">
+              {[
+                { value: '2012', label: 'Foundation Year' },
+                { value: '300+', label: 'Member Network' },
+                { value: '85+',  label: 'Registered Households' },
+                { value: 'ACT Inc.', label: 'A04821 Incorporated' },
+              ].map(({ value, label }, i, arr) => (
+                <div
+                  key={label}
+                  className={`py-3 md:py-6 ${i < arr.length - 1 ? 'md:border-b border-emerald-800/60' : ''}`}
+                >
+                  <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{value}</p>
+                  <p className="text-[10px] font-mono uppercase tracking-wider text-emerald-300 mt-1">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
       </section>
 
       {/* ── Facts Strip ─────────────────────────────────────── */}
-      <section className="border-b border-stone-200 dark:border-stone-800 py-10 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="border-b border-stone-200 dark:border-stone-800 py-8 sm:py-10 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           {[
             { stat: '14',     label: 'Years of Service' },
             { stat: '4×',     label: 'Annual General Assemblies' },
@@ -454,7 +448,7 @@ export default function HomePage() {
             { stat: '100%',   label: 'Community-Governed' },
           ].map(({ stat, label }) => (
             <div key={label}>
-              <p className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">{stat}</p>
+              <p className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">{stat}</p>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-500 mt-1">{label}</p>
             </div>
           ))}
@@ -468,25 +462,26 @@ export default function HomePage() {
       ) : (
         <section
           id="welcome"
-          className="py-20 px-6 max-w-7xl mx-auto"
+          className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
           aria-label="President's Welcome"
         >
-          <div className="grid md:grid-cols-12 gap-12 items-center">
+          <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             <div className="md:col-span-5">
-              <div className="relative w-full aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-md overflow-hidden">
+              <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-md overflow-hidden">
                 <Image
                   src="/president-ifeanyi.jpg"
                   alt="Chief Ifeanyi Onuchukwu"
                   fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover object-[center_12%]"
                   priority
                 />
-                <div className="absolute bottom-0 inset-x-0 bg-stone-950/85 text-white p-4 border-t border-stone-800">
+                <div className="absolute bottom-0 inset-x-0 bg-stone-950/85 text-white p-3.5 sm:p-4 border-t border-stone-800">
                   <p className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">
                     President &amp; Executive Chairman
                   </p>
-                  <p className="font-serif text-lg font-bold mt-0.5">Chief Ifeanyi Onuchukwu</p>
+                  <p className="font-serif text-base sm:text-lg font-bold mt-0.5">Chief Ifeanyi Onuchukwu</p>
                   <p className="text-xs text-stone-300 font-serif italic">
                     Ikeorah 1 of Oraifite · President Since 2021
                   </p>
@@ -494,10 +489,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="md:col-span-7 space-y-6">
+            <div className="md:col-span-7 space-y-5 sm:space-y-6">
               <div>
                 <SectionLabel>EXECUTIVE ADDRESS</SectionLabel>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                   Welcome from the Office of the President
                 </h2>
                 <Rule className="mt-4" />
@@ -550,20 +545,20 @@ export default function HomePage() {
       ) : (
         <section
           id="charter"
-          className="py-20 px-6 max-w-7xl mx-auto"
+          className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
           aria-label="Constitutional Objectives"
         >
-          <div className="mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
+          <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
             <SectionLabel>CONSTITUTIONAL OBJECTIVES</SectionLabel>
-            <h2 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
               Institutional Pillars of the Association
             </h2>
-            <p className="text-stone-500 text-xs mt-1">
+            <p className="text-stone-500 text-xs sm:text-sm mt-1">
               Formally registered under the ACT Associations Incorporation Act 1991.
             </p>
           </div>
 
-          {/* Flush grid — no floating cards, no shadows */}
+          {/* Flush responsive grid */}
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
             {[
               {
@@ -601,7 +596,7 @@ export default function HomePage() {
                       {pillar.tag}
                     </span>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-stone-900 dark:text-stone-100 mb-2">
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 mb-2">
                     {pillar.title}
                   </h3>
                   <p className="text-stone-600 dark:text-stone-400 text-xs sm:text-sm leading-relaxed">
@@ -625,33 +620,33 @@ export default function HomePage() {
       ) : (
         <section
           id="events"
-          className="py-20 px-6 max-w-7xl mx-auto"
+          className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
           aria-label="Cultural Calendar"
         >
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-3 border-b border-stone-200 dark:border-stone-800 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 pb-3 border-b border-stone-200 dark:border-stone-800 gap-3">
             <div>
               <SectionLabel>COMMUNITY GATHERINGS</SectionLabel>
-              <h2 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                 2026/2027 Cultural Calendar
               </h2>
             </div>
             <Link
               href="/en/dashboard/events"
-              className="text-xs font-bold text-[#064e3b] dark:text-emerald-400 hover:text-emerald-950 border-b border-[#064e3b] dark:border-emerald-400 pb-0.5 whitespace-nowrap"
+              className="text-xs font-bold text-[#064e3b] dark:text-emerald-400 hover:text-emerald-950 border-b border-[#064e3b] dark:border-emerald-400 pb-0.5 whitespace-nowrap self-start sm:self-auto"
             >
               Access Member RSVP System →
             </Link>
           </div>
 
-          {/* Flagship event — dark editorial block */}
+          {/* Flagship annual event */}
           <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-md mb-8">
-            <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
 
-              <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-stone-800 pb-6 md:pb-0 md:pr-6">
+              <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-stone-800 pb-4 md:pb-0 md:pr-6">
                 <span className="font-mono text-[9px] uppercase tracking-widest text-emerald-400 font-bold block mb-1">
                   FLAGSHIP EVENT
                 </span>
-                <p className="font-serif text-3xl font-bold text-white">29 NOV 2026</p>
+                <p className="font-serif text-2xl sm:text-3xl font-bold text-white">29 NOV 2026</p>
                 <p className="text-xs text-stone-400 mt-1 font-mono">Sunday · EPIC Centre Canberra</p>
               </div>
 
@@ -672,7 +667,7 @@ export default function HomePage() {
               <div className="md:col-span-3 flex md:justify-end">
                 <Link
                   href="/en/dashboard/events"
-                  className="inline-block bg-[#064e3b] hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded transition uppercase tracking-wider"
+                  className="w-full sm:w-auto text-center inline-block bg-[#064e3b] hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded transition uppercase tracking-wider"
                 >
                   RSVP via Member Portal
                 </Link>
@@ -681,7 +676,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Quarterly assemblies — flush grid */}
+          {/* Quarterly assemblies — responsive flush grid */}
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
             {[
               {
@@ -734,28 +729,29 @@ export default function HomePage() {
       ) : (
         <section
           id="leadership"
-          className="py-20 px-6 max-w-7xl mx-auto"
+          className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
           aria-label="Executive Council"
         >
-          <div className="mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
+          <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
             <SectionLabel>EXECUTIVE GOVERNANCE</SectionLabel>
-            <h2 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
               The Executive Council (2025–2027)
             </h2>
-            <p className="text-stone-500 text-sm mt-1">
+            <p className="text-stone-500 text-xs sm:text-sm mt-1">
               Democratically elected officers dedicated to administrative integrity and community
               representation.
             </p>
           </div>
 
-          {/* President feature — flat, no shadow */}
-          <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-8 items-center bg-white dark:bg-stone-900/60">
+          {/* President feature */}
+          <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
             <div className="md:col-span-4">
-              <div className="relative w-full aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded overflow-hidden">
+              <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded overflow-hidden">
                 <Image
                   src="/president-ifeanyi.jpg"
                   alt="Chief Ifeanyi Onuchukwu"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-[center_12%]"
                   priority
                 />
@@ -765,13 +761,13 @@ export default function HomePage() {
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b] dark:text-emerald-400 block">
                 President &amp; Executive Chairman
               </span>
-              <h3 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">
                 Chief Ifeanyi Onuchukwu
               </h3>
-              <p className="font-serif italic text-stone-500 dark:text-stone-400 text-lg">
+              <p className="font-serif italic text-stone-500 dark:text-stone-400 text-base sm:text-lg">
                 Ikeorah 1 of Oraifite
               </p>
-              <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed max-w-xl">
+              <p className="text-stone-600 dark:text-stone-400 text-xs sm:text-sm leading-relaxed max-w-xl">
                 Leading executive governance, constitutional custodianship, and community
                 leadership for the Igbo community across the Australian Capital Territory.
               </p>
@@ -781,8 +777,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Officers grid — consistent 4:5 portrait ratio */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {/* Officers grid (2 cols mobile, 3 cols sm, 6 cols lg) */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {[
               { src: '/vice-president-joseph.jpg',    name: 'Joseph Nwosu',             role: 'Vice-President',      pos: 'center 12%' },
               { src: '/women-leader-nonye.jpg',       name: 'Nonye Orisakwe',           role: 'President, Ezinwanyi', pos: 'center 12%' },
@@ -801,7 +797,9 @@ export default function HomePage() {
                       src={officer.src}
                       alt={officer.name}
                       fill
-                      className={`object-cover object-[${officer.pos}]`}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                      className="object-cover"
+                      style={{ objectPosition: officer.pos || 'center 12%' }}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -811,11 +809,11 @@ export default function HomePage() {
                     </div>
                   )}
                 </div>
-                <div className="p-3 border-t border-stone-100 dark:border-stone-800">
-                  <p className="font-mono text-[9px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-500">
+                <div className="p-2.5 sm:p-3 border-t border-stone-100 dark:border-stone-800">
+                  <p className="font-mono text-[9px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-500 truncate">
                     {officer.role}
                   </p>
-                  <h4 className="font-serif font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm mt-0.5">
+                  <h4 className="font-serif font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm mt-0.5 truncate">
                     {officer.name}
                   </h4>
                 </div>
@@ -832,38 +830,38 @@ export default function HomePage() {
       ) : (
         <section
           id="membership"
-          className="py-20 px-6 max-w-7xl mx-auto"
+          className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto"
           aria-label="Membership Dues"
         >
-          <div className="mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
+          <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
             <SectionLabel>MEMBERSHIP STRUCTURE</SectionLabel>
-            <h2 className="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
               Annual Membership Dues &amp; Household Options
             </h2>
           </div>
 
-          {/* Flush two-column grid — no floating cards */}
+          {/* Flush two-column grid */}
           <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
 
             {/* Family */}
-            <div className="p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
+            <div className="p-6 sm:p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
               <div>
-                <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6">
+                <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6 gap-2">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                       Family Membership
                     </h3>
                     <p className="text-[10px] text-stone-400 font-mono mt-0.5">
                       Primary Member &amp; Household Dependents
                     </p>
                   </div>
-                  <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">
+                  <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded shrink-0">
                     Recommended
                   </span>
                 </div>
 
-                <p className="font-serif text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
-                  $250 <span className="text-xs font-sans text-stone-400">AUD / year</span>
+                <p className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+                  $250 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                 </p>
 
                 <ul className="space-y-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300 border-t border-stone-100 dark:border-stone-800 pt-4">
@@ -875,13 +873,13 @@ export default function HomePage() {
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5">
                       <span className="text-[#064e3b] dark:text-emerald-400 font-bold shrink-0">✓</span>
-                      {item}
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-8">
+              <div className="pt-6 sm:pt-8">
                 <Link
                   href="/en/register"
                   className="block w-full text-center bg-[#064e3b] hover:bg-emerald-950 text-white font-bold text-xs py-3 rounded uppercase tracking-wider transition"
@@ -892,22 +890,22 @@ export default function HomePage() {
             </div>
 
             {/* Single */}
-            <div className="p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
+            <div className="p-6 sm:p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
               <div>
-                <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6">
+                <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6 gap-2">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                       Single Membership
                     </h3>
                     <p className="text-[10px] text-stone-400 font-mono mt-0.5">Individual Adult Member</p>
                   </div>
-                  <span className="border border-stone-300 dark:border-stone-700 text-stone-500 text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded">
+                  <span className="border border-stone-300 dark:border-stone-700 text-stone-500 text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded shrink-0">
                     Individual
                   </span>
                 </div>
 
-                <p className="font-serif text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
-                  $150 <span className="text-xs font-sans text-stone-400">AUD / year</span>
+                <p className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+                  $150 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                 </p>
 
                 <ul className="space-y-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300 border-t border-stone-100 dark:border-stone-800 pt-4">
@@ -918,13 +916,13 @@ export default function HomePage() {
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5">
                       <span className="text-stone-800 dark:text-stone-300 font-bold shrink-0">✓</span>
-                      {item}
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-8">
+              <div className="pt-6 sm:pt-8">
                 <Link
                   href="/en/register"
                   className="block w-full text-center border border-stone-300 dark:border-stone-700 hover:border-stone-500 text-stone-800 dark:text-stone-200 font-bold text-xs py-3 rounded uppercase tracking-wider transition"
@@ -944,12 +942,12 @@ export default function HomePage() {
       ) : (
         <footer
           id="contact"
-          className="bg-stone-900 text-stone-400 py-16 px-6 border-t border-stone-800 mt-auto"
+          className="bg-stone-900 text-stone-400 py-12 sm:py-16 px-4 sm:px-6 border-t border-stone-800 mt-auto"
         >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
 
             {/* Brand */}
-            <div className="md:col-span-2">
+            <div className="sm:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-8 h-8 border border-stone-700 bg-white shrink-0">
                   <Image src="/logo.jpg" alt="Igbo Community Canberra Logo" fill className="object-contain" />
@@ -973,7 +971,7 @@ export default function HomePage() {
             <div>
               <h5 className="font-serif font-bold text-white text-sm mb-3">Institutional Links</h5>
               <ul className="space-y-2 text-xs text-stone-400">
-                <li><a href="#welcome" className="hover:text-white transition">President's Address</a></li>
+                <li><a href="#welcome" className="hover:text-white transition">President&apos;s Address</a></li>
                 <li><a href="#charter" className="hover:text-white transition">Constitution &amp; By-Laws</a></li>
                 <li><a href="#leadership" className="hover:text-white transition">Executive Council</a></li>
                 <li><a href="#events" className="hover:text-white transition">Cultural Calendar</a></li>
