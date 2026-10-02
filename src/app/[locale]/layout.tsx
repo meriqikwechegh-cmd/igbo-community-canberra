@@ -2,20 +2,27 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
-import { DM_Sans, Playfair_Display } from 'next/font/google';
+import { Plus_Jakarta_Sans, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
 import '../globals.css';
 
-const dmSans = DM_Sans({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -40,9 +47,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${dmSans.variable} ${playfair.variable}`}
+      className={`${plusJakartaSans.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans antialiased bg-[#fafaf9] text-stone-900 selection:bg-emerald-900 selection:text-emerald-100">
+      <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
