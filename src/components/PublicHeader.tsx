@@ -68,13 +68,13 @@ export function PublicHeader({
         <div className="hidden sm:flex items-center gap-2.5 shrink-0">
           <Link
             href="/en/login"
-            className="font-sans text-xs font-semibold text-stone-800 dark:text-stone-200 hover:text-[#064e3b] dark:hover:text-white border border-stone-300 dark:border-stone-700 px-3.5 py-2 rounded transition whitespace-nowrap"
+            className="font-sans text-xs font-semibold text-stone-800 dark:text-stone-200 hover:text-[#064e3b] dark:hover:text-white border border-stone-300 dark:border-stone-700 px-3.5 py-2 rounded-none transition whitespace-nowrap"
           >
             {memberLoginText}
           </Link>
           <Link
             href="/en/register"
-            className="font-sans text-xs font-semibold bg-[#064e3b] hover:bg-emerald-950 text-white px-4 py-2 rounded transition whitespace-nowrap"
+            className="font-sans text-xs font-semibold bg-[#064e3b] hover:bg-emerald-950 text-white px-4 py-2 rounded-none transition whitespace-nowrap"
           >
             {joinText}
           </Link>
@@ -84,7 +84,7 @@ export function PublicHeader({
         <button
           type="button"
           onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-          className="xl:hidden p-2 text-stone-800 dark:text-stone-200 hover:text-[#064e3b] dark:hover:text-white rounded hover:bg-stone-100 dark:hover:bg-stone-800 transition shrink-0"
+          className="xl:hidden p-2 text-stone-800 dark:text-stone-200 hover:text-[#064e3b] dark:hover:text-white rounded-none hover:bg-stone-100 dark:hover:bg-stone-800 transition shrink-0"
           aria-label="Toggle Navigation Sidebar"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ export function PublicHeader({
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileDrawerOpen(false)}
-                    className="block px-3 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-300 hover:text-white hover:bg-stone-800 rounded transition"
+                    className="block px-3 py-2.5 text-xs font-semibold uppercase tracking-wider text-stone-300 hover:text-white hover:bg-stone-800 rounded-none transition"
                   >
                     {link.label}
                   </a>
@@ -160,14 +160,14 @@ export function PublicHeader({
                 <Link
                   href="/en/login"
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="w-full block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2.5 rounded hover:bg-stone-800 transition"
+                  className="w-full block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2.5 rounded-none hover:bg-stone-800 transition"
                 >
                   {memberLoginText}
                 </Link>
                 <Link
                   href="/en/register"
                   onClick={() => setMobileDrawerOpen(false)}
-                  className="w-full block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2.5 rounded hover:bg-emerald-900 transition"
+                  className="w-full block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2.5 rounded-none hover:bg-emerald-900 transition"
                 >
                   {joinText}
                 </Link>

@@ -109,7 +109,7 @@ export function PublicSidebar({
           <span className="text-[11px] font-serif italic text-stone-300 truncate">
             Onye aghana nwanne ya
           </span>
-          <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded shrink-0 ml-2">
+          <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded-none shrink-0 ml-2">
             Est. 2012
           </span>
         </div>
@@ -129,7 +129,7 @@ export function PublicSidebar({
             href={item.href}
             onClick={() => setMobileOpen(false)}
             title={collapsed ? item.label : undefined}
-            className={`flex items-center gap-3 px-3 py-2.5 rounded text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors ${
+            className={`flex items-center gap-3 px-3 py-2.5 rounded-none text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors ${
               collapsed ? 'justify-center' : ''
             }`}
           >
@@ -147,13 +147,13 @@ export function PublicSidebar({
             <div className="space-y-1.5 px-1 pb-2">
               <Link
                 href="/en/login"
-                className="block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2 rounded hover:bg-stone-800 transition"
+                className="block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2 rounded-none hover:bg-stone-800 transition"
               >
                 {memberLoginText}
               </Link>
               <Link
                 href="/en/register"
-                className="block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2 rounded hover:bg-emerald-900 transition"
+                className="block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2 rounded-none hover:bg-emerald-900 transition"
               >
                 {joinText}
               </Link>
@@ -182,7 +182,7 @@ export function PublicSidebar({
         <button
           type="button"
           onClick={() => setCollapsed(!collapsed)}
-          className={`w-full flex items-center gap-2 px-2 py-1.5 rounded text-[10px] font-mono uppercase tracking-wider text-stone-500 hover:text-white hover:bg-stone-800 transition ${
+          className={`w-full flex items-center gap-2 px-2 py-1.5 rounded-none text-[10px] font-mono uppercase tracking-wider text-stone-500 hover:text-white hover:bg-stone-800 transition ${
             collapsed ? 'justify-center' : 'justify-between'
           }`}
           title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
@@ -241,7 +241,7 @@ export function PublicSidebar({
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-1.5 text-stone-300 hover:text-white rounded hover:bg-stone-800 transition"
+            className="p-1.5 text-stone-300 hover:text-white rounded-none hover:bg-stone-800 transition"
             aria-label="Toggle Navigation Sidebar"
           >
             {mobileOpen ? (
@@ -281,7 +281,7 @@ export function PublicSidebar({
 
               <div className="px-5 py-2.5 bg-stone-950/60 border-b border-stone-800 flex items-center justify-between shrink-0">
                 <span className="text-[11px] font-serif italic text-stone-300 truncate">Onye aghana nwanne ya</span>
-                <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded shrink-0 ml-2">Est. 2012</span>
+                <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded-none shrink-0 ml-2">Est. 2012</span>
               </div>
 
               <nav className="flex-1 p-2 space-y-0.5 overflow-y-auto">
@@ -293,7 +293,7 @@ export function PublicSidebar({
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-none text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors"
                   >
                     <span className="text-stone-400 shrink-0">{item.icon}</span>
                     <span className="truncate">{item.label}</span>
@@ -304,10 +304,10 @@ export function PublicSidebar({
                   Member Access
                 </div>
                 <div className="space-y-1.5 px-1 pb-2">
-                  <Link href="/en/login" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2 rounded hover:bg-stone-800 transition">
+                  <Link href="/en/login" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2 rounded-none hover:bg-stone-800 transition">
                     {memberLoginText}
                   </Link>
-                  <Link href="/en/register" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2 rounded hover:bg-emerald-900 transition">
+                  <Link href="/en/register" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2 rounded-none hover:bg-emerald-900 transition">
                     {joinText}
                   </Link>
                 </div>

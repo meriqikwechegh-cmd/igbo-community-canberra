@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -28,65 +29,109 @@ export default function LoginPage() {
         router.push('/en/dashboard');
       }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError('Something went wrong. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
+    <div className="min-h-screen bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col font-sans">
+      <header className="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 px-6 py-4 flex items-center justify-between">
         <Link href="/en" className="flex items-center gap-3">
-          <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-emerald-800/30 shrink-0 bg-white"><Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" /></div>
+          <div className="relative w-8 h-8 border border-stone-300 dark:border-stone-700 bg-white shrink-0 rounded-none">
+            <Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" />
+          </div>
           <div>
-            <span className="font-bold text-green-800 block text-sm leading-tight">Igbo Community</span>
-            <span className="text-xs text-green-600">Canberra</span>
+            <span className="font-serif font-bold text-stone-900 dark:text-stone-100 block text-sm leading-tight">
+              Igbo Community
+            </span>
+            <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+              Canberra Inc. · A04821
+            </span>
           </div>
         </Link>
-        <p className="text-sm text-gray-500">
-          No account?{' '}
-          <Link href="/en/register" className="text-green-700 font-semibold hover:underline">Register</Link>
+        <p className="text-xs text-stone-500">
+          Not yet a member?{' '}
+          <Link href="/en/register" className="text-[#064e3b] dark:text-emerald-400 font-semibold underline hover:text-emerald-950">
+            Apply
+          </Link>
         </p>
       </header>
 
       <main className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="bg-white w-full max-w-md rounded-2xl shadow-sm border border-gray-100 p-8">
+        <div className="bg-white dark:bg-stone-900 w-full max-w-md rounded-none border border-stone-200 dark:border-stone-800 shadow-sm p-6 sm:p-10">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-1">Welcome back</h1>
-            <p className="text-gray-500 text-sm">Sign in to your member account</p>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-[#064e3b] dark:text-emerald-400 font-bold block mb-1">
+              PORTAL ACCESS
+            </span>
+            <h1 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100 mb-1">
+              Member Sign In
+            </h1>
+            <p className="text-stone-500 text-xs">
+              Access your household directory, dues history, and official RSVPs.
+            </p>
           </div>
 
           {error && (
-            <div className="mb-4 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3">{error}</div>
+            <div
+              role="alert"
+              className="mb-6 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60 text-red-700 dark:text-red-300 text-xs p-3.5 rounded-none flex items-start gap-2"
+            >
+              <span className="font-bold">Error:</span>
+              <span>{error}</span>
+            </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">Email address</label>
-              <input id="email" type="email" required value={email} onChange={e => setEmail(e.target.value)}
+              <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1" htmlFor="email">
+                Registered Email Address
+              </label>
+              <input
+                id="email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" />
+                className="w-full border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 rounded-none px-3.5 py-2.5 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#064e3b]"
+              />
             </div>
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label className="block text-sm font-medium text-gray-700" htmlFor="password">Password</label>
-                <Link href="/en/forgot-password" className="text-xs text-green-700 hover:underline">Forgot password?</Link>
+                <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400" htmlFor="password">
+                  Password
+                </label>
+                <Link href="/en/contact" className="text-[11px] text-stone-500 hover:text-stone-800 underline">
+                  Forgot password?
+                </Link>
               </div>
-              <input id="password" type="password" required value={password} onChange={e => setPassword(e.target.value)}
+              <input
+                id="password"
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" />
+                className="w-full border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 rounded-none px-3.5 py-2.5 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#064e3b]"
+              />
             </div>
-            <button type="submit" disabled={loading}
-              className="w-full bg-green-700 text-white font-semibold py-3 rounded-lg hover:bg-green-800 transition disabled:opacity-60">
-              {loading ? 'Signing in…' : 'Sign In'}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-[#064e3b] hover:bg-emerald-950 text-white font-bold py-3 rounded-none transition disabled:opacity-60 text-xs uppercase tracking-widest cursor-pointer"
+            >
+              {loading ? 'Authenticating…' : 'Sign In'}
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t text-center">
-            <p className="text-sm text-gray-500">
+          <div className="mt-8 pt-6 border-t border-stone-100 dark:border-stone-800 text-center">
+            <p className="text-xs text-stone-500">
               Not a member yet?{' '}
-              <Link href="/en/register" className="text-green-700 font-semibold hover:underline">Join Igbo Community Canberra</Link>
+              <Link href="/en/register" className="text-[#064e3b] dark:text-emerald-400 font-semibold underline hover:text-emerald-950">
+                Submit Membership Application
+              </Link>
             </p>
           </div>
         </div>

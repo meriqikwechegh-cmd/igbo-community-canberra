@@ -2,12 +2,13 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
-import { Plus_Jakarta_Sans, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+import { Inter, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+import CookieConsentBanner from '@/components/CookieConsentBanner';
 import '../globals.css';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -28,7 +29,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: 'Igbo Community Canberra (ICC) — Official Portal',
-  description: 'The official cultural and membership portal for Igbo Community Canberra, Australian Capital Territory.',
+  description:
+    'The official cultural, governance, and membership portal for Igbo Community Canberra Inc., Australian Capital Territory.',
 };
 
 export default async function LocaleLayout({
@@ -47,12 +49,13 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakartaSans.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${cormorant.variable} ${jetbrainsMono.variable} h-full`}
     >
-      <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white">
+      <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   );

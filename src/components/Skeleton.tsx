@@ -19,11 +19,11 @@ interface SkProps {
   w?: string;
   /** Extra Tailwind classes */
   className?: string;
-  /** Override border-radius class; default "rounded" (4px) */
+  /** Override border-radius class; default "rounded-none" (0px) */
   rounded?: string;
 }
 
-export function Sk({ h, w = 'w-full', className, rounded = 'rounded' }: SkProps) {
+export function Sk({ h, w = 'w-full', className, rounded = 'rounded-none' }: SkProps) {
   return (
     <span
       aria-hidden="true"

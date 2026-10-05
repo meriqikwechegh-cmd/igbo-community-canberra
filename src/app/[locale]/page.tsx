@@ -51,12 +51,12 @@ function HeroSkeleton() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-8 space-y-5">
           <Sk h="h-3" w="w-28" />
-          <Sk h="h-12 sm:h-14" w="w-full" rounded="rounded" />
-          <Sk h="h-4 sm:h-5" w="w-4/5" rounded="rounded" />
-          <Sk h="h-4 sm:h-5" w="w-3/5" rounded="rounded" />
+          <Sk h="h-12 sm:h-14" w="w-full" rounded="rounded-none" />
+          <Sk h="h-4 sm:h-5" w="w-4/5" rounded="rounded-none" />
+          <Sk h="h-4 sm:h-5" w="w-3/5" rounded="rounded-none" />
           <div className="flex flex-col sm:flex-row gap-3 pt-3">
-            <Sk h="h-11" w="w-full sm:w-44" rounded="rounded" />
-            <Sk h="h-11" w="w-full sm:w-36" rounded="rounded" />
+            <Sk h="h-11" w="w-full sm:w-44" rounded="rounded-none" />
+            <Sk h="h-11" w="w-full sm:w-36" rounded="rounded-none" />
           </div>
         </div>
         <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-emerald-800/50 pt-8 md:pt-0 pl-0 md:pl-8">
@@ -103,7 +103,7 @@ function WelcomeSkeleton() {
       <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-5">
           <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5]">
-            <Sk h="h-full" w="w-full" rounded="rounded-md" />
+            <Sk h="h-full" w="w-full" rounded="rounded-none" />
           </div>
         </div>
         <div className="md:col-span-7 space-y-4">
@@ -141,7 +141,7 @@ function PillarsSkeleton() {
         <Sk h="h-3" w="w-36" />
         <Sk h="h-7 sm:h-8" w="w-72" />
       </div>
-      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
         {[1, 2, 3].map((i) => (
           <div key={i} className="p-6 sm:p-8 space-y-4 bg-white dark:bg-stone-900/60">
             <div className="flex justify-between items-center pb-3 border-b border-stone-100 dark:border-stone-800">
@@ -178,7 +178,7 @@ function EventsSkeleton() {
         <Sk h="h-3" w="w-36" />
       </div>
 
-      <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-md mb-8">
+      <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-none mb-8">
         <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div className="md:col-span-3 space-y-2 pb-4 md:pb-0 border-b md:border-b-0 md:border-r border-stone-800">
             <Sk h="h-3" w="w-20" className="opacity-40" />
@@ -192,12 +192,12 @@ function EventsSkeleton() {
             <Sk h="h-4" w="w-5/6" className="opacity-20" />
           </div>
           <div className="md:col-span-3 flex md:justify-end">
-            <Sk h="h-10" w="w-full sm:w-36" className="opacity-30" rounded="rounded" />
+            <Sk h="h-10" w="w-full sm:w-36" className="opacity-30" rounded="rounded-none" />
           </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
         {[1, 2, 3].map((i) => (
           <div key={i} className="p-6 space-y-3 bg-white dark:bg-stone-900/60">
             <Sk h="h-3" w="w-24" />
@@ -229,10 +229,10 @@ function LeadershipSkeleton() {
         <Sk h="h-3" w="w-64" />
       </div>
 
-      <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
+      <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-none mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
         <div className="md:col-span-4">
           <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5]">
-            <Sk h="h-full" w="w-full" rounded="rounded" />
+            <Sk h="h-full" w="w-full" rounded="rounded-none" />
           </div>
         </div>
         <div className="md:col-span-8 space-y-3">
@@ -248,7 +248,7 @@ function LeadershipSkeleton() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="border border-stone-200 dark:border-stone-800 rounded overflow-hidden bg-white dark:bg-stone-900">
+          <div key={i} className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden bg-white dark:bg-stone-900">
             <div className="aspect-[4/5] w-full">
               <Sk h="h-full" w="w-full" rounded="rounded-none" />
             </div>
@@ -274,7 +274,7 @@ function MembershipSkeleton() {
         <Sk h="h-3" w="w-36" />
         <Sk h="h-7 sm:h-8" w="w-80" />
       </div>
-      <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
         {[1, 2].map((i) => (
           <div key={i} className="p-6 sm:p-8 space-y-5 bg-white dark:bg-stone-900/60">
             <div className="flex justify-between pb-4 border-b border-stone-100 dark:border-stone-800">
@@ -282,7 +282,7 @@ function MembershipSkeleton() {
                 <Sk h="h-5 sm:h-6" w="w-40" />
                 <Sk h="h-3" w="w-32" />
               </div>
-              <Sk h="h-5" w="w-20" rounded="rounded" />
+              <Sk h="h-5" w="w-20" rounded="rounded-none" />
             </div>
             <Sk h="h-9 sm:h-10" w="w-28" />
             <div className="space-y-2 pt-2">
@@ -293,7 +293,7 @@ function MembershipSkeleton() {
                 </div>
               ))}
             </div>
-            <Sk h="h-10" w="w-full" rounded="rounded" className="mt-6" />
+            <Sk h="h-10" w="w-full" rounded="rounded-none" className="mt-6" />
           </div>
         ))}
       </div>
@@ -399,13 +399,13 @@ export default function HomePage() {
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/en/register"
-                  className="bg-stone-50 hover:bg-white text-[#064e3b] font-bold px-6 py-3 rounded text-sm transition tracking-wide text-center"
+                  className="bg-stone-50 hover:bg-white text-[#064e3b] font-bold px-6 py-3 rounded-none text-sm transition tracking-wide text-center"
                 >
                   Submit Membership Application
                 </Link>
                 <a
                   href="#welcome"
-                  className="border border-emerald-500/30 hover:bg-emerald-900/50 text-emerald-50 font-semibold px-6 py-3 rounded text-sm transition text-center"
+                  className="border border-emerald-500/30 hover:bg-emerald-900/50 text-emerald-50 font-semibold px-6 py-3 rounded-none text-sm transition text-center"
                 >
                   President&apos;s Address
                 </a>
@@ -465,7 +465,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
               <div className="md:col-span-5">
-                <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-md overflow-hidden">
+                <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-none overflow-hidden">
                   <Image
                     src="/president-ifeanyi.jpg"
                     alt="Chief Ifeanyi Onuchukwu"
@@ -555,7 +555,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
               {[
                 {
                   numeral: 'I',
@@ -634,7 +634,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-md mb-8">
+            <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-none mb-8">
               <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
 
                 <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-stone-800 pb-4 md:pb-0 md:pr-6">
@@ -662,7 +662,7 @@ export default function HomePage() {
                 <div className="md:col-span-3 flex md:justify-end">
                   <Link
                     href="/en/dashboard/events"
-                    className="w-full sm:w-auto text-center inline-block bg-[#064e3b] hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded transition uppercase tracking-wider"
+                    className="w-full sm:w-auto text-center inline-block bg-[#064e3b] hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded-none transition uppercase tracking-wider"
                   >
                     RSVP via Member Portal
                   </Link>
@@ -671,7 +671,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
               {[
                 {
                   tag: 'Q1 2027 ASSEMBLY',
@@ -737,9 +737,9 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-md mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
+            <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-none mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
               <div className="md:col-span-4">
-                <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded overflow-hidden">
+                <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-none overflow-hidden">
                   <Image
                     src="/president-ifeanyi.jpg"
                     alt="Chief Ifeanyi Onuchukwu"
@@ -781,7 +781,7 @@ export default function HomePage() {
               ].map((officer) => (
                 <div
                   key={officer.name}
-                  className="border border-stone-200 dark:border-stone-800 rounded overflow-hidden flex flex-col bg-white dark:bg-stone-900"
+                  className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden flex flex-col bg-white dark:bg-stone-900"
                 >
                   <div className="relative w-full aspect-[4/5] bg-stone-100 dark:bg-stone-800">
                     {officer.src ? (
@@ -832,7 +832,7 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-md overflow-hidden">
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
 
               <div className="p-6 sm:p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
                 <div>
@@ -845,7 +845,7 @@ export default function HomePage() {
                         Primary Member &amp; Household Dependents
                       </p>
                     </div>
-                    <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded shrink-0">
+                    <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
                       Recommended
                     </span>
                   </div>
@@ -872,7 +872,7 @@ export default function HomePage() {
                 <div className="pt-6 sm:pt-8">
                   <Link
                     href="/en/register"
-                    className="block w-full text-center bg-[#064e3b] hover:bg-emerald-950 text-white font-bold text-xs py-3 rounded uppercase tracking-wider transition"
+                    className="block w-full text-center bg-[#064e3b] hover:bg-emerald-950 text-white font-bold text-xs py-3 rounded-none uppercase tracking-wider transition"
                   >
                     Register Family Account
                   </Link>
@@ -888,7 +888,7 @@ export default function HomePage() {
                       </h3>
                       <p className="text-[10px] text-stone-400 font-mono mt-0.5">Individual Adult Member</p>
                     </div>
-                    <span className="border border-stone-300 dark:border-stone-700 text-stone-500 text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded shrink-0">
+                    <span className="border border-stone-300 dark:border-stone-700 text-stone-500 text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
                       Individual
                     </span>
                   </div>
@@ -914,7 +914,7 @@ export default function HomePage() {
                 <div className="pt-6 sm:pt-8">
                   <Link
                     href="/en/register"
-                    className="block w-full text-center border border-stone-300 dark:border-stone-700 hover:border-stone-500 text-stone-800 dark:text-stone-200 font-bold text-xs py-3 rounded uppercase tracking-wider transition"
+                    className="block w-full text-center border border-stone-300 dark:border-stone-700 hover:border-stone-500 text-stone-800 dark:text-stone-200 font-bold text-xs py-3 rounded-none uppercase tracking-wider transition"
                   >
                     Register Single Account
                   </Link>
@@ -933,9 +933,9 @@ export default function HomePage() {
             id="contact"
             className="bg-stone-900 text-stone-400 py-12 sm:py-16 px-4 sm:px-6 border-t border-stone-800 mt-auto"
           >
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12">
 
-              <div className="sm:col-span-2">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-8 h-8 border border-stone-700 bg-white shrink-0">
                     <Image src="/logo.jpg" alt="Igbo Community Canberra Logo" fill className="object-contain" />
@@ -944,7 +944,7 @@ export default function HomePage() {
                     Igbo Community Canberra Inc.
                   </span>
                 </div>
-                <p className="text-stone-400 text-xs sm:text-sm leading-relaxed max-w-md mb-4">
+                <p className="text-stone-400 text-xs leading-relaxed max-w-sm mb-4">
                   Incorporated non-profit association established in 2012 for cultural heritage,
                   communal solidarity, and fellowship across the Australian Capital Territory.
                 </p>
@@ -967,6 +967,18 @@ export default function HomePage() {
               </div>
 
               <div>
+                <h5 className="font-serif font-bold text-white text-sm mb-3">Privacy &amp; Compliance</h5>
+                <ul className="space-y-2 text-xs text-stone-400">
+                  <li><Link href="/en/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                  <li><Link href="/en/terms-of-use" className="hover:text-white transition">Terms of Use</Link></li>
+                  <li><Link href="/en/photo-video-consent" className="hover:text-white transition">Photo &amp; Video Consent</Link></li>
+                  <li><Link href="/en/accessibility" className="hover:text-white transition">Accessibility Statement</Link></li>
+                  <li><Link href="/en/membership-terms" className="hover:text-white transition">Membership Terms</Link></li>
+                  <li><Link href="/en/contact" className="hover:text-white transition">Contact &amp; Grievance</Link></li>
+                </ul>
+              </div>
+
+              <div>
                 <h5 className="font-serif font-bold text-white text-sm mb-3">Secretariat</h5>
                 <ul className="space-y-2 text-xs text-stone-400">
                   <li>GPO Box 1985, Canberra ACT 2601</li>
@@ -982,10 +994,22 @@ export default function HomePage() {
 
             </div>
 
-            <div className="max-w-6xl mx-auto pt-6 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-stone-500 gap-2">
-              <p>© 2026 Igbo Community Canberra Inc. All rights reserved.</p>
+            <div className="max-w-6xl mx-auto pt-6 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-stone-500 gap-4">
+              <div className="flex flex-wrap items-center gap-3 text-stone-400">
+                <Link href="/en/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+                <span>·</span>
+                <Link href="/en/terms-of-use" className="hover:text-white transition">Terms of Use</Link>
+                <span>·</span>
+                <Link href="/en/photo-video-consent" className="hover:text-white transition">Photo Consent</Link>
+                <span>·</span>
+                <Link href="/en/accessibility" className="hover:text-white transition">Accessibility</Link>
+                <span>·</span>
+                <Link href="/en/membership-terms" className="hover:text-white transition">Membership Terms</Link>
+                <span>·</span>
+                <Link href="/en/contact" className="hover:text-white transition">Contact</Link>
+              </div>
               <p className="flex items-center gap-2">
-                <span>Founded 2012 · ACT Inc. A04821</span>
+                <span>© 2026 ICC Canberra Inc. A04821</span>
                 <span>·</span>
                 <span>
                   Powered by{' '}

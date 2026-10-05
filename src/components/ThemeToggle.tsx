@@ -43,7 +43,7 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
 
   if (!mounted) {
     return (
-      <div className={`p-1.5 rounded border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-xs font-mono opacity-50 flex items-center gap-1.5 ${className}`}>
+      <div className={`p-1.5 rounded-none border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-xs font-mono opacity-50 flex items-center gap-1.5 ${className}`}>
         <span className="w-3.5 h-3.5 block" />
         {showLabel && <span className="text-[10px]">Theme</span>}
       </div>
@@ -54,7 +54,7 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
     <button
       type="button"
       onClick={toggleTheme}
-      className={`p-1.5 rounded text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 transition flex items-center gap-1.5 text-xs font-mono cursor-pointer ${className}`}
+      className={`p-1.5 rounded-none text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 transition flex items-center gap-1.5 text-xs font-mono cursor-pointer ${className}`}
       title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
       aria-label="Toggle Theme Mode"
     >
