@@ -27,12 +27,11 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
     }
   }, []);
 
-  function toggleTheme() {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    localStorage.setItem('icc_theme', nextTheme);
+  function setMode(mode: 'light' | 'dark') {
+    setTheme(mode);
+    localStorage.setItem('icc_theme', mode);
 
-    if (nextTheme === 'dark') {
+    if (mode === 'dark') {
       document.documentElement.classList.add('dark');
       document.body?.classList.add('dark');
     } else {
@@ -43,36 +42,73 @@ export function ThemeToggle({ className = '', showLabel = true }: ThemeTogglePro
 
   if (!mounted) {
     return (
-      <div className={`p-1.5 rounded-none border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 text-xs font-mono opacity-50 flex items-center gap-1.5 ${className}`}>
-        <span className="w-3.5 h-3.5 block" />
-        {showLabel && <span className="text-[10px]">Theme</span>}
+      <div className={`inline-flex items-center border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 p-0.5 rounded-none opacity-50 ${className}`}>
+        <span className="w-5 h-5 block" />
       </div>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      className={`p-1.5 rounded-none text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 transition flex items-center gap-1.5 text-xs font-mono cursor-pointer ${className}`}
-      title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
-      aria-label="Toggle Theme Mode"
+    <div
+      className={`inline-flex items-center border border-stone-300 dark:border-stone-700 bg-stone-100 dark:bg-stone-800/80 p-0.5 rounded-none select-none ${className}`}
+      role="group"
+      aria-label="Color scheme toggle"
     >
-      {theme === 'light' ? (
-        <>
-          <svg className="w-3.5 h-3.5 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-          </svg>
-          {showLabel && <span className="text-[10px] font-semibold">Dark</span>}
-        </>
-      ) : (
-        <>
-          <svg className="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v2.25m0 13.5V21m8.966-8.966h-2.25m-13.5 0h-2.25m15.003-5.657l-1.591 1.59m-11.314 11.314l-1.59 1.591m15.804 0l-1.591-1.59m-11.314-11.314l-1.59-1.591M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
-          </svg>
-          {showLabel && <span className="text-[10px] font-semibold">Light</span>}
-        </>
-      )}
-    </button>
+      <button
+        type="button"
+        onClick={() => setMode('light')}
+        className={`px-1.5 py-1 rounded-none flex items-center gap-1 transition-all cursor-pointer ${
+          theme === 'light'
+            ? 'bg-white text-amber-500 shadow-xs font-semibold'
+            : 'text-stone-400 hover:text-stone-700 dark:hover:text-stone-200'
+        }`}
+        title="Light Mode"
+        aria-label="Switch to Light Mode"
+        aria-pressed={theme === 'light'}
+      >
+        <svg
+          className="w-3.5 h-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="4" fill="currentColor" fillOpacity="0.2" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+        {showLabel && <span className="text-[10px] font-mono uppercase tracking-wider">Light</span>}
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setMode('dark')}
+        className={`px-1.5 py-1 rounded-none flex items-center gap-1 transition-all cursor-pointer ${
+          theme === 'dark'
+            ? 'bg-stone-900 text-amber-300 shadow-xs font-semibold border border-stone-700/60'
+            : 'text-stone-400 hover:text-stone-700 dark:hover:text-stone-200'
+        }`}
+        title="Dark Mode"
+        aria-label="Switch to Dark Mode"
+        aria-pressed={theme === 'dark'}
+      >
+        <svg
+          className="w-3.5 h-3.5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73A8.15 8.15 0 0 1 9.08 5.49a8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05z" />
+        </svg>
+        {showLabel && <span className="text-[10px] font-mono uppercase tracking-wider">Dark</span>}
+      </button>
+    </div>
   );
 }

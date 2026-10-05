@@ -63,11 +63,14 @@ export function PublicSidebar({
   memberLoginText = 'Member Login',
   joinText = 'Registration',
 }: PublicSidebarProps = {}) {
-  const [collapsed, setCollapsed] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // Automatically collapsible: collapsed by default, expands on hover, or can be pinned
+  const [pinned, setPinned] = useState(false);
+  const [hovered, setHovered] = useState(false);
+
+  const collapsed = !pinned && !hovered;
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-stone-900 text-stone-100 border-r border-stone-800 select-none transition-all duration-200">
+    <div className="flex flex-col h-full bg-stone-900 text-stone-100 border-r border-stone-800 select-none transition-all duration-300 ease-in-out">
       {/* Brand Header */}
       <div className="h-16 flex items-center border-b border-stone-800 bg-stone-950 shrink-0 overflow-hidden">
         {collapsed ? (
@@ -118,7 +121,6 @@ export function PublicSidebar({
           <a
             key={item.href}
             href={item.href}
-            onClick={() => setMobileOpen(false)}
             title={collapsed ? item.label : undefined}
             className={`flex items-center gap-3 px-3 py-2.5 rounded-none text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors ${
               collapsed ? 'justify-center' : ''
@@ -156,38 +158,35 @@ export function PublicSidebar({
       {/* Appearance / Theme Toggle */}
       <div className={`px-3 py-3 border-t border-stone-800 bg-stone-900/90 shrink-0 ${collapsed ? 'flex justify-center' : ''}`}>
         {collapsed ? (
-          /* Collapsed: just the icon button, no label */
           <ThemeToggle showLabel={false} />
         ) : (
           <div className="flex items-center justify-between px-1">
             <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">
               Appearance
             </span>
-            <ThemeToggle />
+            <ThemeToggle showLabel={false} />
           </div>
         )}
       </div>
 
-      {/* Collapse / Expand Toggle Button */}
+      {/* Pin / Unpin (Auto-collapse) Toggle Button */}
       <div className="px-3 py-2.5 border-t border-stone-800 bg-stone-950 shrink-0">
         <button
           type="button"
-          onClick={() => setCollapsed(!collapsed)}
+          onClick={() => setPinned(!pinned)}
           className={`w-full flex items-center gap-2 px-2 py-1.5 rounded-none text-[10px] font-mono uppercase tracking-wider text-stone-500 hover:text-white hover:bg-stone-800 transition ${
             collapsed ? 'justify-center' : 'justify-between'
           }`}
-          title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          title={pinned ? 'Unpin Sidebar (Auto-collapse on)' : 'Pin Sidebar (Keep expanded)'}
         >
-          {!collapsed && <span>Collapse Sidebar</span>}
-          {collapsed ? (
-            /* Chevron right when collapsed */
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          {!collapsed && <span>{pinned ? 'Unpin Sidebar' : 'Auto-Collapse: Off'}</span>}
+          {pinned ? (
+            <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           ) : (
-            /* Chevron left when expanded */
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           )}
         </button>
@@ -207,11 +206,14 @@ export function PublicSidebar({
 
   return (
     <>
-      {/* Desktop Persistent Left Sidebar */}
+      {/* Desktop Persistent Left Sidebar: automatically collapses when mouse leaves */}
       <aside
-        className={`hidden lg:block shrink-0 h-screen sticky top-0 z-30 transition-all duration-200 ${
-          collapsed ? 'w-[60px]' : 'w-72'
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={`hidden lg:block shrink-0 h-screen sticky top-0 z-30 transition-all duration-300 ease-in-out ${
+          collapsed ? 'w-[64px]' : 'w-72'
         }`}
+        aria-label="Navigation Sidebar"
       >
         {sidebarContent}
       </aside>

@@ -2,7 +2,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
-import { Inter, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import CookieConsentBanner from '@/components/CookieConsentBanner';
 import '../globals.css';
 
@@ -13,9 +13,9 @@ const inter = Inter({
   display: 'swap',
 });
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -49,7 +49,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${cormorant.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>

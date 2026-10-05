@@ -230,8 +230,8 @@ function LeadershipSkeleton() {
         <Sk h="h-3" w="w-64" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {[1, 2, 3, 4].map((i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        {[1, 2, 3, 4, 5].map((i) => (
           <div key={i} className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden bg-white dark:bg-stone-900">
             <div className="aspect-[4/5] w-full">
               <Sk h="h-full" w="w-full" rounded="rounded-none" />
@@ -714,11 +714,11 @@ export default function HomePage() {
                 Executive Leadership
               </h2>
               <p className="text-stone-500 text-xs sm:text-sm mt-1">
-                The President and Vice-President representing both the General Assembly &amp; Ezinwanyi Canberra (Women&apos;s Wing).
+                The Executive Council representing the General Assembly, Ezinwanyi Canberra (Women&apos;s Wing), and Secretariat Protocol.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
               {[
                 {
                   src: '/president-ifeanyi.jpg',
@@ -726,6 +726,7 @@ export default function HomePage() {
                   role: 'President & Executive Chairman',
                   sub: 'General Assembly (Men)',
                   pos: 'center 12%',
+                  initials: 'IO',
                 },
                 {
                   src: '/vice-president-joseph.jpg',
@@ -733,6 +734,7 @@ export default function HomePage() {
                   role: 'Vice-President',
                   sub: 'General Assembly (Men)',
                   pos: 'center 12%',
+                  initials: 'JN',
                 },
                 {
                   src: '/women-leader-nonye.jpg',
@@ -740,6 +742,7 @@ export default function HomePage() {
                   role: 'President, Ezinwanyi',
                   sub: "Women's Wing",
                   pos: 'center 12%',
+                  initials: 'NO',
                 },
                 {
                   src: '/doris-njoku.jpg',
@@ -747,6 +750,15 @@ export default function HomePage() {
                   role: 'Vice-President, Ezinwanyi',
                   sub: "Women's Wing",
                   pos: 'center 10%',
+                  initials: 'DN',
+                },
+                {
+                  src: '',
+                  name: 'Chidi Nsirim',
+                  role: 'Provost',
+                  sub: 'Protocol & Order',
+                  pos: 'center 12%',
+                  initials: 'CN',
                 },
               ].map((officer) => (
                 <div
@@ -754,14 +766,25 @@ export default function HomePage() {
                   className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden flex flex-col bg-white dark:bg-stone-900 shadow-xs"
                 >
                   <div className="relative w-full aspect-[4/5] bg-stone-100 dark:bg-stone-800">
-                    <Image
-                      src={officer.src}
-                      alt={officer.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover"
-                      style={{ objectPosition: officer.pos || 'center 12%' }}
-                    />
+                    {officer.src ? (
+                      <Image
+                        src={officer.src}
+                        alt={officer.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                        className="object-cover"
+                        style={{ objectPosition: officer.pos || 'center 12%' }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 dark:bg-stone-900 p-4 text-center">
+                        <div className="w-16 h-16 rounded-none bg-[#064e3b] text-amber-300 flex items-center justify-center font-serif font-bold text-xl border border-emerald-800 shadow-inner">
+                          {officer.initials || 'CN'}
+                        </div>
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-stone-400 mt-3 font-semibold">
+                          Official Portrait Pending
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-3.5 sm:p-4 border-t border-stone-100 dark:border-stone-800">
                     <p className="font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-400 truncate">
