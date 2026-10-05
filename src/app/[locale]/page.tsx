@@ -17,6 +17,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PublicSidebar } from '@/components/PublicSidebar';
+import { PublicHeader } from '@/components/PublicHeader';
 import { Sk, SkSection } from '@/components/Skeleton';
 
 // ─── Section label used throughout ───────────────────────────
@@ -229,32 +230,16 @@ function LeadershipSkeleton() {
         <Sk h="h-3" w="w-64" />
       </div>
 
-      <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-none mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
-        <div className="md:col-span-4">
-          <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5]">
-            <Sk h="h-full" w="w-full" rounded="rounded-none" />
-          </div>
-        </div>
-        <div className="md:col-span-8 space-y-3">
-          <Sk h="h-3" w="w-40" />
-          <Sk h="h-7 sm:h-9" w="w-64" />
-          <Sk h="h-4 sm:h-5" w="w-44" />
-          <Sk h="h-4" w="w-full" />
-          <Sk h="h-4" w="w-5/6" />
-          <Rule className="mt-4" />
-          <Sk h="h-3" w="w-56" />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-        {[1, 2, 3, 4, 5, 6].map((i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {[1, 2, 3, 4].map((i) => (
           <div key={i} className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden bg-white dark:bg-stone-900">
             <div className="aspect-[4/5] w-full">
               <Sk h="h-full" w="w-full" rounded="rounded-none" />
             </div>
-            <div className="p-3 space-y-1.5 border-t border-stone-100 dark:border-stone-800">
-              <Sk h="h-2.5" w="w-16" />
-              <Sk h="h-3.5" w="w-full" />
+            <div className="p-4 space-y-2 border-t border-stone-100 dark:border-stone-800">
+              <Sk h="h-2.5" w="w-20" />
+              <Sk h="h-4" w="w-full" />
+              <Sk h="h-2.5" w="w-24" />
             </div>
           </div>
         ))}
@@ -377,6 +362,9 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* ── Institutional Header (Face of the Site Upfront) ─── */}
+        <PublicHeader />
+
         {/* ── Hero Section ─────────────────────────────────────── */}
         <section className="bg-[#064e3b] text-white py-16 sm:py-24 lg:py-28 px-4 sm:px-6 border-b border-emerald-950">
           <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -396,19 +384,13 @@ export default function HomePage() {
                 Igbo diaspora across Canberra and the Australian Capital Territory.
               </p>
 
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <div className="pt-2">
                 <Link
                   href="/en/register"
-                  className="bg-stone-50 hover:bg-white text-[#064e3b] font-bold px-6 py-3 rounded-none text-sm transition tracking-wide text-center"
+                  className="inline-block bg-stone-50 hover:bg-white text-[#064e3b] font-bold px-8 py-3.5 rounded-none text-sm transition tracking-wider uppercase text-center shadow-sm"
                 >
-                  Submit Membership Application
+                  Become a Member
                 </Link>
-                <a
-                  href="#welcome"
-                  className="border border-emerald-500/30 hover:bg-emerald-900/50 text-emerald-50 font-semibold px-6 py-3 rounded-none text-sm transition text-center"
-                >
-                  President&apos;s Address
-                </a>
               </div>
             </div>
 
@@ -727,87 +709,70 @@ export default function HomePage() {
             aria-label="Executive Council"
           >
             <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
-              <SectionLabel>EXECUTIVE GOVERNANCE</SectionLabel>
+              <SectionLabel>EXECUTIVE LEADERSHIP</SectionLabel>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
-                The Executive Council (2025–2027)
+                Executive Leadership
               </h2>
               <p className="text-stone-500 text-xs sm:text-sm mt-1">
-                Democratically elected officers dedicated to administrative integrity and community
-                representation.
+                The President and Vice-President representing both the General Assembly &amp; Ezinwanyi Canberra (Women&apos;s Wing).
               </p>
             </div>
 
-            <div className="border border-stone-200 dark:border-stone-800 p-6 sm:p-8 rounded-none mb-8 grid md:grid-cols-12 gap-6 sm:gap-8 items-center bg-white dark:bg-stone-900/60">
-              <div className="md:col-span-4">
-                <div className="relative w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-none overflow-hidden">
-                  <Image
-                    src="/president-ifeanyi.jpg"
-                    alt="Chief Ifeanyi Onuchukwu"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-[center_12%]"
-                    priority
-                  />
-                </div>
-              </div>
-              <div className="md:col-span-8 space-y-2">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b] dark:text-emerald-400 block">
-                  President &amp; Executive Chairman
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">
-                  Chief Ifeanyi Onuchukwu
-                </h3>
-                <p className="font-serif italic text-stone-500 dark:text-stone-400 text-base sm:text-lg">
-                  Ikeorah 1 of Oraifite
-                </p>
-                <p className="text-stone-600 dark:text-stone-400 text-xs sm:text-sm leading-relaxed max-w-xl">
-                  Leading executive governance, constitutional custodianship, and community
-                  leadership for the Igbo community across the Australian Capital Territory.
-                </p>
-                <p className="font-mono text-[10px] text-stone-400 pt-3 border-t border-stone-100 dark:border-stone-800">
-                  President in Office Since 2021 · Executive Council Chair
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { src: '/vice-president-joseph.jpg',    name: 'Joseph Nwosu',             role: 'Vice-President',      pos: 'center 12%' },
-                { src: '/women-leader-nonye.jpg',       name: 'Nonye Orisakwe',           role: 'President, Ezinwanyi', pos: 'center 12%' },
-                { src: '/lawrence-ochu.jpg',            name: 'Lawrence Ochu',            role: 'Social Secretary',    pos: 'center 12%' },
-                { src: '/chibueze-iloelunachi.jpg',     name: 'C. Iloelunachi',           role: 'Assistant Sec.',      pos: 'center 12%' },
-                { src: null,                            name: 'Anderson Ikea',            role: 'Treasurer',           initials: 'AI'     },
-                { src: '/doris-njoku.jpg',              name: 'Doris Njoku',             role: 'Assistant Treas.',    pos: 'center 10%' },
+                {
+                  src: '/president-ifeanyi.jpg',
+                  name: 'Chief Ifeanyi Onuchukwu',
+                  role: 'President & Executive Chairman',
+                  sub: 'General Assembly (Men)',
+                  pos: 'center 12%',
+                },
+                {
+                  src: '/vice-president-joseph.jpg',
+                  name: 'Joseph Nwosu',
+                  role: 'Vice-President',
+                  sub: 'General Assembly (Men)',
+                  pos: 'center 12%',
+                },
+                {
+                  src: '/women-leader-nonye.jpg',
+                  name: 'Nonye Orisakwe',
+                  role: 'President, Ezinwanyi',
+                  sub: "Women's Wing",
+                  pos: 'center 12%',
+                },
+                {
+                  src: '/doris-njoku.jpg',
+                  name: 'Doris Njoku',
+                  role: 'Vice-President, Ezinwanyi',
+                  sub: "Women's Wing",
+                  pos: 'center 10%',
+                },
               ].map((officer) => (
                 <div
                   key={officer.name}
-                  className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden flex flex-col bg-white dark:bg-stone-900"
+                  className="border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden flex flex-col bg-white dark:bg-stone-900 shadow-xs"
                 >
                   <div className="relative w-full aspect-[4/5] bg-stone-100 dark:bg-stone-800">
-                    {officer.src ? (
-                      <Image
-                        src={officer.src}
-                        alt={officer.name}
-                        fill
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                        className="object-cover"
-                        style={{ objectPosition: officer.pos || 'center 12%' }}
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 bg-stone-800 text-white flex items-center justify-center font-serif font-bold text-sm">
-                          {officer.initials}
-                        </div>
-                      </div>
-                    )}
+                    <Image
+                      src={officer.src}
+                      alt={officer.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                      style={{ objectPosition: officer.pos || 'center 12%' }}
+                    />
                   </div>
-                  <div className="p-2.5 sm:p-3 border-t border-stone-100 dark:border-stone-800">
-                    <p className="font-mono text-[9px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-500 truncate">
+                  <div className="p-3.5 sm:p-4 border-t border-stone-100 dark:border-stone-800">
+                    <p className="font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-400 truncate">
                       {officer.role}
                     </p>
-                    <h4 className="font-serif font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm mt-0.5 truncate">
+                    <h4 className="font-serif font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base mt-0.5 truncate">
                       {officer.name}
                     </h4>
+                    <p className="text-[11px] text-stone-500 font-sans mt-0.5 truncate">
+                      {officer.sub}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -846,7 +811,7 @@ export default function HomePage() {
                       </p>
                     </div>
                     <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
-                      Recommended
+                      Family
                     </span>
                   </div>
 
@@ -888,7 +853,7 @@ export default function HomePage() {
                       </h3>
                       <p className="text-[10px] text-stone-400 font-mono mt-0.5">Individual Adult Member</p>
                     </div>
-                    <span className="border border-stone-300 dark:border-stone-700 text-stone-500 text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
+                    <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
                       Individual
                     </span>
                   </div>
@@ -904,7 +869,7 @@ export default function HomePage() {
                       'Member portal access & event RSVPs',
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-2.5">
-                        <span className="text-stone-800 dark:text-stone-300 font-bold shrink-0">✓</span>
+                        <span className="text-[#064e3b] dark:text-emerald-400 font-bold shrink-0">✓</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -914,7 +879,7 @@ export default function HomePage() {
                 <div className="pt-6 sm:pt-8">
                   <Link
                     href="/en/register"
-                    className="block w-full text-center border border-stone-300 dark:border-stone-700 hover:border-stone-500 text-stone-800 dark:text-stone-200 font-bold text-xs py-3 rounded-none uppercase tracking-wider transition"
+                    className="block w-full text-center bg-[#064e3b] hover:bg-emerald-950 text-white font-bold text-xs py-3 rounded-none uppercase tracking-wider transition"
                   >
                     Register Single Account
                   </Link>

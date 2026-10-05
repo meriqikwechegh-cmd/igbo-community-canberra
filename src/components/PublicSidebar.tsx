@@ -13,7 +13,7 @@ interface PublicSidebarProps {
 
 const navItems = [
   {
-    label: "President's Address",
+    label: 'About Us',
     href: '#welcome',
     icon: (
       <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,16 +22,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Charter & Pillars',
-    href: '#charter',
-    icon: (
-      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5M4.5 21V10.5" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Cultural Calendar',
+    label: 'Activities',
     href: '#events',
     icon: (
       <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,16 +31,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Executive Council',
-    href: '#leadership',
-    icon: (
-      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Membership Dues',
+    label: 'Membership',
     href: '#membership',
     icon: (
       <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +40,16 @@ const navItems = [
     ),
   },
   {
-    label: 'Contact Secretariat',
+    label: 'Leadership',
+    href: '#leadership',
+    icon: (
+      <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Contact Us',
     href: '#contact',
     icon: (
       <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,8 +60,8 @@ const navItems = [
 ];
 
 export function PublicSidebar({
-  memberLoginText = 'Member Portal',
-  joinText = 'Apply for Membership',
+  memberLoginText = 'Member Login',
+  joinText = 'Registration',
 }: PublicSidebarProps = {}) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -224,110 +215,6 @@ export function PublicSidebar({
       >
         {sidebarContent}
       </aside>
-
-      {/* Mobile Top Bar (< lg) */}
-      <div className="lg:hidden bg-stone-900 text-white px-4 h-14 flex items-center justify-between border-b border-stone-800 sticky top-0 z-40">
-        <Link href="/en" className="flex items-center gap-2.5 min-w-0">
-          <div className="relative w-6 h-6 border border-stone-700 bg-white shrink-0">
-            <Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" />
-          </div>
-          <span className="font-serif font-bold text-xs text-stone-100 truncate">
-            Igbo Community Canberra
-          </span>
-        </Link>
-
-        <div className="flex items-center gap-2">
-          <ThemeToggle showLabel={false} />
-          <button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-1.5 text-stone-300 hover:text-white rounded-none hover:bg-stone-800 transition"
-            aria-label="Toggle Navigation Sidebar"
-          >
-            {mobileOpen ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Slide-Out Drawer */}
-      {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 flex">
-          <div
-            className="fixed inset-0 bg-stone-950/70 backdrop-blur-xs transition-opacity"
-            onClick={() => setMobileOpen(false)}
-          />
-          {/* Mobile drawer always shows full expanded sidebar */}
-          <div className="relative w-72 max-w-[85vw] h-full z-10 shadow-2xl">
-            <div className="flex flex-col h-full bg-stone-900 text-stone-100 border-r border-stone-800 select-none">
-              <div className="h-16 flex items-center px-5 border-b border-stone-800 bg-stone-950 shrink-0">
-                <Link href="/en" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 min-w-0">
-                  <div className="relative w-8 h-8 border border-stone-700 bg-white shrink-0">
-                    <Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="font-serif font-bold text-sm text-stone-100 block leading-tight truncate">Igbo Community</span>
-                    <span className="text-[9px] font-mono text-emerald-400 uppercase tracking-widest block truncate">Canberra Inc. · A04821</span>
-                  </div>
-                </Link>
-              </div>
-
-              <div className="px-5 py-2.5 bg-stone-950/60 border-b border-stone-800 flex items-center justify-between shrink-0">
-                <span className="text-[11px] font-serif italic text-stone-300 truncate">Onye aghana nwanne ya</span>
-                <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded-none shrink-0 ml-2">Est. 2012</span>
-              </div>
-
-              <nav className="flex-1 p-2 space-y-0.5 overflow-y-auto">
-                <div className="px-3 py-1.5 text-[9px] font-mono font-bold uppercase tracking-widest text-stone-500">
-                  Website Navigation
-                </div>
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-none text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors"
-                  >
-                    <span className="text-stone-400 shrink-0">{item.icon}</span>
-                    <span className="truncate">{item.label}</span>
-                  </a>
-                ))}
-
-                <div className="pt-4 px-3 pb-1.5 text-[9px] font-mono font-bold uppercase tracking-widest text-stone-500">
-                  Member Access
-                </div>
-                <div className="space-y-1.5 px-1 pb-2">
-                  <Link href="/en/login" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-semibold text-stone-200 border border-stone-700 py-2 rounded-none hover:bg-stone-800 transition">
-                    {memberLoginText}
-                  </Link>
-                  <Link href="/en/register" onClick={() => setMobileOpen(false)} className="block text-center font-sans text-xs font-bold bg-[#064e3b] text-white py-2 rounded-none hover:bg-emerald-900 transition">
-                    {joinText}
-                  </Link>
-                </div>
-              </nav>
-
-              <div className="px-3 py-3 border-t border-stone-800 bg-stone-900/90 shrink-0">
-                <div className="flex items-center justify-between px-1">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">Appearance</span>
-                  <ThemeToggle />
-                </div>
-              </div>
-
-              <div className="px-4 py-3 border-t border-stone-800 bg-stone-950 shrink-0 flex items-center justify-between text-[10px] font-mono text-stone-500">
-                <span>ICC Canberra</span>
-                <span>Powered by <strong className="text-emerald-400 font-bold">MeriQTech</strong></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
