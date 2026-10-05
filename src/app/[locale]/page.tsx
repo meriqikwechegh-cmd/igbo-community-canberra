@@ -774,7 +774,7 @@ export default function HomePage() {
               {[
                 { src: '/vice-president-joseph.jpg',    name: 'Joseph Nwosu',             role: 'Vice-President',      pos: 'center 12%' },
                 { src: '/women-leader-nonye.jpg',       name: 'Nonye Orisakwe',           role: 'President, Ezinwanyi', pos: 'center 12%' },
-                { src: '/lawrence-ochu.jpg',            name: 'Lawrence Ochu',            role: 'P.R.O.',              pos: 'center 12%' },
+                { src: '/lawrence-ochu.jpg',            name: 'Lawrence Ochu',            role: 'Social Secretary',    pos: 'center 12%' },
                 { src: '/chibueze-iloelunachi.jpg',     name: 'C. Iloelunachi',           role: 'Assistant Sec.',      pos: 'center 12%' },
                 { src: null,                            name: 'Anderson Ikea',            role: 'Treasurer',           initials: 'AI'     },
                 { src: '/doris-njoku.jpg',              name: 'Doris Njoku',             role: 'Assistant Treas.',    pos: 'center 10%' },
