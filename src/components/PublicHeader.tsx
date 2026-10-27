@@ -42,10 +42,10 @@ export function PublicHeader({
             />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-serif font-bold text-sm sm:text-base text-stone-900 dark:text-stone-100 tracking-tight leading-tight truncate">
+            <span className="font-sans font-bold text-sm sm:text-base text-stone-900 dark:text-stone-100 tracking-tight leading-tight truncate">
               Igbo Community Canberra
             </span>
-            <span className="font-mono text-[9px] sm:text-[10px] font-semibold text-[#064e3b] dark:text-emerald-400 uppercase tracking-widest leading-none mt-0.5 truncate">
+            <span className="font-sans text-[11px] sm:text-[11px] font-semibold text-[#064e3b] dark:text-emerald-400 uppercase tracking-wide leading-none mt-0.5 truncate">
               Cultural Association Inc. · A04821
             </span>
           </div>

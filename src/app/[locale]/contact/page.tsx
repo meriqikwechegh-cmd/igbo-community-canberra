@@ -53,11 +53,11 @@ export default function ContactPage() {
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
-              <span className="font-mono text-[11px] sm:text-xs">
+              <span className="font-sans text-[11px] sm:text-xs">
                 Secretariat &amp; Executive Council Correspondence · ACT Inc. A04821
               </span>
             </div>
-            <Link href="/en" className="text-[11px] font-mono text-stone-400 hover:text-white underline">
+            <Link href="/en" className="text-[11px] font-sans text-stone-400 hover:text-white underline">
               ← Back to Portal Home
             </Link>
           </div>
@@ -66,10 +66,10 @@ export default function ContactPage() {
         {/* Banner */}
         <section className="bg-[#064e3b] text-white py-12 sm:py-16 px-4 sm:px-8 border-b border-emerald-950">
           <div className="max-w-5xl mx-auto space-y-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-300 font-bold block">
+            <span className="font-sans text-[11px] uppercase tracking-wide text-emerald-300 font-bold block">
               OFFICIAL CORRESPONDENCE
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-50">
+            <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-50">
               Secretariat &amp; Community Contact
             </h1>
             <p className="text-sm sm:text-base text-emerald-100/80 max-w-2xl leading-relaxed">
@@ -83,19 +83,19 @@ export default function ContactPage() {
           {/* Left Column: Official Details */}
           <div className="md:col-span-5 space-y-6">
             <div className="border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 rounded-none">
-              <h2 className="font-serif text-lg font-bold text-stone-900 dark:text-stone-100 mb-4 pb-2 border-b border-stone-100 dark:border-stone-800">
+              <h2 className="font-sans text-lg font-bold text-stone-900 dark:text-stone-100 mb-4 pb-2 border-b border-stone-100 dark:border-stone-800">
                 Official Directory
               </h2>
               <dl className="space-y-4 text-xs">
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-stone-400">Postal Address</dt>
+                  <dt className="font-sans text-[11px] uppercase tracking-wide text-stone-400">Postal Address</dt>
                   <dd className="font-semibold text-stone-800 dark:text-stone-200 mt-0.5">
                     Igbo Community Canberra Inc.<br />
                     GPO Box 1985, Canberra ACT 2601
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-stone-400">General Secretariat</dt>
+                  <dt className="font-sans text-[11px] uppercase tracking-wide text-stone-400">General Secretariat</dt>
                   <dd className="font-semibold text-[#064e3b] dark:text-emerald-400 mt-0.5">
                     <a href="mailto:secretariat@igbocommunitycanberra.org.au" className="hover:underline">
                       secretariat@igbocommunitycanberra.org.au
@@ -103,7 +103,7 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-stone-400">Privacy &amp; Data Rights</dt>
+                  <dt className="font-sans text-[11px] uppercase tracking-wide text-stone-400">Privacy &amp; Data Rights</dt>
                   <dd className="font-semibold text-[#064e3b] dark:text-emerald-400 mt-0.5">
                     <a href="mailto:privacy@igbocommunitycanberra.org.au" className="hover:underline">
                       privacy@igbocommunitycanberra.org.au
@@ -111,13 +111,13 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-stone-400">Direct Telephone</dt>
+                  <dt className="font-sans text-[11px] uppercase tracking-wide text-stone-400">Direct Telephone</dt>
                   <dd className="font-semibold text-stone-800 dark:text-stone-200 mt-0.5">
                     (02) 6100 4820
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-widest text-stone-400">Assembly Venue</dt>
+                  <dt className="font-sans text-[11px] uppercase tracking-wide text-stone-400">Assembly Venue</dt>
                   <dd className="text-stone-600 dark:text-stone-400 mt-0.5">
                     Acton Community Centre, Acton ACT 2601
                   </dd>
@@ -126,7 +126,7 @@ export default function ContactPage() {
             </div>
 
             <div className="p-4 bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-xs text-stone-500 rounded-none space-y-1">
-              <p className="font-mono font-bold text-stone-700 dark:text-stone-300">Confidentiality Guarantee</p>
+              <p className="font-sans font-bold text-stone-700 dark:text-stone-300">Confidentiality Guarantee</p>
               <p className="leading-relaxed">
                 All communications sent to the Secretariat are managed confidentially. We never publish contact details or share inquiries with external parties.
               </p>
@@ -136,7 +136,7 @@ export default function ContactPage() {
           {/* Right Column: Contact Form */}
           <div className="md:col-span-7">
             <div className="border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 p-6 sm:p-8 rounded-none">
-              <h2 className="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-1">
+              <h2 className="font-sans text-xl font-bold text-stone-900 dark:text-stone-100 mb-1">
                 Direct Secretariat Communication
               </h2>
               <p className="text-xs text-stone-500 mb-6">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   <div className="w-10 h-10 bg-[#064e3b] text-white flex items-center justify-center mx-auto rounded-none">
                     ✓
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-stone-900 dark:text-stone-100">
+                  <h3 className="font-sans text-lg font-bold text-stone-900 dark:text-stone-100">
                     Dispatch Received
                   </h3>
                   <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed max-w-sm mx-auto">
@@ -168,7 +168,7 @@ export default function ContactPage() {
                         hp_field: '',
                       });
                     }}
-                    className="text-xs font-mono underline text-[#064e3b] dark:text-emerald-400 mt-2 block mx-auto"
+                    className="text-xs font-sans underline text-[#064e3b] dark:text-emerald-400 mt-2 block mx-auto"
                   >
                     Submit another dispatch
                   </button>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                   )}
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Full Legal Name *
                     </label>
                     <input
@@ -210,7 +210,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                      <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                         Email Address *
                       </label>
                       <input
@@ -223,7 +223,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                      <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                         Phone (Optional)
                       </label>
                       <input
@@ -237,7 +237,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Subject Matter *
                     </label>
                     <select
@@ -255,7 +255,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Message / Dispatch Content *
                     </label>
                     <textarea

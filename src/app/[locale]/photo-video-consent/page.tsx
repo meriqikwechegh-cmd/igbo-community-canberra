@@ -59,7 +59,7 @@ export default function PhotoVideoConsentPage() {
             <li>Specify the URL or context of the image/video.</li>
             <li>The Secretariat will review and remove or blur the requested media within 5 business days.</li>
           </ul>
-          <p className="font-mono text-xs text-stone-500 pt-2">
+          <p className="font-sans text-xs text-stone-500 pt-2">
             [Photo &amp; Video Opt-Out Protocol Placeholder: Pending final ratification by ICC Executive Council].
           </p>
         </>

@@ -36,13 +36,13 @@ export default function LegalPageLayout({
           <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
-              <span className="font-mono text-[11px] sm:text-xs">
+              <span className="font-sans text-[11px] sm:text-xs">
                 Official Institutional Documentation · ACT Inc. A04821
               </span>
             </div>
             <Link
               href="/en"
-              className="text-[11px] font-mono text-stone-400 hover:text-white underline"
+              className="text-[11px] font-sans text-stone-400 hover:text-white underline"
             >
               ← Back to Portal Home
             </Link>
@@ -52,13 +52,13 @@ export default function LegalPageLayout({
         {/* Header Banner */}
         <section className="bg-[#064e3b] text-white py-12 sm:py-16 px-4 sm:px-8 border-b border-emerald-950">
           <div className="max-w-4xl mx-auto space-y-3">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-300 font-bold block">
+            <span className="font-sans text-[11px] uppercase tracking-wide text-emerald-300 font-bold block">
               {category}
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-50">
+            <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-50">
               {title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-emerald-200/80 pt-2">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-sans text-emerald-200/80 pt-2">
               <span>{version}</span>
               <span>·</span>
               <span>Effective: {lastUpdated}</span>
@@ -74,7 +74,7 @@ export default function LegalPageLayout({
         <div className="max-w-4xl mx-auto w-full px-4 sm:px-8 pt-8">
           <div className="p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 text-amber-800 dark:text-amber-300 text-xs rounded-none">
             <div className="flex items-start gap-2.5">
-              <span className="font-bold shrink-0 font-mono">[ICC VERIFICATION PLACEHOLDER]</span>
+              <span className="font-bold shrink-0 font-sans">[ICC VERIFICATION PLACEHOLDER]</span>
               <p className="leading-relaxed">
                 This document reflects the foundational privacy and governance framework of Igbo Community Canberra Inc. (ACT Reg. A04821). All policy statements, retention periods, officer contacts, and storage procedures are presented in accordance with the Privacy Act 1988 (Cth) and are pending formal verification and ratification by the ICC Executive Council.
               </p>
@@ -90,10 +90,10 @@ export default function LegalPageLayout({
               className="border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/70 p-6 sm:p-8 rounded-none shadow-xs"
             >
               <div className="flex items-center gap-3 pb-3 mb-4 border-b border-stone-100 dark:border-stone-800">
-                <span className="font-mono text-xs text-[#064e3b] dark:text-emerald-400 font-bold">
+                <span className="font-sans text-xs text-[#064e3b] dark:text-emerald-400 font-bold">
                   § {(idx + 1).toString().padStart(2, '0')}
                 </span>
-                <h2 className="font-serif text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100">
+                <h2 className="font-sans text-lg sm:text-xl font-bold text-stone-900 dark:text-stone-100">
                   {section.title}
                 </h2>
               </div>
@@ -106,7 +106,7 @@ export default function LegalPageLayout({
 
         {/* Structured Footer */}
         <footer className="bg-stone-900 text-stone-400 py-10 px-4 sm:px-8 border-t border-stone-800 mt-auto">
-          <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans">
             <p>© {new Date().getFullYear()} Igbo Community Canberra Inc. · ABN 48 192 840 129</p>
             <div className="flex flex-wrap gap-4 text-stone-400">
               <Link href="/en/privacy-policy" className="hover:text-white underline">Privacy</Link>

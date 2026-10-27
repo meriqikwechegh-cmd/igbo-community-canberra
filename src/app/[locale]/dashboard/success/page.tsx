@@ -10,7 +10,7 @@ export default function PaymentSuccessPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h1 className="font-serif text-2xl font-bold text-slate-900 mb-2">Payment Successfully Confirmed</h1>
+        <h1 className="font-sans text-2xl font-bold text-slate-900 mb-2">Payment Successfully Confirmed</h1>
         <p className="text-slate-600 text-sm mb-6 leading-relaxed">
           Daalụ. Your transaction has been processed securely via Stripe. Your membership ledger and household status have been updated.
         </p>

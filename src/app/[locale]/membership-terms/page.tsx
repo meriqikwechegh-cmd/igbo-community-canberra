@@ -80,7 +80,7 @@ export default function MembershipTermsPage() {
           <p>
             Disciplinary proceedings or termination of membership for constitutional breach follow due process and natural justice as stipulated under Section 7 of the ICC Constitution.
           </p>
-          <p className="font-mono text-xs text-stone-500 pt-2">
+          <p className="font-sans text-xs text-stone-500 pt-2">
             [Membership Terms Placeholder: Subject to constitutional revisions ratified at General Assembly].
           </p>
         </>

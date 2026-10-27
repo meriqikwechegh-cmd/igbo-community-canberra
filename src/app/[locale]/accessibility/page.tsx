@@ -52,12 +52,12 @@ export default function AccessibilityPage() {
           <p>
             If you encounter any accessibility barrier on our portal or require alternative formats for constitutional or welfare documents, please notify our Secretariat:
           </p>
-          <div className="p-4 bg-stone-100 dark:bg-stone-800 font-mono text-xs space-y-1">
+          <div className="p-4 bg-stone-100 dark:bg-stone-800 font-sans text-xs space-y-1">
             <p>Digital Access Coordinator · Igbo Community Canberra Inc.</p>
             <p>Email: <a href="mailto:accessibility@igbocommunitycanberra.org.au" className="underline">accessibility@igbocommunitycanberra.org.au</a></p>
             <p>Phone: (02) 6100 4820</p>
           </div>
-          <p className="font-mono text-xs text-stone-500 pt-2">
+          <p className="font-sans text-xs text-stone-500 pt-2">
             [Accessibility Review Placeholder: Ongoing audit scheduled by ICC Secretariat].
           </p>
         </>

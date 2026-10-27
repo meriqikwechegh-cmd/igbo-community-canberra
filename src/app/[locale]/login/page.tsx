@@ -43,10 +43,10 @@ export default function LoginPage() {
             <Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" />
           </div>
           <div>
-            <span className="font-serif font-bold text-stone-900 dark:text-stone-100 block text-sm leading-tight">
+            <span className="font-sans font-bold text-stone-900 dark:text-stone-100 block text-sm leading-tight">
               Igbo Community
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            <span className="text-[11px] font-sans uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
               Canberra Inc. · A04821
             </span>
           </div>
@@ -62,10 +62,10 @@ export default function LoginPage() {
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="bg-white dark:bg-stone-900 w-full max-w-md rounded-none border border-stone-200 dark:border-stone-800 shadow-sm p-6 sm:p-10">
           <div className="text-center mb-8">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-[#064e3b] dark:text-emerald-400 font-bold block mb-1">
+            <span className="font-sans text-[11px] uppercase tracking-wide text-[#064e3b] dark:text-emerald-400 font-bold block mb-1">
               PORTAL ACCESS
             </span>
-            <h1 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100 mb-1">
+            <h1 className="font-sans text-2xl font-bold text-stone-900 dark:text-stone-100 mb-1">
               Member Sign In
             </h1>
             <p className="text-stone-500 text-xs">
@@ -85,7 +85,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1" htmlFor="email">
+              <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1" htmlFor="email">
                 Registered Email Address
               </label>
               <input
@@ -100,7 +100,7 @@ export default function LoginPage() {
             </div>
             <div>
               <div className="flex justify-between items-center mb-1">
-                <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400" htmlFor="password">
+                <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400" htmlFor="password">
                   Password
                 </label>
                 <Link href="/en/contact" className="text-[11px] text-stone-500 hover:text-stone-800 underline">
@@ -120,7 +120,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#064e3b] hover:bg-emerald-950 text-white font-bold py-3 rounded-none transition disabled:opacity-60 text-xs uppercase tracking-widest cursor-pointer"
+              className="w-full bg-[#064e3b] hover:bg-emerald-950 text-white font-bold py-3 rounded-none transition disabled:opacity-60 text-xs uppercase tracking-wide cursor-pointer"
             >
               {loading ? 'Authenticating…' : 'Sign In'}
             </button>

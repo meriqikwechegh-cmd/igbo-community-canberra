@@ -42,7 +42,7 @@ export default function CookieConsentBanner() {
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1 text-xs leading-relaxed max-w-3xl">
-          <p className="font-bold text-white uppercase tracking-wider text-[11px] font-mono">
+          <p className="font-bold text-white uppercase tracking-wider text-[11px] font-sans">
             Privacy &amp; Cookie Notice
           </p>
           <p className="text-stone-300">

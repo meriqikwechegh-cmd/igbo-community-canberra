@@ -115,8 +115,8 @@ export default function EventsPortalPage() {
       {/* Editorial Header */}
       <div className="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#064e3b]">SECRETARIAT EVENTS</span>
-          <h1 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-0.5">Community Events &amp; RSVPs</h1>
+          <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-[#064e3b]">SECRETARIAT EVENTS</span>
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-stone-900 mt-0.5">Community Events &amp; RSVPs</h1>
           <p className="text-stone-600 text-xs sm:text-sm mt-1">
             Browse upcoming Igbo Community Canberra festivals, workshops, and general assemblies.
           </p>
@@ -139,7 +139,7 @@ export default function EventsPortalPage() {
       {/* Household RSVP Setting */}
       <div className="bg-white border border-stone-200 rounded-md p-4 flex items-center justify-between font-sans">
         <div>
-          <p className="font-bold text-xs text-stone-900 uppercase tracking-wider font-mono">Household Auto-RSVP</p>
+          <p className="font-bold text-xs text-stone-900 uppercase tracking-wider font-sans">Household Auto-RSVP</p>
           <p className="text-xs text-stone-500 mt-0.5">Automatically register all linked family members when you RSVP &quot;Yes&quot;</p>
         </div>
         <label className="flex items-center gap-2 text-xs font-bold text-stone-700 cursor-pointer">
@@ -163,22 +163,22 @@ export default function EventsPortalPage() {
             <div key={evt.id} className="bg-white rounded-md border border-stone-200 p-6 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-stone-100 pb-3">
                 <div>
-                  <span className="bg-stone-100 text-stone-700 text-[10px] font-mono font-bold px-2 py-0.5 rounded border border-stone-200 uppercase">
+                  <span className="bg-stone-100 text-stone-700 text-[11px] font-sans font-bold px-2 py-0.5 rounded border border-stone-200 uppercase">
                     {evt.tag}
                   </span>
-                  <h2 className="text-xl font-serif font-bold text-stone-900 mt-2">{evt.title}</h2>
-                  <p className="text-xs text-stone-500 mt-1 font-mono">📅 {evt.formattedDate}</p>
-                  <p className="text-xs text-stone-500 font-mono">📍 {evt.location}</p>
+                  <h2 className="text-xl font-sans font-bold text-stone-900 mt-2">{evt.title}</h2>
+                  <p className="text-xs text-stone-500 mt-1 font-sans">📅 {evt.formattedDate}</p>
+                  <p className="text-xs text-stone-500 font-sans">📍 {evt.location}</p>
                 </div>
 
                 <div className="text-right shrink-0">
-                  <span className={`text-[10px] font-mono font-bold px-2 py-1 rounded border uppercase ${
+                  <span className={`text-[11px] font-sans font-bold px-2 py-1 rounded border uppercase ${
                     isFull ? 'bg-rose-50 text-rose-800 border-rose-200' : 'bg-emerald-50 text-[#064e3b] border-emerald-200'
                   }`}>
                     {evt.yesCount} / {evt.capacityLimit} Attending {isFull ? '(FULL)' : ''}
                   </span>
                   {evt.fee > 0 && (
-                    <p className="text-xs font-serif font-bold text-[#064e3b] mt-1">${evt.fee} AUD / person</p>
+                    <p className="text-xs font-sans font-bold text-[#064e3b] mt-1">${evt.fee} AUD / person</p>
                   )}
                 </div>
               </div>
@@ -188,7 +188,7 @@ export default function EventsPortalPage() {
               {/* RSVP Action Bar */}
               <div className="pt-3 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-sans">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-wider mr-1">Your RSVP:</span>
+                  <span className="text-[11px] font-sans font-bold text-stone-500 uppercase tracking-wider mr-1">Your RSVP:</span>
                   <button
                     onClick={() => handleRSVP(evt.id, 'yes')}
                     className={`px-3 py-1.5 rounded text-xs font-bold transition uppercase tracking-wider ${
@@ -227,7 +227,7 @@ export default function EventsPortalPage() {
 
                 <div className="flex items-center gap-2">
                   {currentRsvp === 'waitlist' && (
-                    <span className="text-[10px] font-mono bg-amber-50 text-amber-900 font-bold px-2 py-1 rounded border border-amber-200">
+                    <span className="text-[11px] font-sans bg-amber-50 text-amber-900 font-bold px-2 py-1 rounded border border-amber-200">
                       Waitlisted (#3)
                     </span>
                   )}
@@ -249,13 +249,13 @@ export default function EventsPortalPage() {
         <div className="fixed inset-0 bg-stone-900/60 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-md p-6 max-w-lg w-full border border-stone-300 font-sans space-y-4">
             <div className="flex justify-between items-center border-b border-stone-200 pb-3">
-              <h2 className="text-base font-serif font-bold text-stone-900">Create Community Event</h2>
+              <h2 className="text-base font-sans font-bold text-stone-900">Create Community Event</h2>
               <button onClick={() => setShowCreateModal(false)} className="text-stone-400 hover:text-stone-700 text-lg font-bold">✕</button>
             </div>
 
             <form onSubmit={handleCreateEvent} className="space-y-4">
               <div>
-                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Event Title</label>
+                <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Event Title</label>
                 <input
                   type="text"
                   required
@@ -268,7 +268,7 @@ export default function EventsPortalPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Date &amp; Time</label>
+                  <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Date &amp; Time</label>
                   <input
                     type="datetime-local"
                     required
@@ -278,7 +278,7 @@ export default function EventsPortalPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Capacity</label>
+                  <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Capacity</label>
                   <input
                     type="number"
                     value={newEvent.capacityLimit}
@@ -290,7 +290,7 @@ export default function EventsPortalPage() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Location</label>
+                  <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Location</label>
                   <input
                     type="text"
                     required
@@ -301,7 +301,7 @@ export default function EventsPortalPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Fee (AUD)</label>
+                  <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Fee (AUD)</label>
                   <input
                     type="number"
                     step="0.01"
@@ -313,7 +313,7 @@ export default function EventsPortalPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase font-bold text-stone-700 mb-1">Description</label>
+                <label className="block text-xs font-sans uppercase font-bold text-stone-700 mb-1">Description</label>
                 <textarea
                   rows={3}
                   placeholder="Event details, schedule, food and dress code instructions..."

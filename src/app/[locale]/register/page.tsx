@@ -69,7 +69,7 @@ export default function RegisterPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+          <h1 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2">
             Membership Application Received
           </h1>
           <p className="text-stone-600 dark:text-stone-300 text-xs sm:text-sm mb-6 leading-relaxed">
@@ -77,7 +77,7 @@ export default function RegisterPage() {
           </p>
           <Link
             href="/en/login"
-            className="block w-full bg-[#064e3b] hover:bg-emerald-950 text-white font-bold py-3 rounded-none transition text-xs uppercase tracking-widest text-center"
+            className="block w-full bg-[#064e3b] hover:bg-emerald-950 text-white font-bold py-3 rounded-none transition text-xs uppercase tracking-wide text-center"
           >
             Proceed to Member Sign In
           </Link>
@@ -95,10 +95,10 @@ export default function RegisterPage() {
             <Image src="/logo.jpg" alt="ICC Logo" fill className="object-contain" />
           </div>
           <div>
-            <span className="font-serif font-bold text-stone-900 dark:text-stone-100 block text-sm leading-tight">
+            <span className="font-sans font-bold text-stone-900 dark:text-stone-100 block text-sm leading-tight">
               Igbo Community
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            <span className="text-[11px] font-sans uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
               Canberra Inc. · A04821
             </span>
           </div>
@@ -120,7 +120,7 @@ export default function RegisterPage() {
             {['1. Primary Member', '2. Household & Dues'].map((label, i) => (
               <div key={label} className="flex items-center gap-2 flex-1">
                 <div
-                  className={`w-6 h-6 flex items-center justify-center text-xs font-mono font-bold rounded-none border transition ${
+                  className={`w-6 h-6 flex items-center justify-center text-xs font-sans font-bold rounded-none border transition ${
                     step > i + 1
                       ? 'bg-[#064e3b] border-[#064e3b] text-white'
                       : step === i + 1
@@ -131,7 +131,7 @@ export default function RegisterPage() {
                   {step > i + 1 ? '✓' : i + 1}
                 </div>
                 <span
-                  className={`text-xs font-medium uppercase tracking-wider font-mono ${
+                  className={`text-xs font-medium uppercase tracking-wider font-sans ${
                     step === i + 1 ? 'text-[#064e3b] dark:text-emerald-400 font-bold' : 'text-stone-400'
                   }`}
                 >
@@ -143,7 +143,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="mb-6">
-            <h1 className="font-serif text-2xl font-bold text-stone-900 dark:text-stone-100">
+            <h1 className="font-sans text-2xl font-bold text-stone-900 dark:text-stone-100">
               {step === 1 ? 'Primary Member Registration' : 'Address, Plan & Privacy Consent'}
             </h1>
             <p className="text-stone-500 text-xs mt-1">
@@ -205,7 +205,7 @@ export default function RegisterPage() {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       First Name *
                     </label>
                     <input
@@ -217,7 +217,7 @@ export default function RegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Last Name *
                     </label>
                     <input
@@ -231,7 +231,7 @@ export default function RegisterPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                     Email Address (Official Member Account) *
                   </label>
                   <input
@@ -245,7 +245,7 @@ export default function RegisterPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                     Contact Phone (For Secretariat Communications)
                   </label>
                   <input
@@ -259,7 +259,7 @@ export default function RegisterPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Password (Min. 8 characters) *
                     </label>
                     <input
@@ -273,7 +273,7 @@ export default function RegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Confirm Password *
                     </label>
                     <input
@@ -292,7 +292,7 @@ export default function RegisterPage() {
             {step === 2 && (
               <>
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                     Street Address (Household Residence) *
                   </label>
                   <input
@@ -306,7 +306,7 @@ export default function RegisterPage() {
 
                 <div className="grid grid-cols-3 gap-3">
                   <div className="col-span-1">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Suburb *
                     </label>
                     <input
@@ -318,7 +318,7 @@ export default function RegisterPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       State *
                     </label>
                     <select
@@ -333,7 +333,7 @@ export default function RegisterPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
+                    <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-1">
                       Postcode *
                     </label>
                     <input
@@ -347,7 +347,7 @@ export default function RegisterPage() {
                 </div>
 
                 <div className="pt-2">
-                  <label className="block text-xs font-mono uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2">
                     Select Membership Dues Category *
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -380,10 +380,10 @@ export default function RegisterPage() {
                           checked={form.planType === plan.key}
                           onChange={() => update('planType', plan.key)}
                         />
-                        <p className="font-serif font-bold text-sm text-stone-900 dark:text-stone-100">
+                        <p className="font-sans font-bold text-sm text-stone-900 dark:text-stone-100">
                           {plan.label}
                         </p>
-                        <p className="text-[#064e3b] dark:text-emerald-400 font-mono font-bold text-base mt-0.5">
+                        <p className="text-[#064e3b] dark:text-emerald-400 font-sans font-bold text-base mt-0.5">
                           {plan.price}
                         </p>
                         <p className="text-[11px] text-stone-500 mt-1">{plan.sub}</p>
@@ -421,7 +421,7 @@ export default function RegisterPage() {
             </div>
           </form>
 
-          <p className="text-[10px] font-mono text-stone-400 text-center mt-6">
+          <p className="text-[11px] font-sans text-stone-400 text-center mt-6">
             Data protected under Privacy Act 1988 (Cth) · Canberra ACT
           </p>
         </div>

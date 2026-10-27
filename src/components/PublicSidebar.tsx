@@ -86,10 +86,10 @@ export function PublicSidebar({
               <Image src="/logo.jpg" alt="Igbo Community Canberra Logo" fill className="object-contain" />
             </div>
             <div className="min-w-0">
-              <span className="font-serif font-bold text-sm text-stone-100 block leading-tight truncate">
+              <span className="font-sans font-bold text-sm text-stone-100 block leading-tight truncate">
                 Igbo Community
               </span>
-              <span className="text-[9px] font-mono text-emerald-400 uppercase tracking-widest block truncate">
+              <span className="text-[11px] font-sans font-semibold text-emerald-400 uppercase tracking-wider block truncate">
                 Canberra Inc. · A04821
               </span>
             </div>
@@ -100,19 +100,19 @@ export function PublicSidebar({
       {/* Motto banner — hidden when collapsed */}
       {!collapsed && (
         <div className="px-5 py-2.5 bg-stone-950/60 border-b border-stone-800 flex items-center justify-between shrink-0">
-          <span className="text-[11px] font-serif italic text-stone-300 truncate">
+          <span className="text-xs font-sans font-medium text-stone-200 truncate">
             Onye aghana nwanne ya
           </span>
-          <span className="text-[9px] font-mono text-emerald-400 border border-emerald-900 bg-emerald-950 px-1.5 py-0.5 rounded-none shrink-0 ml-2">
+          <span className="text-[11px] font-sans font-bold text-emerald-300 border border-emerald-800/80 bg-emerald-950 px-2 py-0.5 shrink-0 ml-2">
             Est. 2012
           </span>
         </div>
       )}
 
       {/* Navigation Links */}
-      <nav className="flex-1 p-2 space-y-0.5 overflow-y-auto">
+      <nav className="flex-1 p-2 space-y-0.5 overflow-y-auto font-sans">
         {!collapsed && (
-          <div className="px-3 py-1.5 text-[9px] font-mono font-bold uppercase tracking-widest text-stone-500">
+          <div className="px-3 py-1.5 text-xs font-sans font-bold uppercase tracking-wider text-stone-400">
             Website Navigation
           </div>
         )}
@@ -122,7 +122,7 @@ export function PublicSidebar({
             key={item.href}
             href={item.href}
             title={collapsed ? item.label : undefined}
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-none text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors ${
+            className={`flex items-center gap-3 px-3 py-2.5 text-xs font-semibold text-stone-300 hover:bg-stone-800 hover:text-white transition-colors ${
               collapsed ? 'justify-center' : ''
             }`}
           >
@@ -134,7 +134,7 @@ export function PublicSidebar({
         {/* Member Access buttons — hidden when collapsed */}
         {!collapsed && (
           <>
-            <div className="pt-4 px-3 pb-1.5 text-[9px] font-mono font-bold uppercase tracking-widest text-stone-500">
+            <div className="pt-4 px-3 pb-1.5 text-xs font-sans font-bold uppercase tracking-wider text-stone-400">
               Member Access
             </div>
             <div className="space-y-1.5 px-1 pb-2">
@@ -161,7 +161,7 @@ export function PublicSidebar({
           <ThemeToggle showLabel={false} />
         ) : (
           <div className="flex items-center justify-between px-1">
-            <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">
+            <span className="text-xs font-sans font-medium text-stone-300">
               Appearance
             </span>
             <ThemeToggle showLabel={false} />
@@ -174,7 +174,7 @@ export function PublicSidebar({
         <button
           type="button"
           onClick={() => setPinned(!pinned)}
-          className={`w-full flex items-center gap-2 px-2 py-1.5 rounded-none text-[10px] font-mono uppercase tracking-wider text-stone-500 hover:text-white hover:bg-stone-800 transition ${
+          className={`w-full flex items-center gap-2 px-2 py-1.5 text-xs font-sans font-semibold uppercase tracking-wider text-stone-400 hover:text-white hover:bg-stone-800 transition ${
             collapsed ? 'justify-center' : 'justify-between'
           }`}
           title={pinned ? 'Unpin Sidebar (Auto-collapse on)' : 'Pin Sidebar (Keep expanded)'}
@@ -182,18 +182,18 @@ export function PublicSidebar({
           {!collapsed && <span>{pinned ? 'Unpin Sidebar' : 'Auto-Collapse: Off'}</span>}
           {pinned ? (
             <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           ) : (
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           )}
         </button>
 
-        {/* MeriQTech branding — full text when expanded, none when collapsed */}
+        {/* MeriQTech branding */}
         {!collapsed && (
-          <div className="mt-2 flex items-center justify-between text-[10px] font-mono text-stone-500 px-2">
+          <div className="mt-2 flex items-center justify-between text-xs font-sans text-stone-400 px-2">
             <span>ICC Canberra</span>
             <span>
               Powered by <strong className="text-emerald-400 font-bold">MeriQTech</strong>

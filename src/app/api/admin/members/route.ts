@@ -42,7 +42,7 @@ export async function PATCH(req: Request) {
         action: 'UPDATE_MEMBER_ROLE',
         targetTable: 'users',
         targetId: userId,
-        changes: { newRole },
+        changes: JSON.stringify({ newRole }),
       },
     }).catch(() => {});
 

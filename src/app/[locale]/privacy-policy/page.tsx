@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
             <li><strong>Treasurer:</strong> Reconciliation of annual dues and financial audits.</li>
             <li><strong>Technical Administrator:</strong> Secure maintenance of database infrastructure and audit logs.</li>
           </ul>
-          <p className="font-mono text-xs text-stone-500 pt-2">
+          <p className="font-sans text-xs text-stone-500 pt-2">
             [Storage Placeholder: Encrypted PostgreSQL database hosted via Supabase in Australian AWS region (ap-southeast-2), subject to verification by ICC Executive Council].
           </p>
         </>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
           <p>
             Members may request access to, correction of, or deletion of their personal data upon resigning from the association by submitting a formal request in writing to the Secretariat. Data will be archived or securely expunged subject to legal retention obligations.
           </p>
-          <p className="font-mono text-xs text-stone-500 pt-1">
+          <p className="font-sans text-xs text-stone-500 pt-1">
             [Retention &amp; Deletion Process Placeholder: To be reviewed and codified by ICC Legal Officer].
           </p>
         </>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
           <p>
             For any inquiries, requests for access, or concerns regarding your personal data, please contact the ICC Secretariat:
           </p>
-          <div className="p-4 bg-stone-100 dark:bg-stone-800 font-mono text-xs space-y-1">
+          <div className="p-4 bg-stone-100 dark:bg-stone-800 font-sans text-xs space-y-1">
             <p>Privacy Officer · Igbo Community Canberra Inc.</p>
             <p>GPO Box 1985, Canberra ACT 2601</p>
             <p>Email: <a href="mailto:privacy@igbocommunitycanberra.org.au" className="underline">privacy@igbocommunitycanberra.org.au</a></p>

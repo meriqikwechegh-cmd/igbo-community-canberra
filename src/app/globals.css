@@ -3,17 +3,23 @@
 /* ─── Tailwind v4 Class-Based Dark Mode Variant Definition ─── */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ─── Font Stack ─────────────────────────────────────────────── */
-@layer base {
-  :root {
-    --font-sans: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, sans-serif;
-    --font-display: var(--font-display), 'Playfair Display', Georgia, Cambria,
-      serif;
-    --font-serif: var(--font-display), 'Playfair Display', Georgia, Cambria,
-      serif;
-    --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
+/* ─── Modern, Solid Font Stack (No thin monospace) ───────────── */
+@theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+  }
+
+  :root {
     /* Skeleton palette */
     --sk-base: #f0efee;
     --sk-shine: #e4e3e1;
@@ -22,19 +28,19 @@
   }
 }
 
-.font-display  { font-family: var(--font-display); }
-.font-serif    { font-family: var(--font-display); }
+.font-display  { font-family: var(--font-sans); }
+.font-serif    { font-family: var(--font-sans); }
 .font-sans     { font-family: var(--font-sans); }
-.font-mono     { font-family: var(--font-mono); }
+/* Overwrite font-mono with solid, high-legibility sans-serif */
+.font-mono     { font-family: var(--font-sans) !important; font-weight: 600; }
 
-/* ─── Skeleton shimmer (Strictly rectangular, zero rounded border) ─── */
+/* ─── Skeleton shimmer ───────────────────────────────────────── */
 @keyframes sk-shimmer {
   0%   { background-position: -400px 0; }
   100% { background-position:  400px 0; }
 }
 
 .sk {
-  border-radius: 0px;
   background-color: var(--sk-base);
   background-image: linear-gradient(
     90deg,
@@ -57,7 +63,6 @@
   );
 }
 
-/* Honour prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .sk {
     animation: none;

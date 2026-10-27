@@ -31,7 +31,7 @@ export default function Footer() {
             Membership Terms
           </Link>
         </div>
-        <p className="font-mono text-[10px] text-stone-500 text-center md:text-right">
+        <p className="font-sans text-[11px] text-stone-500 text-center md:text-right">
           © {new Date().getFullYear()} Igbo Community Canberra Inc. (ACT Reg. A04821)
         </p>
       </div>

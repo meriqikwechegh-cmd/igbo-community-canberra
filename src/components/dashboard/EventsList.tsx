@@ -11,7 +11,7 @@ export function EventsList({ events }: { events: EventItem[] }) {
     <div className="bg-white dark:bg-stone-900 p-6 rounded-none border border-stone-200 dark:border-stone-800 flex flex-col justify-between h-full transition-colors">
       <div>
         <div className="flex justify-between items-center mb-4 pb-3 border-b border-stone-200 dark:border-stone-800">
-          <h3 className="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+          <h3 className="font-sans font-bold text-base text-stone-900 dark:text-stone-100">
             Upcoming Gatherings
           </h3>
           <Link
@@ -34,7 +34,7 @@ export function EventsList({ events }: { events: EventItem[] }) {
                   <p className="font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm truncate">
                     {evt.title}
                   </p>
-                  <p className="text-xs text-stone-500 dark:text-stone-400 font-mono truncate">
+                  <p className="text-xs text-stone-500 dark:text-stone-400 font-medium truncate">
                     📅 {evt.date} &middot; 📍 {evt.location}
                   </p>
                 </div>

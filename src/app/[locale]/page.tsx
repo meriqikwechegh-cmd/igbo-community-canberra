@@ -7,7 +7,7 @@
  * • One accent: #064e3b (deep forest emerald)
  * • Max container radius: 6px (rounded-md)
  * • Max button radius: 4px (rounded)
- * • Fonts: Cormorant Garamond (Serif), Plus Jakarta Sans (Sans), JetBrains Mono (Mono)
+ * • Fonts: Inter (Sans) — bold, clean, modern sans-serif throughout
  * • Responsive scaling across mobile, tablet, and desktop
  * • Polished skeleton states matching responsive grid layouts
  * • Accessible: role=status, aria-busy=true, aria-label, sr-only
@@ -30,7 +30,7 @@ function SectionLabel({
 }) {
   return (
     <span
-      className={`font-mono text-[10px] uppercase tracking-widest font-bold block mb-1.5 text-[#064e3b] dark:text-emerald-500 ${className}`}
+      className={`font-sans text-[11px] uppercase tracking-wide font-extrabold block mb-1.5 text-[#064e3b] dark:text-emerald-400 ${className}`}
     >
       {children}
     </span>
@@ -342,18 +342,18 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div className="flex items-center gap-2 text-center sm:text-left">
               <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
-              <span className="font-mono text-[11px] sm:text-xs">
+              <span className="font-sans text-[11px] sm:text-xs">
                 Incorporated Cultural Association · ACT Reg. No. A04821 · Founded 2012
               </span>
             </div>
             <div className="flex items-center gap-4 sm:gap-6 text-xs">
-              <span className="hidden md:inline font-serif italic text-stone-400">
+              <span className="hidden md:inline font-sans italic text-stone-400">
                 Onye aghana nwanne ya{' '}
                 <span className="not-italic font-sans text-stone-500">
                   (Be your brother&apos;s keeper)
                 </span>
               </span>
-              <div className="flex gap-2 font-mono text-stone-400">
+              <div className="flex gap-2 font-sans text-stone-400">
                 <Link href="/en" className="hover:text-white underline">EN</Link>
                 <span className="text-stone-700">|</span>
                 <Link href="/ig" className="hover:text-white">IGBO</Link>
@@ -371,11 +371,11 @@ export default function HomePage() {
 
             {/* Left: headline block */}
             <div className="md:col-span-8 space-y-5 sm:space-y-6">
-              <SectionLabel className="text-emerald-300/80 font-mono text-[10px] uppercase tracking-widest">
+              <SectionLabel className="text-emerald-300/80 font-sans text-[11px] uppercase tracking-wide font-bold">
                 ESTABLISHED 2012 · CANBERRA ACT
               </SectionLabel>
 
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.12] text-stone-50">
+              <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.12] text-stone-50">
                 Fostering Unity, Preserving Heritage &amp; Empowering Generations
               </h1>
 
@@ -407,8 +407,8 @@ export default function HomePage() {
                     key={label}
                     className={`py-3 md:py-6 ${i < arr.length - 1 ? 'md:border-b border-emerald-800/60' : ''}`}
                   >
-                    <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{value}</p>
-                    <p className="text-[10px] font-mono uppercase tracking-wider text-emerald-300 mt-1">{label}</p>
+                    <p className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{value}</p>
+                    <p className="text-[11px] font-sans uppercase tracking-wide font-semibold text-emerald-300 mt-1">{label}</p>
                   </div>
                 ))}
               </div>
@@ -427,8 +427,8 @@ export default function HomePage() {
               { stat: '100%',   label: 'Community-Governed' },
             ].map(({ stat, label }) => (
               <div key={label}>
-                <p className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">{stat}</p>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-stone-500 mt-1">{label}</p>
+                <p className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">{stat}</p>
+                <p className="text-[11px] font-sans uppercase tracking-wide font-semibold text-stone-500 mt-1">{label}</p>
               </div>
             ))}
           </div>
@@ -457,11 +457,11 @@ export default function HomePage() {
                     priority
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-stone-950/85 text-white p-3.5 sm:p-4 border-t border-stone-800">
-                    <p className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">
+                    <p className="font-sans text-[11px] uppercase tracking-wide font-bold text-emerald-400">
                       President &amp; Executive Chairman
                     </p>
-                    <p className="font-serif text-base sm:text-lg font-bold mt-0.5">Chief Ifeanyi Onuchukwu</p>
-                    <p className="text-xs text-stone-300 font-serif italic">
+                    <p className="font-sans text-base sm:text-lg font-bold mt-0.5">Chief Ifeanyi Onuchukwu</p>
+                    <p className="text-xs text-stone-300 font-sans italic">
                       Ikeorah 1 of Oraifite · President Since 2021
                     </p>
                   </div>
@@ -471,7 +471,7 @@ export default function HomePage() {
               <div className="md:col-span-7 space-y-5 sm:space-y-6">
                 <div>
                   <SectionLabel>EXECUTIVE ADDRESS</SectionLabel>
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                  <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                     Welcome from the Office of the President
                   </h2>
                   <Rule className="mt-4" />
@@ -494,13 +494,13 @@ export default function HomePage() {
 
                 <div className="pt-4 border-t border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div>
-                    <p className="font-serif font-bold text-stone-900 dark:text-stone-100">
+                    <p className="font-sans font-bold text-stone-900 dark:text-stone-100">
                       Chief Ifeanyi Onuchukwu
                     </p>
-                    <p className="text-xs font-serif italic text-[#064e3b] dark:text-emerald-400">
+                    <p className="text-xs font-sans italic text-[#064e3b] dark:text-emerald-400">
                       Ikeorah 1 of Oraifite
                     </p>
-                    <p className="font-mono text-[10px] text-stone-500 mt-0.5">
+                    <p className="font-sans text-[11px] text-stone-500 mt-0.5">
                       President, Executive Council · In Office Since 2021
                     </p>
                   </div>
@@ -529,7 +529,7 @@ export default function HomePage() {
           >
             <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
               <SectionLabel>CONSTITUTIONAL OBJECTIVES</SectionLabel>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                 Institutional Pillars of the Association
               </h2>
               <p className="text-stone-500 text-xs sm:text-sm mt-1">
@@ -567,21 +567,21 @@ export default function HomePage() {
                 <div key={pillar.numeral} className="p-6 sm:p-8 flex flex-col justify-between bg-white dark:bg-stone-900/60">
                   <div>
                     <div className="flex justify-between items-center pb-3 border-b border-stone-100 dark:border-stone-800 mb-4">
-                      <span className="font-serif text-2xl font-bold text-[#064e3b] dark:text-emerald-500">
+                      <span className="font-sans text-2xl font-bold text-[#064e3b] dark:text-emerald-500">
                         {pillar.numeral}
                       </span>
-                      <span className="font-mono text-[9px] uppercase tracking-wider text-stone-400">
+                      <span className="font-sans text-[11px] uppercase tracking-wide font-bold text-stone-400">
                         {pillar.tag}
                       </span>
                     </div>
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 mb-2">
+                    <h3 className="font-sans text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 mb-2">
                       {pillar.title}
                     </h3>
                     <p className="text-stone-600 dark:text-stone-400 text-xs sm:text-sm leading-relaxed">
                       {pillar.body}
                     </p>
                   </div>
-                  <div className="pt-4 mt-6 border-t border-stone-100 dark:border-stone-800 text-[10px] font-mono text-stone-400 flex justify-between">
+                  <div className="pt-4 mt-6 border-t border-stone-100 dark:border-stone-800 text-[11px] font-sans text-stone-400 flex justify-between">
                     <span>{pillar.ref}</span>
                     <span className="text-[#064e3b] dark:text-emerald-500 font-bold">{pillar.status}</span>
                   </div>
@@ -604,7 +604,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 pb-3 border-b border-stone-200 dark:border-stone-800 gap-3">
               <div>
                 <SectionLabel>COMMUNITY GATHERINGS</SectionLabel>
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                   2026/2027 Cultural Calendar
                 </h2>
               </div>
@@ -620,18 +620,18 @@ export default function HomePage() {
               <div className="grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
 
                 <div className="md:col-span-3 border-b md:border-b-0 md:border-r border-stone-800 pb-4 md:pb-0 md:pr-6">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-emerald-400 font-bold block mb-1">
+                  <span className="font-sans text-[11px] uppercase tracking-wide font-bold text-emerald-400 font-bold block mb-1">
                     FLAGSHIP EVENT
                   </span>
-                  <p className="font-serif text-2xl sm:text-3xl font-bold text-white">29 NOV 2026</p>
-                  <p className="text-xs text-stone-400 mt-1 font-mono">Sunday · EPIC Centre Canberra</p>
+                  <p className="font-sans text-2xl sm:text-3xl font-bold text-white">29 NOV 2026</p>
+                  <p className="text-xs text-stone-400 mt-1 font-sans">Sunday · EPIC Centre Canberra</p>
                 </div>
 
                 <div className="md:col-span-6 space-y-2">
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="font-sans text-xl sm:text-2xl font-bold text-white">
                     Igbo End of Year Annual Celebration
                   </h3>
-                  <p className="text-xs text-stone-400 font-mono">
+                  <p className="text-xs text-stone-400 font-sans">
                     The Hall, Exhibition Park in Canberra (EPIC Centre), Mitchell ACT
                   </p>
                   <p className="text-stone-300 text-xs sm:text-sm leading-relaxed">
@@ -679,15 +679,15 @@ export default function HomePage() {
               ].map((ev) => (
                 <div key={ev.tag} className="p-6 bg-white dark:bg-stone-900/60 flex flex-col justify-between">
                   <div>
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-stone-400 block mb-1">
+                    <span className="font-sans text-[11px] uppercase tracking-wide font-bold text-stone-400 block mb-1">
                       {ev.tag}
                     </span>
-                    <p className="font-serif text-lg font-bold text-stone-900 dark:text-stone-100 mb-0.5">{ev.date}</p>
-                    <p className="text-xs text-stone-400 mb-3 font-mono">{ev.venue}</p>
+                    <p className="font-sans text-lg font-bold text-stone-900 dark:text-stone-100 mb-0.5">{ev.date}</p>
+                    <p className="text-xs text-stone-400 mb-3 font-sans">{ev.venue}</p>
                     <p className="text-stone-600 dark:text-stone-400 text-xs leading-relaxed">{ev.body}</p>
                   </div>
                   <div className="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between text-xs">
-                    <span className="text-stone-400 font-mono">{ev.note}</span>
+                    <span className="text-stone-400 font-sans">{ev.note}</span>
                     <Link href="/en/dashboard/events" className="font-bold text-[#064e3b] dark:text-emerald-400">
                       RSVP →
                     </Link>
@@ -710,7 +710,7 @@ export default function HomePage() {
           >
             <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
               <SectionLabel>EXECUTIVE LEADERSHIP</SectionLabel>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                 Executive Leadership
               </h2>
               <p className="text-stone-500 text-xs sm:text-sm mt-1">
@@ -718,7 +718,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 {
                   src: '/president-ifeanyi.jpg',
@@ -747,10 +747,34 @@ export default function HomePage() {
                 {
                   src: '/doris-njoku.jpg',
                   name: 'Doris Njoku',
-                  role: 'Vice-President, Ezinwanyi',
-                  sub: "Women's Wing",
+                  role: 'Treasurer',
+                  sub: 'Secretariat Treasury',
                   pos: 'center 10%',
                   initials: 'DN',
+                },
+                {
+                  src: '/lawrence-ochu.jpg',
+                  name: 'Lawrence Ochu',
+                  role: 'Social Secretary',
+                  sub: 'Events & Welfare',
+                  pos: 'center 12%',
+                  initials: 'LO',
+                },
+                {
+                  src: '',
+                  name: 'Anderson Ikea',
+                  role: 'Assistant Treasurer',
+                  sub: 'Secretariat Treasury',
+                  pos: 'center 12%',
+                  initials: 'AI',
+                },
+                {
+                  src: '/chibueze-iloelunachi.jpg',
+                  name: 'Chibueze Iloelunachi',
+                  role: 'Assistant Secretary',
+                  sub: 'Secretariat Administration',
+                  pos: 'center 12%',
+                  initials: 'CI',
                 },
                 {
                   src: '',
@@ -777,20 +801,20 @@ export default function HomePage() {
                       />
                     ) : (
                       <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 dark:bg-stone-900 p-4 text-center">
-                        <div className="w-16 h-16 rounded-none bg-[#064e3b] text-amber-300 flex items-center justify-center font-serif font-bold text-xl border border-emerald-800 shadow-inner">
+                        <div className="w-16 h-16 rounded-none bg-[#064e3b] text-amber-300 flex items-center justify-center font-sans font-bold text-xl border border-emerald-800 shadow-inner">
                           {officer.initials || 'CN'}
                         </div>
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-stone-400 mt-3 font-semibold">
+                        <span className="font-sans text-[11px] uppercase tracking-wide font-bold text-stone-400 mt-3 font-semibold">
                           Official Portrait Pending
                         </span>
                       </div>
                     )}
                   </div>
                   <div className="p-3.5 sm:p-4 border-t border-stone-100 dark:border-stone-800">
-                    <p className="font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#064e3b] dark:text-emerald-400 truncate">
+                    <p className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-wide text-[#064e3b] dark:text-emerald-400 truncate">
                       {officer.role}
                     </p>
-                    <h4 className="font-serif font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base mt-0.5 truncate">
+                    <h4 className="font-sans font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base mt-0.5 truncate">
                       {officer.name}
                     </h4>
                     <p className="text-[11px] text-stone-500 font-sans mt-0.5 truncate">
@@ -815,7 +839,7 @@ export default function HomePage() {
           >
             <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
               <SectionLabel>MEMBERSHIP STRUCTURE</SectionLabel>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
                 Annual Membership Dues &amp; Household Options
               </h2>
             </div>
@@ -826,19 +850,19 @@ export default function HomePage() {
                 <div>
                   <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6 gap-2">
                     <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                         Family Membership
                       </h3>
-                      <p className="text-[10px] text-stone-400 font-mono mt-0.5">
+                      <p className="text-[11px] text-stone-400 font-sans mt-0.5">
                         Primary Member &amp; Household Dependents
                       </p>
                     </div>
-                    <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
+                    <span className="bg-[#064e3b] text-white text-[11px] font-sans uppercase tracking-wide font-bold px-2.5 py-1 rounded-none shrink-0">
                       Family
                     </span>
                   </div>
 
-                  <p className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+                  <p className="font-sans text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
                     $250 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                   </p>
 
@@ -871,17 +895,17 @@ export default function HomePage() {
                 <div>
                   <div className="flex justify-between items-start pb-4 border-b border-stone-100 dark:border-stone-800 mb-6 gap-2">
                     <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-stone-900 dark:text-stone-100">
                         Single Membership
                       </h3>
-                      <p className="text-[10px] text-stone-400 font-mono mt-0.5">Individual Adult Member</p>
+                      <p className="text-[11px] text-stone-400 font-sans mt-0.5">Individual Adult Member</p>
                     </div>
-                    <span className="bg-[#064e3b] text-white text-[9px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-none shrink-0">
+                    <span className="bg-[#064e3b] text-white text-[11px] font-sans uppercase tracking-wide font-bold px-2.5 py-1 rounded-none shrink-0">
                       Individual
                     </span>
                   </div>
 
-                  <p className="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+                  <p className="font-sans text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
                     $150 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                   </p>
 
@@ -928,7 +952,7 @@ export default function HomePage() {
                   <div className="relative w-8 h-8 border border-stone-700 bg-white shrink-0">
                     <Image src="/logo.jpg" alt="Igbo Community Canberra Logo" fill className="object-contain" />
                   </div>
-                  <span className="font-serif font-bold text-base text-white">
+                  <span className="font-sans font-bold text-base text-white">
                     Igbo Community Canberra Inc.
                   </span>
                 </div>
@@ -936,7 +960,7 @@ export default function HomePage() {
                   Incorporated non-profit association established in 2012 for cultural heritage,
                   communal solidarity, and fellowship across the Australian Capital Territory.
                 </p>
-                <p className="font-mono text-xs text-stone-400">
+                <p className="font-sans text-xs text-stone-400">
                   ACT Reg. No.: <strong className="text-stone-200">A04821</strong>
                   <span className="mx-2">·</span>
                   ABN: <strong className="text-stone-200">48 192 840 129</strong>
@@ -944,7 +968,7 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h5 className="font-serif font-bold text-white text-sm mb-3">Institutional Links</h5>
+                <h5 className="font-sans font-bold text-white text-sm mb-3">Institutional Links</h5>
                 <ul className="space-y-2 text-xs text-stone-400">
                   <li><a href="#welcome" className="hover:text-white transition">President&apos;s Address</a></li>
                   <li><a href="#charter" className="hover:text-white transition">Constitution &amp; By-Laws</a></li>
@@ -955,7 +979,7 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h5 className="font-serif font-bold text-white text-sm mb-3">Privacy &amp; Compliance</h5>
+                <h5 className="font-sans font-bold text-white text-sm mb-3">Privacy &amp; Compliance</h5>
                 <ul className="space-y-2 text-xs text-stone-400">
                   <li><Link href="/en/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                   <li><Link href="/en/terms-of-use" className="hover:text-white transition">Terms of Use</Link></li>
@@ -967,7 +991,7 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h5 className="font-serif font-bold text-white text-sm mb-3">Secretariat</h5>
+                <h5 className="font-sans font-bold text-white text-sm mb-3">Secretariat</h5>
                 <ul className="space-y-2 text-xs text-stone-400">
                   <li>GPO Box 1985, Canberra ACT 2601</li>
                   <li>
@@ -982,7 +1006,7 @@ export default function HomePage() {
 
             </div>
 
-            <div className="max-w-6xl mx-auto pt-6 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-[10px] font-mono text-stone-500 gap-4">
+            <div className="max-w-6xl mx-auto pt-6 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center text-[11px] font-sans text-stone-500 gap-4">
               <div className="flex flex-wrap items-center gap-3 text-stone-400">
                 <Link href="/en/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
                 <span>·</span>

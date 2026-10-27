@@ -55,7 +55,7 @@ export async function POST(req: Request) {
         action: 'RECORD_OFFLINE_PAYMENT',
         targetTable: 'payments',
         targetId: payment.id,
-        changes: { amount, paymentMethod, description, notes },
+        changes: JSON.stringify({ amount, paymentMethod, description, notes }),
       },
     }).catch(() => {});
 

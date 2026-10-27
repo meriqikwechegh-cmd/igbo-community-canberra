@@ -2,28 +2,14 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
-import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import CookieConsentBanner from '@/components/CookieConsentBanner';
 import '../globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-mono',
+  variable: '--font-sans',
   display: 'swap',
 });
 
@@ -49,9 +35,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${inter.variable} h-full`}
     >
-      <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white min-h-screen flex flex-col">
+      <body className="font-sans antialiased bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-[#064e3b] selection:text-white min-h-screen flex flex-col font-normal">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

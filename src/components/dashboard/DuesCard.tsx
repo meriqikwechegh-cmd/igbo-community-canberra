@@ -15,11 +15,11 @@ export function DuesCard({
     <div className="bg-white dark:bg-stone-900 p-6 rounded-none border border-stone-200 dark:border-stone-800 flex flex-col justify-between h-full transition-colors">
       <div>
         <div className="flex justify-between items-center mb-3 pb-2 border-b border-stone-100 dark:border-stone-800">
-          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-stone-500 dark:text-stone-400">
+          <span className="text-xs font-sans font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">
             DUES STATUS
           </span>
           <span
-            className={`px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider rounded-none border ${
+            className={`px-2.5 py-1 text-xs font-sans font-bold uppercase tracking-wider rounded-sm border ${
               isPastDue
                 ? 'bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-800'
                 : 'bg-emerald-50 dark:bg-emerald-950/60 text-[#064e3b] dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
@@ -30,10 +30,10 @@ export function DuesCard({
         </div>
 
         <div className="my-3">
-          <p className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mb-1">
-            ${amount} <span className="text-xs font-sans text-stone-500 dark:text-stone-400 font-normal">AUD / year</span>
+          <p className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 mb-1">
+            ${amount} <span className="text-xs font-sans text-stone-500 dark:text-stone-400 font-medium">AUD / year</span>
           </p>
-          <p className="text-xs font-mono text-stone-500 dark:text-stone-400">
+          <p className="text-xs font-sans font-medium text-stone-500 dark:text-stone-400">
             Family Membership &middot; Next: {nextBillingDate}
           </p>
         </div>

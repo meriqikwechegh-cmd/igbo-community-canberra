@@ -21,7 +21,7 @@ CREATE TABLE households (
     city VARCHAR(100),
     state VARCHAR(100),
     postal_code VARCHAR(20),
-    country VARCHAR(100) DEFAULT 'USA',
+    country VARCHAR(100) DEFAULT 'Australia',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

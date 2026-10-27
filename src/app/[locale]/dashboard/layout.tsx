@@ -1,18 +1,25 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { Sidebar } from '@/components/dashboard/Sidebar';
+import { UserMenu } from '@/components/dashboard/UserMenu';
+import { auth } from '@/auth';
 
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
+  const session = await auth();
+  const userName = session?.user?.name || 'Obinna Okafor';
+  const userEmail = session?.user?.email || 'obinna@example.com';
+  const userRole = (session?.user as any)?.role || 'member';
+
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-[#fafaf9] dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-sans transition-colors">
-      {/* Sidebar Navigation (contains Appearance ThemeToggle) */}
-      <Sidebar />
+      {/* Sidebar Navigation */}
+      <Sidebar user={{ name: userName, email: userEmail, role: userRole }} />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
         <header className="h-14 bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between px-4 sm:px-6 shrink-0 transition-colors">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold text-stone-600 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded truncate">
+            <span className="text-xs font-sans uppercase tracking-wider font-bold text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 px-3 py-1 rounded-sm truncate">
               Member Portal &middot; ACT Inc. A04821
             </span>
           </div>
@@ -27,12 +34,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
               </svg>
             </Link>
             <div className="h-3.5 w-px bg-stone-200 dark:bg-stone-800 hidden sm:block"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-sm bg-stone-900 dark:bg-stone-800 text-stone-100 text-xs font-serif font-bold flex items-center justify-center border border-stone-700">
-                OO
-              </div>
-              <span className="text-xs font-semibold text-stone-800 dark:text-stone-200 hidden md:inline">Obinna Okafor</span>
-            </div>
+            <UserMenu name={userName} email={userEmail} role={userRole} />
           </div>
         </header>
 
