@@ -101,23 +101,33 @@ export default function MembershipPage() {
 
                   <ul className="space-y-3 text-xs text-stone-700 dark:text-stone-300">
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Full voting rights for primary member at the Annual General Assembly</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Full household coverage under the ICC Bereavement &amp; Welfare Charter</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Access to youth cultural mentorship, language immersion, and workshops</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Invitations to community gatherings, New Yam Festival (Iri Ji), &amp; Annual Gala</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Online household management portal for dues and event registrations</span>
                     </li>
                   </ul>
@@ -158,23 +168,33 @@ export default function MembershipPage() {
 
                   <ul className="space-y-3 text-xs text-stone-700 dark:text-stone-300">
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Individual voting rights at the Annual General Assembly</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Individual coverage under the ICC Bereavement &amp; Welfare Charter</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Access to community cultural fellowship and networking</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Member invitations and discounted entry to ICC community events</span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#064e3b] dark:text-emerald-400 font-bold text-sm">✓</span>
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
                       <span>Individual portal account for official receipts and RSVPs</span>
                     </li>
                   </ul>

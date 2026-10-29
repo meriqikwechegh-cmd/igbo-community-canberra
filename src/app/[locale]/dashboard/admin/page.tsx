@@ -344,8 +344,11 @@ export default function AdminDashboardPage() {
           </div>
 
           {paymentSuccessMsg && (
-            <div className="bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-[#064e3b] dark:text-emerald-300 text-sm p-3.5 rounded-sm font-semibold">
-              ✓ {paymentSuccessMsg}
+            <div className="bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-[#064e3b] dark:text-emerald-300 text-sm p-3.5 rounded-sm font-semibold flex items-center gap-2">
+              <svg className="w-4 h-4 shrink-0 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>{paymentSuccessMsg}</span>
             </div>
           )}
 

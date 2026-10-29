@@ -128,7 +128,13 @@ export default function RegisterPage() {
                       : 'bg-stone-100 dark:bg-stone-800 border-stone-300 dark:border-stone-700 text-stone-400'
                   }`}
                 >
-                  {step > i + 1 ? '✓' : i + 1}
+                  {step > i + 1 ? (
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  ) : (
+                    i + 1
+                  )}
                 </div>
                 <span
                   className={`text-xs font-medium uppercase tracking-wider font-sans ${

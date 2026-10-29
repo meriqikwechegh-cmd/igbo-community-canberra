@@ -132,7 +132,11 @@ export default function EventsPortalPage() {
       {actionMessage && (
         <div className="bg-emerald-50 border border-emerald-200 text-[#064e3b] text-xs font-sans p-3.5 rounded-md flex justify-between items-center">
           <span>{actionMessage}</span>
-          <button onClick={() => setActionMessage(null)} className="text-[#064e3b] font-bold ml-4">✕</button>
+          <button onClick={() => setActionMessage(null)} className="text-[#064e3b] hover:text-emerald-950 ml-4 p-1" aria-label="Close">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       )}
 
@@ -167,8 +171,8 @@ export default function EventsPortalPage() {
                     {evt.tag}
                   </span>
                   <h2 className="text-xl font-sans font-bold text-stone-900 mt-2">{evt.title}</h2>
-                  <p className="text-xs text-stone-500 mt-1 font-sans">📅 {evt.formattedDate}</p>
-                  <p className="text-xs text-stone-500 font-sans">📍 {evt.location}</p>
+                  <p className="text-xs text-stone-500 mt-1 font-sans font-medium">Date: {evt.formattedDate}</p>
+                  <p className="text-xs text-stone-500 font-sans font-medium">Location: {evt.location}</p>
                 </div>
 
                 <div className="text-right shrink-0">
@@ -250,7 +254,11 @@ export default function EventsPortalPage() {
           <div className="bg-white rounded-md p-6 max-w-lg w-full border border-stone-300 font-sans space-y-4">
             <div className="flex justify-between items-center border-b border-stone-200 pb-3">
               <h2 className="text-base font-sans font-bold text-stone-900">Create Community Event</h2>
-              <button onClick={() => setShowCreateModal(false)} className="text-stone-400 hover:text-stone-700 text-lg font-bold">✕</button>
+              <button onClick={() => setShowCreateModal(false)} className="text-stone-400 hover:text-stone-700 p-1" aria-label="Close modal">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
 
             <form onSubmit={handleCreateEvent} className="space-y-4">

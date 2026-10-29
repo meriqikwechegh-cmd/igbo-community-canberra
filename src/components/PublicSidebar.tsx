@@ -72,8 +72,8 @@ export function PublicSidebar({
   memberLoginText = 'Member Login',
   joinText = 'Registration',
 }: PublicSidebarProps = {}) {
-  // Automatically collapsible: collapsed by default, expands on hover, or can be pinned
-  const [pinned, setPinned] = useState(false);
+  // Pinned/expanded by default so all sections are immediately accessible in the sidebar
+  const [pinned, setPinned] = useState(true);
   const [hovered, setHovered] = useState(false);
 
   const collapsed = !pinned && !hovered;

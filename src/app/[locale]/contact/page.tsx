@@ -146,7 +146,9 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="p-6 bg-emerald-900/20 border border-[#064e3b] text-center space-y-3 rounded-none">
                   <div className="w-10 h-10 bg-[#064e3b] text-white flex items-center justify-center mx-auto rounded-none">
-                    ✓
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
                   </div>
                   <h3 className="font-sans text-lg font-bold text-stone-900 dark:text-stone-100">
                     Dispatch Received

@@ -35,7 +35,7 @@ export function EventsList({ events }: { events: EventItem[] }) {
                     {evt.title}
                   </p>
                   <p className="text-xs text-stone-500 dark:text-stone-400 font-medium truncate">
-                    📅 {evt.date} &middot; 📍 {evt.location}
+                    {evt.date} &middot; {evt.location}
                   </p>
                 </div>
                 <Link

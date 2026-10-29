@@ -107,15 +107,25 @@ export default function EventsPage() {
                     {evt.title}
                   </h3>
 
-                  <div className="space-y-1.5 text-xs text-stone-500 dark:text-stone-400 mb-4 font-semibold">
-                    <p className="flex items-center gap-2 text-stone-900 dark:text-stone-200 font-bold">
-                      <span>🗓️</span> {evt.date}
+                  <div className="space-y-2 text-xs text-stone-600 dark:text-stone-300 mb-4 font-semibold">
+                    <p className="flex items-center gap-2 text-stone-900 dark:text-stone-100 font-bold">
+                      <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                      </svg>
+                      {evt.date}
                     </p>
                     <p className="flex items-center gap-2">
-                      <span>⏰</span> {evt.time}
+                      <svg className="w-4 h-4 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {evt.time}
                     </p>
                     <p className="flex items-center gap-2">
-                      <span>📍</span> {evt.venue}
+                      <svg className="w-4 h-4 text-stone-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                      {evt.venue}
                     </p>
                   </div>
 

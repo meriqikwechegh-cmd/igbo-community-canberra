@@ -168,19 +168,27 @@ export default function ConstitutionPage() {
               </h3>
               <ul className="space-y-3 text-xs text-stone-700 dark:text-stone-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#064e3b] dark:text-emerald-400 font-bold">✓</span>
+                  <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
                   <span>Voting and speaking rights at all General Assembly meetings.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#064e3b] dark:text-emerald-400 font-bold">✓</span>
+                  <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
                   <span>Eligibility to contest for Executive Council elective offices after meeting tenure criteria.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#064e3b] dark:text-emerald-400 font-bold">✓</span>
+                  <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
                   <span>Automatic coverage under the ICC Bereavement &amp; Emergency Welfare Charter.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#064e3b] dark:text-emerald-400 font-bold">✓</span>
+                  <svg className="w-4 h-4 text-[#064e3b] dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
                   <span>Inspection rights of audited annual association balance sheets and financial statements.</span>
                 </li>
               </ul>
