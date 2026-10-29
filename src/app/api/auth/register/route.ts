@@ -114,7 +114,7 @@ export async function POST(req: Request) {
         householdId: household.id,
         userId: user.id,
         planType: planType === 'single' ? 'single' : 'family',
-        amount: planType === 'single' ? 150.0 : 250.0,
+        amount: planType === 'single' ? 80.0 : 120.0,
         status: 'unpaid',
       },
     });

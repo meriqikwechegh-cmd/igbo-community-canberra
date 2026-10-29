@@ -34,7 +34,7 @@ export default function AdminDashboardPage() {
   const [offlineForm, setOfflineForm] = useState({
     memberName: 'Chief Ifeanyi Onuchukwu',
     email: 'ifeanyi.onuchukwu@icc.org.au',
-    amount: '250.00',
+    amount: '120.00',
     paymentMethod: 'cash',
     description: 'Annual Membership Dues (Cash Payment)',
     notes: 'Paid at community meeting to Treasurer',
@@ -185,10 +185,10 @@ export default function AdminDashboardPage() {
             Annual Membership Dues
           </span>
           <p className="text-3xl font-extrabold text-stone-900 dark:text-stone-100 mt-1.5">
-            $250.00
+            $120.00
           </p>
           <span className="text-xs text-stone-500 dark:text-stone-400 font-medium mt-1 block">
-            AUD / Household Year
+            AUD / Household Year ($80 Single)
           </span>
         </div>
         <div className="bg-white dark:bg-stone-900 p-5 border border-stone-200 dark:border-stone-800 rounded-sm shadow-xs">

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function DuesCard({
   status = 'active',
-  amount = '250.00',
+  amount = '120.00',
   nextBillingDate = 'Nov 1, 2026',
 }: {
   status?: string;

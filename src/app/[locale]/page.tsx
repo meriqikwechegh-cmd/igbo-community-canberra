@@ -417,13 +417,130 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Quick Portal Gateway Hub ─────────────────────────── */}
+        <section className="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 py-10 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 pb-3 border-b border-stone-100 dark:border-stone-800 gap-2">
+              <div>
+                <span className="font-sans text-[11px] uppercase tracking-wide font-extrabold text-[#064e3b] dark:text-emerald-400 block">
+                  COMMUNITY DIRECTORY &amp; PORTAL ACCESS
+                </span>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-stone-900 dark:text-stone-100">
+                  Explore Igbo Community Canberra
+                </h2>
+              </div>
+              <span className="text-xs text-stone-500 font-semibold">
+                Dedicated Sections &amp; Direct Links
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link
+                href="/en/membership"
+                className="group border border-stone-200 dark:border-stone-800 p-5 bg-[#fafaf9] dark:bg-stone-950/60 hover:border-[#064e3b] dark:hover:border-emerald-600 transition flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-2xl">💳</span>
+                    <span className="text-[11px] font-extrabold text-[#064e3b] dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 border border-emerald-200 dark:border-emerald-800">
+                      $80 / $120
+                    </span>
+                  </div>
+                  <h3 className="font-extrabold text-base text-stone-900 dark:text-stone-100 group-hover:text-[#064e3b] dark:group-hover:text-emerald-400 transition">
+                    Become a Member
+                  </h3>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">
+                    Single ($80) and Family ($120) memberships. Voting rights and Welfare Charter coverage.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 text-xs font-bold text-[#064e3b] dark:text-emerald-400 flex items-center justify-between">
+                  <span>View Details</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+
+              <Link
+                href="/en/leadership"
+                className="group border border-stone-200 dark:border-stone-800 p-5 bg-[#fafaf9] dark:bg-stone-950/60 hover:border-[#064e3b] dark:hover:border-emerald-600 transition flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-2xl">👥</span>
+                    <span className="text-[11px] font-extrabold text-stone-600 dark:text-stone-300 bg-stone-200 dark:bg-stone-800 px-2 py-0.5">
+                      8 Officers
+                    </span>
+                  </div>
+                  <h3 className="font-extrabold text-base text-stone-900 dark:text-stone-100 group-hover:text-[#064e3b] dark:group-hover:text-emerald-400 transition">
+                    Executive Council
+                  </h3>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">
+                    Meet President Chief Ifeanyi Onuchukwu and the elected executive council officers.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 text-xs font-bold text-[#064e3b] dark:text-emerald-400 flex items-center justify-between">
+                  <span>Meet EXCO</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+
+              <Link
+                href="/en/constitution"
+                className="group border border-stone-200 dark:border-stone-800 p-5 bg-[#fafaf9] dark:bg-stone-950/60 hover:border-[#064e3b] dark:hover:border-emerald-600 transition flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-2xl">📜</span>
+                    <span className="text-[11px] font-extrabold text-stone-600 dark:text-stone-300 bg-stone-200 dark:bg-stone-800 px-2 py-0.5">
+                      A04821
+                    </span>
+                  </div>
+                  <h3 className="font-extrabold text-base text-stone-900 dark:text-stone-100 group-hover:text-[#064e3b] dark:group-hover:text-emerald-400 transition">
+                    The Constitution
+                  </h3>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">
+                    Review our 6 foundational pillars, governance bylaws, rights, and ethical code of conduct.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 text-xs font-bold text-[#064e3b] dark:text-emerald-400 flex items-center justify-between">
+                  <span>Read Charter</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+
+              <Link
+                href="/en/events"
+                className="group border border-stone-200 dark:border-stone-800 p-5 bg-[#fafaf9] dark:bg-stone-950/60 hover:border-[#064e3b] dark:hover:border-emerald-600 transition flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-2xl">🗓️</span>
+                    <span className="text-[11px] font-extrabold text-stone-600 dark:text-stone-300 bg-stone-200 dark:bg-stone-800 px-2 py-0.5">
+                      Calendar
+                    </span>
+                  </div>
+                  <h3 className="font-extrabold text-base text-stone-900 dark:text-stone-100 group-hover:text-[#064e3b] dark:group-hover:text-emerald-400 transition">
+                    Community Events
+                  </h3>
+                  <p className="text-xs text-stone-600 dark:text-stone-400 mt-1.5 leading-relaxed">
+                    Upcoming Iri Ji (New Yam Festival), language classes, gala dinner, and meeting RSVPs.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-stone-200 dark:border-stone-800 text-xs font-bold text-[#064e3b] dark:text-emerald-400 flex items-center justify-between">
+                  <span>View Calendar</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── Facts Strip ─────────────────────────────────────── */}
         <section className="border-b border-stone-200 dark:border-stone-800 py-8 sm:py-10 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {[
               { stat: '14',     label: 'Years of Service' },
               { stat: '4×',     label: 'Annual General Assemblies' },
-              { stat: '$250',   label: 'Family Dues / Year' },
+              { stat: '$120',   label: 'Family Dues / Year' },
               { stat: '100%',   label: 'Community-Governed' },
             ].map(({ stat, label }) => (
               <div key={label}>
@@ -458,7 +575,7 @@ export default function HomePage() {
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-stone-950/85 text-white p-3.5 sm:p-4 border-t border-stone-800">
                     <p className="font-sans text-[11px] uppercase tracking-wide font-bold text-emerald-400">
-                      President &amp; Executive Chairman
+                      President
                     </p>
                     <p className="font-sans text-base sm:text-lg font-bold mt-0.5">Chief Ifeanyi Onuchukwu</p>
                     <p className="text-xs text-stone-300 font-sans italic">
@@ -527,14 +644,22 @@ export default function HomePage() {
             className="py-16 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto"
             aria-label="Constitutional Objectives"
           >
-            <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
-              <SectionLabel>CONSTITUTIONAL OBJECTIVES</SectionLabel>
-              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
-                Institutional Pillars of the Association
-              </h2>
-              <p className="text-stone-500 text-xs sm:text-sm mt-1">
-                Formally registered under the ACT Associations Incorporation Act 1991.
-              </p>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800 gap-4">
+              <div>
+                <SectionLabel>CONSTITUTIONAL OBJECTIVES</SectionLabel>
+                <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                  Institutional Pillars of the Association
+                </h2>
+                <p className="text-stone-500 text-xs sm:text-sm mt-1">
+                  Formally registered under the ACT Associations Incorporation Act 1991 (Reg. A04821).
+                </p>
+              </div>
+              <Link
+                href="/en/constitution"
+                className="bg-[#064e3b] hover:bg-emerald-950 text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shrink-0 transition"
+              >
+                Read Full Constitution →
+              </Link>
             </div>
 
             <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
@@ -608,12 +733,20 @@ export default function HomePage() {
                   2026/2027 Cultural Calendar
                 </h2>
               </div>
-              <Link
-                href="/en/dashboard/events"
-                className="text-xs font-bold text-[#064e3b] dark:text-emerald-400 hover:text-emerald-950 border-b border-[#064e3b] dark:border-emerald-400 pb-0.5 whitespace-nowrap self-start sm:self-auto"
-              >
-                Access Member RSVP System →
-              </Link>
+              <div className="flex items-center gap-3 self-start sm:self-auto">
+                <Link
+                  href="/en/events"
+                  className="bg-[#064e3b] hover:bg-emerald-950 text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shrink-0 transition"
+                >
+                  Full Activities Calendar →
+                </Link>
+                <Link
+                  href="/en/dashboard/events"
+                  className="text-xs font-bold text-[#064e3b] dark:text-emerald-400 hover:text-emerald-950 border-b border-[#064e3b] dark:border-emerald-400 pb-0.5 whitespace-nowrap"
+                >
+                  Member RSVPs →
+                </Link>
+              </div>
             </div>
 
             <div className="border border-stone-800 bg-stone-900 p-6 sm:p-8 rounded-none mb-8">
@@ -708,14 +841,22 @@ export default function HomePage() {
             className="py-16 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto"
             aria-label="Executive Council"
           >
-            <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
-              <SectionLabel>EXECUTIVE LEADERSHIP</SectionLabel>
-              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
-                Executive Leadership
-              </h2>
-              <p className="text-stone-500 text-xs sm:text-sm mt-1">
-                The Executive Council representing the General Assembly, Ezinwanyi Canberra (Women&apos;s Wing), and Secretariat Protocol.
-              </p>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800 gap-4">
+              <div>
+                <SectionLabel>EXECUTIVE LEADERSHIP</SectionLabel>
+                <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                  Executive Council (EXCO)
+                </h2>
+                <p className="text-stone-500 text-xs sm:text-sm mt-1">
+                  The Executive Council representing the General Assembly, Ezinwanyi Canberra (Women&apos;s Wing), and Secretariat Protocol.
+                </p>
+              </div>
+              <Link
+                href="/en/leadership"
+                className="bg-[#064e3b] hover:bg-emerald-950 text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shrink-0 transition"
+              >
+                Full EXCO Profiles →
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -723,8 +864,8 @@ export default function HomePage() {
                 {
                   src: '/president-ifeanyi.jpg',
                   name: 'Chief Ifeanyi Onuchukwu',
-                  role: 'President & Executive Chairman',
-                  sub: 'General Assembly (Men)',
+                  role: 'President',
+                  sub: 'General Assembly',
                   pos: 'center 12%',
                   initials: 'IO',
                 },
@@ -732,7 +873,7 @@ export default function HomePage() {
                   src: '/vice-president-joseph.jpg',
                   name: 'Joseph Nwosu',
                   role: 'Vice-President',
-                  sub: 'General Assembly (Men)',
+                  sub: 'General Assembly',
                   pos: 'center 12%',
                   initials: 'JN',
                 },
@@ -837,11 +978,22 @@ export default function HomePage() {
             className="py-16 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto"
             aria-label="Membership Dues"
           >
-            <div className="mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800">
-              <SectionLabel>MEMBERSHIP STRUCTURE</SectionLabel>
-              <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
-                Annual Membership Dues &amp; Household Options
-              </h2>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 sm:mb-10 pb-4 border-b border-stone-200 dark:border-stone-800 gap-4">
+              <div>
+                <SectionLabel>MEMBERSHIP STRUCTURE</SectionLabel>
+                <h2 className="font-sans text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+                  Annual Membership Dues &amp; Household Options
+                </h2>
+                <p className="text-stone-500 text-xs sm:text-sm mt-1">
+                  Single ($80 AUD / yr) and Family ($120 AUD / yr) democratic tiers.
+                </p>
+              </div>
+              <Link
+                href="/en/membership"
+                className="bg-[#064e3b] hover:bg-emerald-950 text-white text-xs font-bold px-4 py-2 uppercase tracking-wider shrink-0 transition"
+              >
+                Full Membership Guide →
+              </Link>
             </div>
 
             <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-stone-800 border border-stone-200 dark:border-stone-800 rounded-none overflow-hidden">
@@ -863,7 +1015,7 @@ export default function HomePage() {
                   </div>
 
                   <p className="font-sans text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
-                    $250 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
+                    $120 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                   </p>
 
                   <ul className="space-y-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300 border-t border-stone-100 dark:border-stone-800 pt-4">
@@ -906,7 +1058,7 @@ export default function HomePage() {
                   </div>
 
                   <p className="font-sans text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-6">
-                    $150 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
+                    $80 <span className="text-xs font-sans text-stone-400 font-normal">AUD / year</span>
                   </p>
 
                   <ul className="space-y-3 text-xs sm:text-sm text-stone-700 dark:text-stone-300 border-t border-stone-100 dark:border-stone-800 pt-4">
@@ -970,10 +1122,10 @@ export default function HomePage() {
               <div>
                 <h5 className="font-sans font-bold text-white text-sm mb-3">Institutional Links</h5>
                 <ul className="space-y-2 text-xs text-stone-400">
-                  <li><a href="#welcome" className="hover:text-white transition">President&apos;s Address</a></li>
-                  <li><a href="#charter" className="hover:text-white transition">Constitution &amp; By-Laws</a></li>
-                  <li><a href="#leadership" className="hover:text-white transition">Executive Council</a></li>
-                  <li><a href="#events" className="hover:text-white transition">Cultural Calendar</a></li>
+                  <li><Link href="/en/membership" className="hover:text-white transition">Membership Tiers ($80 / $120)</Link></li>
+                  <li><Link href="/en/leadership" className="hover:text-white transition">Executive Council (EXCO)</Link></li>
+                  <li><Link href="/en/constitution" className="hover:text-white transition">Constitution &amp; By-Laws</Link></li>
+                  <li><Link href="/en/events" className="hover:text-white transition">Events &amp; Cultural Calendar</Link></li>
                   <li><Link href="/en/dashboard/billing" className="hover:text-white transition">Treasury &amp; Dues Protocol</Link></li>
                 </ul>
               </div>

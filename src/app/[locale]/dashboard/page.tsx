@@ -63,7 +63,7 @@ export default async function DashboardOverview() {
   }));
 
   const activeSubscription = user?.household?.subscriptions?.[0] || user?.duesSubscriptions?.[0];
-  const duesAmount = activeSubscription?.amount ? Number(activeSubscription.amount).toFixed(2) : '250.00';
+  const duesAmount = activeSubscription?.amount ? Number(activeSubscription.amount).toFixed(2) : '120.00';
   const duesStatus = activeSubscription?.status || 'active';
   const nextBillingDate = activeSubscription?.nextBillingDate
     ? new Intl.DateTimeFormat('en-AU', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(activeSubscription.nextBillingDate))

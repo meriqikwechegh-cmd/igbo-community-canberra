@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     }
 
     const isFamily = planType === 'family';
-    const amountInCents = isFamily ? 25000 : 15000; // $250/yr family or $150/yr single
+    const amountInCents = isFamily ? 12000 : 8000; // $120/yr family or $80/yr single
     const interval = 'year';
 
     // Find or create customer in Stripe
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
             currency: 'aud',
             product_data: {
               name: `Igbo Community Canberra — ${isFamily ? 'Family' : 'Single'} Membership Dues`,
-              description: `Annual community membership dues (${isFamily ? '$250 AUD/year — all household members' : '$150 AUD/year — individual'})`,
+              description: `Annual community membership dues (${isFamily ? '$120 AUD/year — all household members' : '$80 AUD/year — individual'})`,
             },
             unit_amount: amountInCents,
             recurring: {

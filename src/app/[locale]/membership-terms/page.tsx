@@ -27,10 +27,10 @@ export default function MembershipTermsPage() {
           <p>The Association operates two democratically approved annual dues categories:</p>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Family Membership ($250 AUD / year):</strong> Encompasses the primary registered member, their spouse, and all dependent children residing at the registered household address. Grants full voting representation at the Annual General Assembly and comprehensive coverage under the ICC Bereavement &amp; Welfare Charter.
+              <strong>Family Membership ($120 AUD / year):</strong> Encompasses the primary registered member, their spouse, and all dependent children residing at the registered household address. Grants full voting representation at the Annual General Assembly and comprehensive coverage under the ICC Bereavement &amp; Welfare Charter.
             </li>
             <li>
-              <strong>Single Adult Membership ($150 AUD / year):</strong> Applicable to individual adult residents. Grants individual voting representation at the General Assembly, individual Welfare Charter coverage, and portal access.
+              <strong>Single Adult Membership ($80 AUD / year):</strong> Applicable to individual adult residents. Grants individual voting representation at the General Assembly, individual Welfare Charter coverage, and portal access.
             </li>
           </ul>
           <p className="text-xs text-stone-500 pt-1">

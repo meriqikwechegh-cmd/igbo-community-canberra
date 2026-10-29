@@ -355,13 +355,13 @@ export default function RegisterPage() {
                       {
                         key: 'family',
                         label: 'Family Membership',
-                        price: '$250 AUD / year',
+                        price: '$120 AUD / year',
                         sub: 'Primary Member + Household Dependents',
                       },
                       {
                         key: 'single',
                         label: 'Single Membership',
-                        price: '$150 AUD / year',
+                        price: '$80 AUD / year',
                         sub: 'Individual Adult Member',
                       },
                     ].map((plan) => (

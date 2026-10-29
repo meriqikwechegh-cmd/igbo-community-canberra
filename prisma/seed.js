@@ -140,7 +140,7 @@ async function main() {
   });
 
   // ─── 2. Executive Council (EXCO) ────────────────────────────────
-  // President & Executive Chairman
+  // President
   const president = await prisma.user.create({
     data: {
       email: 'ifeanyi.onuchukwu@icc.org.au',
@@ -324,7 +324,7 @@ async function main() {
         householdId: item.household.id,
         userId: item.user.id,
         planType: 'annual',
-        amount: 250.00,
+        amount: 120.00,
         status: 'active',
         nextBillingDate: new Date('2026-11-01'),
       },
@@ -334,7 +334,7 @@ async function main() {
       data: {
         householdId: item.household.id,
         userId: item.user.id,
-        amount: 250.00,
+        amount: 120.00,
         paymentMethod: 'stripe',
         status: 'completed',
         description: 'Annual Family Membership Dues (2026/2027)',

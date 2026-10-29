@@ -7,24 +7,32 @@ export default function Footer() {
     <footer className="border-t border-stone-800 bg-stone-950 text-stone-300 py-6 px-6 text-xs">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 text-stone-400">
+          <Link href="/en/membership" className="hover:text-white transition font-semibold">
+            Membership
+          </Link>
+          <span className="text-stone-700">·</span>
+          <Link href="/en/leadership" className="hover:text-white transition font-semibold">
+            Executive Council
+          </Link>
+          <span className="text-stone-700">·</span>
+          <Link href="/en/constitution" className="hover:text-white transition font-semibold">
+            Constitution
+          </Link>
+          <span className="text-stone-700">·</span>
+          <Link href="/en/events" className="hover:text-white transition font-semibold">
+            Activities
+          </Link>
+          <span className="text-stone-700">·</span>
+          <Link href="/en/contact" className="hover:text-white transition font-semibold">
+            Contact
+          </Link>
+          <span className="text-stone-700">·</span>
           <Link href="/en/privacy-policy" className="hover:text-white transition">
             Privacy Policy
           </Link>
           <span className="text-stone-700">·</span>
           <Link href="/en/terms-of-use" className="hover:text-white transition">
             Terms of Use
-          </Link>
-          <span className="text-stone-700">·</span>
-          <Link href="/en/photo-video-consent" className="hover:text-white transition">
-            Photo &amp; Video Consent
-          </Link>
-          <span className="text-stone-700">·</span>
-          <Link href="/en/accessibility" className="hover:text-white transition">
-            Accessibility
-          </Link>
-          <span className="text-stone-700">·</span>
-          <Link href="/en/contact" className="hover:text-white transition">
-            Contact
           </Link>
           <span className="text-stone-700">·</span>
           <Link href="/en/membership-terms" className="hover:text-white transition">

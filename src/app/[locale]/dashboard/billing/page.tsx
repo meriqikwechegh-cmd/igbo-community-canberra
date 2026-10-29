@@ -60,7 +60,7 @@ export default function BillingPage() {
           Membership Dues &amp; Billing
         </h1>
         <p className="text-stone-600 dark:text-stone-400 text-xs sm:text-sm mt-1">
-          Manage your membership subscription — Family ($250/yr) or Single ($150/yr) — and track official payment records.
+          Manage your membership subscription — Family ($120/yr) or Single ($80/yr) — and track official payment records.
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export default function BillingPage() {
                 </span>
               </div>
               <p className="text-2xl sm:text-3xl font-sans font-bold text-stone-900 dark:text-stone-100 mb-1">
-                $250 <span className="text-xs font-sans font-normal text-stone-500 dark:text-stone-400">AUD / year</span>
+                $120 <span className="text-xs font-sans font-normal text-stone-500 dark:text-stone-400">AUD / year</span>
               </p>
               <p className="text-xs text-stone-600 dark:text-stone-400 mb-6 font-sans">
                 Covers primary member &amp; linked household family members for 12 months.
@@ -97,7 +97,7 @@ export default function BillingPage() {
               disabled={loading !== null}
               className="w-full bg-[#064e3b] text-white font-bold py-2.5 rounded hover:bg-emerald-950 transition disabled:opacity-60 text-xs uppercase tracking-wider cursor-pointer"
             >
-              {loading === 'family' ? 'Redirecting to Stripe…' : 'Subscribe — Family ($250/yr)'}
+              {loading === 'family' ? 'Redirecting to Stripe…' : 'Subscribe — Family ($120/yr)'}
             </button>
           </div>
 
@@ -113,7 +113,7 @@ export default function BillingPage() {
                 </span>
               </div>
               <p className="text-2xl sm:text-3xl font-sans font-bold text-stone-900 dark:text-stone-100 mb-1">
-                $150 <span className="text-xs font-sans font-normal text-stone-500 dark:text-stone-400">AUD / year</span>
+                $80 <span className="text-xs font-sans font-normal text-stone-500 dark:text-stone-400">AUD / year</span>
               </p>
               <p className="text-xs text-stone-600 dark:text-stone-400 mb-6 font-sans">
                 Individual annual membership for one adult member.
@@ -124,7 +124,7 @@ export default function BillingPage() {
               disabled={loading !== null}
               className="w-full bg-stone-900 dark:bg-stone-800 text-white font-bold py-2.5 rounded hover:bg-stone-800 dark:hover:bg-stone-700 transition disabled:opacity-60 text-xs uppercase tracking-wider cursor-pointer"
             >
-              {loading === 'single' ? 'Redirecting to Stripe…' : 'Subscribe — Single ($150/yr)'}
+              {loading === 'single' ? 'Redirecting to Stripe…' : 'Subscribe — Single ($80/yr)'}
             </button>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function BillingPage() {
                 <td className="p-2.5 font-sans text-[11px]">2026-09-15</td>
                 <td className="p-2.5 font-semibold text-stone-900 dark:text-stone-100">Annual Family Dues (2026/2027)</td>
                 <td className="p-2.5 font-sans text-[11px]">Stripe Card</td>
-                <td className="p-2.5 font-sans font-bold text-[#064e3b] dark:text-emerald-400">$250.00 AUD</td>
+                <td className="p-2.5 font-sans font-bold text-[#064e3b] dark:text-emerald-400">$120.00 AUD</td>
                 <td className="p-2.5">
                   <span className="bg-emerald-50 dark:bg-emerald-950/60 text-[#064e3b] dark:text-emerald-300 text-[11px] font-sans px-2 py-0.5 rounded font-bold border border-emerald-200 dark:border-emerald-800">
                     Completed

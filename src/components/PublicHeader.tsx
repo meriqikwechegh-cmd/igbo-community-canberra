@@ -19,11 +19,11 @@ export function PublicHeader({
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const links = [
-    { label: 'About Us', href: '#welcome' },
-    { label: 'Activities', href: '#events' },
-    { label: 'Membership', href: '#membership' },
-    { label: 'Leadership', href: '#leadership' },
-    { label: contactText, href: '#contact' },
+    { label: 'Membership', href: '/en/membership' },
+    { label: 'Executive Council', href: '/en/leadership' },
+    { label: 'Constitution', href: '/en/constitution' },
+    { label: 'Activities', href: '/en/events' },
+    { label: contactText, href: '/en/contact' },
   ];
 
   return (
@@ -54,13 +54,13 @@ export function PublicHeader({
         {/* Upfront Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-semibold tracking-wider uppercase text-stone-700 dark:text-stone-300">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="hover:text-[#064e3b] dark:hover:text-emerald-400 transition-colors whitespace-nowrap py-1 border-b-2 border-transparent hover:border-[#064e3b] dark:hover:border-emerald-400"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -110,14 +110,14 @@ export function PublicHeader({
         <div className="lg:hidden border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 px-4 py-4 space-y-3">
           <nav className="flex flex-col space-y-1">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileDrawerOpen(false)}
                 className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-none transition"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           
